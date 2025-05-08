@@ -1,1 +1,0 @@
-config_loader_data['tree_sitter_systemverilog/16.14'] = [["","assume_property_test",0,"logs/tree_sitter_systemverilog/chapter-16/16.14--assume-property.sv.log.html","tests/chapter-16/16.14--assume-property.sv.html"]]

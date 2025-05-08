@@ -1,1 +1,0 @@
-config_loader_data['tree_sitter_systemverilog/5.8'] = [["","time-literals",0,"logs/tree_sitter_systemverilog/chapter-5/5.8-time-literals.sv.log.html","tests/chapter-5/5.8-time-literals.sv.html"]]

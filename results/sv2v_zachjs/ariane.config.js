@@ -1,1 +1,0 @@
-config_loader_data['sv2v_zachjs/ariane'] = [["cores","ariane",0,"logs/Sv2v_zachjs/generated/ariane/ariane.sv.log.html","third_party/cores/ariane/vendor/pulp-platform/fpga-support/rtl/SyncDpRam.sv.html"]]

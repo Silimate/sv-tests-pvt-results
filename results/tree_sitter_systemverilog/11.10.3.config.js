@@ -1,1 +1,0 @@
-config_loader_data['tree_sitter_systemverilog/11.10.3'] = [["","empty_string",0,"logs/tree_sitter_systemverilog/chapter-11/11.10.3--empty_string.sv.log.html","tests/chapter-11/11.10.3--empty_string.sv.html"],["","empty_string_sim",0,"logs/tree_sitter_systemverilog/chapter-11/11.10.3--empty_string-sim.sv.log.html","tests/chapter-11/11.10.3--empty_string-sim.sv.html"]]
