@@ -6,7 +6,7 @@
   </head>
   <body>
     <header class="test-failed">
-        <a href="https://github.com/povik/yosys-slang/tree/f44908907726e684965ba71959cc147df50c0357" target="_blank"><h1>yosys-slang</h1></a>
+        <a href="https://github.com/povik/yosys-slang/tree/4d89de76cbcdcbcc96a473e9562c09fcb0da9d5b" target="_blank"><h1>yosys-slang</h1></a>
         <h2>regress-vlg_br_gh316c_iv</h2>
     </header>
     <section class="property-list">
@@ -32,36 +32,42 @@
           </ul></dd>
         </div>
         <div><dt>defines</dt><dd><code></code></dd></div>
-        <div><dt>completed</dt><dd>2025-11-21 02:32:54</dd></div>
+        <div><dt>completed</dt><dd>2025-11-21 08:04:05</dd></div>
         <div><dt>time elapsed</dt><dd>0.012s</dd></div>
-        <div><dt>ram usage</dt><dd>24268 KB</dd></div>
+        <div><dt>ram usage</dt><dd>22848 KB</dd></div>
       </dl>
     </section>
     <section class="log">
       <pre></pre>
-      <pre>yosys-slang -s /__w/sv-tests/sv-tests/out/tmp/tmp4a9_xatn/yosys-script</pre>
+      <pre>yosys-slang -s /__w/sv-tests/sv-tests/out/tmp/tmpyq7swsv5/yosys-script</pre>
       <pre></pre>
       <pre> /----------------------------------------------------------------------------\</pre>
       <pre> |  yosys -- Yosys Open SYnthesis Suite                                       |</pre>
       <pre> |  Copyright (C) 2012 - 2025  Claire Xenia Wolf &lt;claire@yosyshq.com&gt;         |</pre>
       <pre> |  Distributed under an ISC-like license, type &#34;license&#34; to see terms        |</pre>
       <pre> \----------------------------------------------------------------------------/</pre>
-      <pre> Yosys 0.58+132 (git sha1 5b2252ffd, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)</pre>
+      <pre> Yosys 0.59+110 (git sha1 8ea51e147, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)</pre>
       <pre></pre>
-      <pre>-- Executing script file `/__w/sv-tests/sv-tests/out/tmp/tmp4a9_xatn/yosys-script&#39; --</pre>
+      <pre>-- Executing script file `/__w/sv-tests/sv-tests/out/tmp/tmpyq7swsv5/yosys-script&#39; --</pre>
       <pre></pre>
       <pre>1. Executing SLANG frontend.</pre>
-      <pre>../../../third_party/tools/icarus/ivtest/ivltests/br_gh316c.v:1:39: error: direction &#39;InOut&#39; on inlined port connection unsupported</pre>
-      <pre>module dut(input EN, input DIR, inout A, inout B);</pre>
-      <pre>                                      ^</pre>
-      <pre>../../../third_party/tools/icarus/ivtest/ivltests/br_gh316c.v:1:48: error: direction &#39;InOut&#39; on inlined port connection unsupported</pre>
-      <pre>module dut(input EN, input DIR, inout A, inout B);</pre>
-      <pre>                                               ^</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/br_gh316c.v:25:21: error: connection on port &#39;A&#39; with direction &#39;inout&#39; cannot be inlined; see yosys-slang issue #143</pre>
+      <pre>dut dut1(EN1, 1&#39;b1, I1, O);</pre>
+      <pre>                    ^~</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/br_gh316c.v:25:25: error: connection on port &#39;B&#39; with direction &#39;inout&#39; cannot be inlined; see yosys-slang issue #143</pre>
+      <pre>dut dut1(EN1, 1&#39;b1, I1, O);</pre>
+      <pre>                        ^</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/br_gh316c.v:26:21: error: connection on port &#39;A&#39; with direction &#39;inout&#39; cannot be inlined; see yosys-slang issue #143</pre>
+      <pre>dut dut2(EN2, 1&#39;b0, O, I2);</pre>
+      <pre>                    ^</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/br_gh316c.v:26:24: error: connection on port &#39;B&#39; with direction &#39;inout&#39; cannot be inlined; see yosys-slang issue #143</pre>
+      <pre>dut dut2(EN2, 1&#39;b0, O, I2);</pre>
+      <pre>                       ^~</pre>
       <pre>Top level design units:</pre>
       <pre>    test</pre>
       <pre></pre>
       <pre></pre>
-      <pre>Build failed: 2 errors, 0 warnings</pre>
+      <pre>Build failed: 4 errors, 0 warnings</pre>
       <pre>ERROR: Compilation failed</pre>
       <pre></pre>
     </section>
