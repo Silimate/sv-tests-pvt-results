@@ -5,14 +5,14 @@
     <link rel="stylesheet" type="text/css" href="../../../../log.css">
   </head>
   <body>
-    <header class="test-passed">
-        <a href="https://github.com/YosysHQ/yosys/tree/2e9db8b850bbdfc88dc5956ef64a7e69125c6091" target="_blank"><h1>yosys</h1></a>
+    <header class="test-failed">
+        <a href="https://github.com/YosysHQ/yosys/tree/967b47d98412bb34b1e32fb9b31ba91792db1d3e" target="_blank"><h1>yosys</h1></a>
         <h2>regress-vlg_ldelay1_iv</h2>
     </header>
     <section class="property-list">
       <dl>
         <div><dt>description</dt><dd>Test imported from ivtest</dd></div>
-        <div><dt>rc</dt><dd>0 (means success: 1)</dd></div>
+        <div><dt>rc</dt><dd>1 (means success: 0)</dd></div>
         <div><dt>tags</dt><dd>ivtest</dd></div>
         <div>
           <dt>incdirs</dt>
@@ -32,15 +32,15 @@
           </ul></dd>
         </div>
         <div><dt>defines</dt><dd><code></code></dd></div>
-        <div><dt>completed</dt><dd>2026-01-14 03:08:04</dd></div>
-        <div><dt>time elapsed</dt><dd>0.019s</dd></div>
-        <div><dt>ram usage</dt><dd>22580 KB</dd></div>
+        <div><dt>completed</dt><dd>2026-01-15 03:05:10</dd></div>
+        <div><dt>time elapsed</dt><dd>0.014s</dd></div>
+        <div><dt>ram usage</dt><dd>15644 KB</dd></div>
       </dl>
     </section>
     <section class="log">
       <pre></pre>
-      <pre>sh /__w/sv-tests/sv-tests/out/tmp/tmprjeapf3b/run.sh</pre>
-      <pre>+ cat /__w/sv-tests/sv-tests/out/tmp/tmprjeapf3b/scr.ys</pre>
+      <pre>sh /__w/sv-tests/sv-tests/out/tmp/tmp50rz9aoh/run.sh</pre>
+      <pre>+ cat /__w/sv-tests/sv-tests/out/tmp/tmp50rz9aoh/scr.ys</pre>
       <pre>read_verilog  -sv -nodisplay  -I /__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest -I /__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests  <a href="../../../../third_party/tools/icarus/ivtest/ivltests/ldelay1.v.html" target="file-frame">third_party/tools/icarus/ivtest/ivltests/ldelay1.v</a></pre>
       <pre>hierarchy -auto-top</pre>
       <pre>proc</pre>
@@ -51,183 +51,438 @@
       <pre>stat</pre>
       <pre>check</pre>
       <pre>sim -assert</pre>
-      <pre>+ yosys -Q -T /__w/sv-tests/sv-tests/out/tmp/tmprjeapf3b/scr.ys</pre>
+      <pre>+ yosys -Q -T /__w/sv-tests/sv-tests/out/tmp/tmp50rz9aoh/scr.ys</pre>
       <pre></pre>
-      <pre>-- Executing script file `/__w/sv-tests/sv-tests/out/tmp/tmprjeapf3b/scr.ys&#39; --</pre>
+      <pre>-- Executing script file `/__w/sv-tests/sv-tests/out/tmp/tmp50rz9aoh/scr.ys&#39; --</pre>
       <pre></pre>
       <pre>1. Executing Verilog-2005 frontend: <a href="../../../../third_party/tools/icarus/ivtest/ivltests/ldelay1.v.html" target="file-frame">third_party/tools/icarus/ivtest/ivltests/ldelay1.v</a></pre>
       <pre>Parsing SystemVerilog input from `<a href="../../../../third_party/tools/icarus/ivtest/ivltests/ldelay1.v.html" target="file-frame">third_party/tools/icarus/ivtest/ivltests/ldelay1.v</a>&#39; to AST representation.</pre>
-      <pre>verilog frontend filename <a href="../../../../third_party/tools/icarus/ivtest/ivltests/ldelay1.v.html" target="file-frame">third_party/tools/icarus/ivtest/ivltests/ldelay1.v</a></pre>
       <pre>Generating RTLIL representation for module `\test&#39;.</pre>
       <pre>Warning: wire &#39;\ok.error&#39; is assigned in a block at <a href="../../../../third_party/tools/icarus/ivtest/ivltests/ldelay1.v.html#l-44" target="file-frame">third_party/tools/icarus/ivtest/ivltests/ldelay1.v:44</a>.2-44.14.</pre>
       <pre><a href="../../../../third_party/tools/icarus/ivtest/ivltests/ldelay1.v.html#l-44" target="file-frame">third_party/tools/icarus/ivtest/ivltests/ldelay1.v:44</a>: Warning: Identifier `\ok.error&#39; is implicitly declared.</pre>
-      <pre>Successfully finished Verilog frontend.</pre>
-      <pre></pre>
-      <pre>2. Executing HIERARCHY pass (managing design hierarchy).</pre>
-      <pre></pre>
-      <pre>2.1. Finding top of design hierarchy..</pre>
-      <pre>root of   0 design levels: test                </pre>
-      <pre>Automatically selected test as design top module.</pre>
-      <pre></pre>
-      <pre>2.2. Analyzing design hierarchy..</pre>
-      <pre>Top module:  \test</pre>
-      <pre></pre>
-      <pre>2.3. Analyzing design hierarchy..</pre>
-      <pre>Top module:  \test</pre>
-      <pre>Removed 0 unused modules.</pre>
-      <pre>Module test directly or indirectly displays text -&gt; setting &#34;keep&#34; attribute.</pre>
-      <pre></pre>
-      <pre>3. Executing PROC pass (convert processes to netlists).</pre>
-      <pre></pre>
-      <pre>3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).</pre>
-      <pre>Cleaned up 0 empty switches.</pre>
-      <pre></pre>
-      <pre>3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).</pre>
-      <pre>Marked 12 switch rules as full_case in process $proc$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:42$14 in module test.</pre>
-      <pre>Removed a total of 0 dead cases.</pre>
-      <pre></pre>
-      <pre>3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).</pre>
-      <pre>Removed 0 redundant assignments.</pre>
-      <pre>Promoted 15 assignments to connections.</pre>
-      <pre></pre>
-      <pre>3.4. Executing PROC_INIT pass (extract init attributes).</pre>
-      <pre></pre>
-      <pre>3.5. Executing PROC_ARST pass (detect async resets in processes).</pre>
-      <pre></pre>
-      <pre>3.6. Executing PROC_ROM pass (convert switches to ROMs).</pre>
-      <pre>Converted 0 switches.</pre>
-      <pre>&lt;suppressed ~13 debug messages&gt;</pre>
-      <pre></pre>
-      <pre>3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).</pre>
-      <pre>Creating decoders for process `\test.$proc$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:42$14&#39;.</pre>
-      <pre>     1/25: $1\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:62$12.error[0:0]$61</pre>
-      <pre>     2/25: $1\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:61$11.error[0:0]$58</pre>
-      <pre>     3/25: $1\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:60$10.error[0:0]$55</pre>
-      <pre>     4/25: $1\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:59$9.error[0:0]$52</pre>
-      <pre>     5/25: $1\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:58$8.error[0:0]$49</pre>
-      <pre>     6/25: $1\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:57$7.error[0:0]$46</pre>
-      <pre>     7/25: $1\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:56$6.error[0:0]$43</pre>
-      <pre>     8/25: $1\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:54$5.error[0:0]$40</pre>
-      <pre>     9/25: $1\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:52$4.error[0:0]$37</pre>
-      <pre>    10/25: $1\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:51$3.error[0:0]$34</pre>
-      <pre>    11/25: $1\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:49$2.error[0:0]$31</pre>
-      <pre>    12/25: $1\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:48$1.error[0:0]$28</pre>
-      <pre>    13/25: $display$0x563fda862fe0:64$64_EN</pre>
-      <pre>    14/25: $display$0x563fda862fe0:37$62_EN</pre>
-      <pre>    15/25: $display$0x563fda862fe0:37$59_EN</pre>
-      <pre>    16/25: $display$0x563fda862fe0:37$56_EN</pre>
-      <pre>    17/25: $display$0x563fda862fe0:37$53_EN</pre>
-      <pre>    18/25: $display$0x563fda862fe0:37$50_EN</pre>
-      <pre>    19/25: $display$0x563fda862fe0:37$47_EN</pre>
-      <pre>    20/25: $display$0x563fda862fe0:37$44_EN</pre>
-      <pre>    21/25: $display$0x563fda862fe0:37$41_EN</pre>
-      <pre>    22/25: $display$0x563fda862fe0:37$38_EN</pre>
-      <pre>    23/25: $display$0x563fda862fe0:37$35_EN</pre>
-      <pre>    24/25: $display$0x563fda862fe0:37$32_EN</pre>
-      <pre>    25/25: $display$0x563fda862fe0:37$29_EN</pre>
-      <pre></pre>
-      <pre>3.8. Executing PROC_DLATCH pass (convert process syncs to latches).</pre>
-      <pre>No latch inferred for signal `\test.\a&#39; from process `\test.$proc$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:42$14&#39;.</pre>
-      <pre>No latch inferred for signal `\test.\b&#39; from process `\test.$proc$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:42$14&#39;.</pre>
-      <pre>No latch inferred for signal `\test.\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:48$1.error&#39; from process `\test.$proc$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:42$14&#39;.</pre>
-      <pre>No latch inferred for signal `\test.\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:49$2.error&#39; from process `\test.$proc$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:42$14&#39;.</pre>
-      <pre>No latch inferred for signal `\test.\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:51$3.error&#39; from process `\test.$proc$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:42$14&#39;.</pre>
-      <pre>No latch inferred for signal `\test.\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:52$4.error&#39; from process `\test.$proc$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:42$14&#39;.</pre>
-      <pre>No latch inferred for signal `\test.\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:54$5.error&#39; from process `\test.$proc$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:42$14&#39;.</pre>
-      <pre>No latch inferred for signal `\test.\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:56$6.error&#39; from process `\test.$proc$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:42$14&#39;.</pre>
-      <pre>No latch inferred for signal `\test.\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:57$7.error&#39; from process `\test.$proc$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:42$14&#39;.</pre>
-      <pre>No latch inferred for signal `\test.\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:58$8.error&#39; from process `\test.$proc$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:42$14&#39;.</pre>
-      <pre>No latch inferred for signal `\test.\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:59$9.error&#39; from process `\test.$proc$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:42$14&#39;.</pre>
-      <pre>No latch inferred for signal `\test.\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:60$10.error&#39; from process `\test.$proc$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:42$14&#39;.</pre>
-      <pre>No latch inferred for signal `\test.\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:61$11.error&#39; from process `\test.$proc$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:42$14&#39;.</pre>
-      <pre>No latch inferred for signal `\test.\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:62$12.error&#39; from process `\test.$proc$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:42$14&#39;.</pre>
-      <pre>No latch inferred for signal `\test.\ok.error&#39; from process `\test.$proc$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:42$14&#39;.</pre>
-      <pre></pre>
-      <pre>3.9. Executing PROC_DFF pass (convert process syncs to FFs).</pre>
-      <pre></pre>
-      <pre>3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).</pre>
-      <pre></pre>
-      <pre>3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).</pre>
-      <pre>Found and cleaned up 13 empty switches in `\test.$proc$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:42$14&#39;.</pre>
-      <pre>Removing empty process `test.$proc$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:42$14&#39;.</pre>
-      <pre>Cleaned up 13 empty switches.</pre>
-      <pre></pre>
-      <pre>3.12. Executing OPT_EXPR pass (perform const folding).</pre>
-      <pre>Optimizing module test.</pre>
-      <pre>&lt;suppressed ~39 debug messages&gt;</pre>
-      <pre></pre>
-      <pre>4. Executing CHECK pass (checking for obvious problems).</pre>
-      <pre>Checking module test...</pre>
-      <pre>Found and reported 0 problems.</pre>
-      <pre>Removed 0 unused cells and 104 unused wires.</pre>
-      <pre></pre>
-      <pre>5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).</pre>
-      <pre></pre>
-      <pre>6. Executing MEMORY_COLLECT pass (generating $mem cells).</pre>
-      <pre></pre>
-      <pre>7. Printing statistics.</pre>
-      <pre></pre>
-      <pre>=== test ===</pre>
-      <pre></pre>
-      <pre>        +----------Local Count, excluding submodules.</pre>
-      <pre>        | </pre>
-      <pre>       16 wires</pre>
-      <pre>       16 wire bits</pre>
-      <pre>       16 public wires</pre>
-      <pre>       16 public wire bits</pre>
-      <pre>       13 cells</pre>
-      <pre>       13   $print</pre>
-      <pre></pre>
-      <pre>8. Executing CHECK pass (checking for obvious problems).</pre>
-      <pre>Checking module test...</pre>
-      <pre>Found and reported 0 problems.</pre>
-      <pre></pre>
-      <pre>9. Executing SIM pass (simulate the circuit).</pre>
-      <pre>Simulating cycle 0.</pre>
-      <pre>x: FAILED: q=1, expect x</pre>
-      <pre>x: FAILED: q=1, expect 0</pre>
-      <pre>x: FAILED: q=1, expect 0</pre>
-      <pre>PASSED</pre>
-      <pre>Simulating cycle 1.</pre>
-      <pre>Simulating cycle 2.</pre>
-      <pre>Simulating cycle 3.</pre>
-      <pre>Simulating cycle 4.</pre>
-      <pre>Simulating cycle 5.</pre>
-      <pre>Simulating cycle 6.</pre>
-      <pre>Simulating cycle 7.</pre>
-      <pre>Simulating cycle 8.</pre>
-      <pre>Simulating cycle 9.</pre>
-      <pre>Simulating cycle 10.</pre>
-      <pre>Simulating cycle 11.</pre>
-      <pre>Simulating cycle 12.</pre>
-      <pre>Simulating cycle 13.</pre>
-      <pre>Simulating cycle 14.</pre>
-      <pre>Simulating cycle 15.</pre>
-      <pre>Simulating cycle 16.</pre>
-      <pre>Simulating cycle 17.</pre>
-      <pre>Simulating cycle 18.</pre>
-      <pre>Simulating cycle 19.</pre>
-      <pre>Simulating cycle 20.</pre>
-      <pre>Simulating cycle 21.</pre>
-      <pre>Simulating cycle 22.</pre>
-      <pre>Simulating cycle 23.</pre>
-      <pre>Simulating cycle 24.</pre>
-      <pre>Simulating cycle 25.</pre>
-      <pre>Simulating cycle 26.</pre>
-      <pre>Simulating cycle 27.</pre>
-      <pre>Simulating cycle 28.</pre>
-      <pre>Simulating cycle 29.</pre>
-      <pre>Simulating cycle 30.</pre>
-      <pre>Simulating cycle 31.</pre>
-      <pre>Simulating cycle 32.</pre>
-      <pre>Simulating cycle 33.</pre>
-      <pre>Simulating cycle 34.</pre>
-      <pre>Simulating cycle 35.</pre>
-      <pre>Simulating cycle 36.</pre>
-      <pre>Simulating cycle 37.</pre>
-      <pre>Simulating cycle 38.</pre>
-      <pre>Simulating cycle 39.</pre>
-      <pre>Simulating cycle 40.</pre>
+      <pre><a href="../../../../third_party/tools/icarus/ivtest/ivltests/ldelay1.v.html#l-37" target="file-frame">third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37</a>: Warning: Identifier `\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:48$1.$time&#39; is implicitly declared.</pre>
+      <pre>verilog-ast&gt; AST_MODULE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:24.1-66.10&gt; [0x55bd68eea140] str=&#39;\test&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;   AST_WIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:26.9-26.10&gt; [0x55bd68eea3a0] str=&#39;\q&#39; basic_prep range=[0:0] dimensions=[0:0]</pre>
+      <pre>verilog-ast&gt;   AST_WIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:27.9-27.10&gt; [0x55bd68eea4d0] str=&#39;\a&#39; reg basic_prep range=[0:0] dimensions=[0:0]</pre>
+      <pre>verilog-ast&gt;   AST_WIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:27.12-27.13&gt; [0x55bd68eefbe0] str=&#39;\b&#39; reg basic_prep range=[0:0] dimensions=[0:0]</pre>
+      <pre>verilog-ast&gt;   AST_ASSIGN &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:28.10-28.20&gt; [0x55bd68eefd10] basic_prep</pre>
+      <pre>verilog-ast&gt;     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:28.12-28.13&gt; [0x55bd68eefe40 -&gt; 0x55bd68eea3a0] str=&#39;\q&#39; basic_prep in_lvalue</pre>
+      <pre>verilog-ast&gt;     AST_BIT_AND &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:28.10-28.20&gt; [0x55bd68eeb010] basic_prep</pre>
+      <pre>verilog-ast&gt;       AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:28.15-28.16&gt; [0x55bd68ef00a0 -&gt; 0x55bd68eea4d0] str=&#39;\a&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;       AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:28.18-28.19&gt; [0x55bd68eeaee0 -&gt; 0x55bd68eefbe0] str=&#39;\b&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;   AST_TASK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:30.11-30.11&gt; [0x55bd68eea270] str=&#39;\ok&#39;</pre>
+      <pre>verilog-ast&gt;     AST_WIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:31.13-31.15&gt; [0x55bd68eeb2a0] str=&#39;\qq&#39; input port=1</pre>
+      <pre>verilog-ast&gt;     AST_WIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:32.11-32.16&gt; [0x55bd68eeb3d0] str=&#39;\error&#39; reg</pre>
+      <pre>verilog-ast&gt;     AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:33.7-39.10&gt; [0x55bd68eeb140]</pre>
+      <pre>verilog-ast&gt;       AST_CASE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.3-38.8&gt; [0x55bd68eeb9f0]</pre>
+      <pre>verilog-ast&gt;         AST_REDUCE_BOOL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-34.16&gt; [0x55bd68eebb20]</pre>
+      <pre>verilog-ast&gt;           AST_NEX &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.15&gt; [0x55bd68f00d90]</pre>
+      <pre>verilog-ast&gt;             AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.8&gt; [0x55bd68f00ec0] str=&#39;\q&#39;</pre>
+      <pre>verilog-ast&gt;             AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.13-34.15&gt; [0x55bd68f00ff0] str=&#39;\qq&#39;</pre>
+      <pre>verilog-ast&gt;         AST_COND &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.15&gt; [0x55bd68f01380]</pre>
+      <pre>verilog-ast&gt;           AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-34.16&gt; [0x55bd68f01250] bits=&#39;1&#39;(1) range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;           AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-38.8&gt; [0x55bd68f01120]</pre>
+      <pre>verilog-ast&gt;             AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:35.5-38.8&gt; [0x55bd68eeb8c0]</pre>
+      <pre>verilog-ast&gt;               AST_ASSIGN_EQ &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.8-36.17&gt; [0x55bd68eeb530]</pre>
+      <pre>verilog-ast&gt;                 AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.8-36.13&gt; [0x55bd68eeb790] str=&#39;\error&#39; in_lvalue</pre>
+      <pre>verilog-ast&gt;                 AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.16-36.17&gt; [0x55bd68eeb660] bits=&#39;00000000000000000000000000000001&#39;(32) signed range=[31:0] int=1</pre>
+      <pre>verilog-ast&gt;               AST_TCALL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.8-37.63&gt; [0x55bd68f01640] str=&#39;$display&#39;</pre>
+      <pre>verilog-ast&gt;                 AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.17-37.47&gt; [0x55bd68f01770] str=&#39;%0d: FAILED: q=%b, expect %b&#39; bits=&#39;00100101001100000110010000111010001000000100011001000001010010010100110001000101010001000011101000100000011100010011110100100101011000100010110000100000011001010111100001110000011001010110001101110100001000000010010101100010&#39;(224) range=[223:0] int=1948263778</pre>
+      <pre>verilog-ast&gt;                 AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f018a0] str=&#39;$time&#39;</pre>
+      <pre>verilog-ast&gt;                 AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.56-37.57&gt; [0x55bd68f019d0] str=&#39;\q&#39;</pre>
+      <pre>verilog-ast&gt;                 AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.59-37.61&gt; [0x55bd68f01b00] str=&#39;\qq&#39;</pre>
+      <pre>verilog-ast&gt;   AST_INITIAL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:42.11-42.11&gt; [0x55bd68f01c30] basic_prep</pre>
+      <pre>verilog-ast&gt;     AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:42.11-42.11&gt; [0x55bd68f01d60] basic_prep</pre>
+      <pre>verilog-ast&gt;       AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:43.6-65.9&gt; [0x55bd68f01e90] basic_prep</pre>
+      <pre>verilog-ast&gt;         AST_ASSIGN_EQ &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:44.2-44.14&gt; [0x55bd68f02240] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:44.2-44.10&gt; [0x55bd68f01fc0 -&gt; 0x55bd68eead90] str=&#39;\ok.error&#39; basic_prep in_lvalue</pre>
+      <pre>verilog-ast&gt;           AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:44.13-44.14&gt; [0x55bd68f02110] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0]</pre>
+      <pre>verilog-ast&gt;         AST_ASSIGN_LE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:46.2-46.8&gt; [0x55bd68f02640] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:46.2-46.3&gt; [0x55bd68f02370 -&gt; 0x55bd68eea4d0] str=&#39;\a&#39; basic_prep in_lvalue</pre>
+      <pre>verilog-ast&gt;           AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:46.7-46.8&gt; [0x55bd68f024e0] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0]</pre>
+      <pre>verilog-ast&gt;         AST_ASSIGN_LE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:47.2-47.8&gt; [0x55bd68f02a20] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:47.2-47.3&gt; [0x55bd68f02770 -&gt; 0x55bd68eefbe0] str=&#39;\b&#39; basic_prep in_lvalue</pre>
+      <pre>verilog-ast&gt;           AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:47.7-47.8&gt; [0x55bd68f028c0] bits=&#39;00000000000000000000000000000001&#39;(32) signed basic_prep range=[31:0] int=1</pre>
+      <pre>verilog-ast&gt;         AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:33.7-39.10&gt; [0x55bd68f10190] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_CASE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.3-38.8&gt; [0x55bd68f102c0] basic_prep</pre>
+      <pre>verilog-ast&gt;             AST_REDUCE_BOOL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-34.16&gt; [0x55bd68f103f0] basic_prep</pre>
+      <pre>verilog-ast&gt;               AST_NEX &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.15&gt; [0x55bd68f10520] basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.8&gt; [0x55bd68f10650 -&gt; 0x55bd68eea3a0] str=&#39;\q&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.13-34.15&gt; [0x55bd68f10780] bits=&#39;x&#39;(1) basic_prep range=[0:0]</pre>
+      <pre>verilog-ast&gt;             AST_COND &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.15&gt; [0x55bd68f10940] basic_prep</pre>
+      <pre>verilog-ast&gt;               AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-34.16&gt; [0x55bd68f10a70] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;               AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-38.8&gt; [0x55bd68f10be0] basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:35.5-38.8&gt; [0x55bd68f10d10] basic_prep</pre>
+      <pre>verilog-ast&gt;                   AST_ASSIGN_EQ &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.8-36.17&gt; [0x55bd68f10e40] basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.8-36.13&gt; [0x55bd68f10f70 -&gt; 0x55bd68f0f950] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:48$1.error&#39; basic_prep in_lvalue</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.16-36.17&gt; [0x55bd68f11130] bits=&#39;00000000000000000000000000000001&#39;(32) signed basic_prep range=[31:0] int=1</pre>
+      <pre>verilog-ast&gt;                   AST_TCALL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.8-37.63&gt; [0x55bd68f112b0] str=&#39;$display&#39;</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.17-37.47&gt; [0x55bd68f113e0] str=&#39;%0d: FAILED: q=%b, expect %b&#39; bits=&#39;00100101001100000110010000111010001000000100011001000001010010010100110001000101010001000011101000100000011100010011110100100101011000100010110000100000011001010111100001110000011001010110001101110100001000000010010101100010&#39;(224) basic_prep range=[223:0] int=1948263778</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f11650 -&gt; 0x55bd68f0ecc0] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:48$1.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.56-37.57&gt; [0x55bd68f11810 -&gt; 0x55bd68eea3a0] str=&#39;\q&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.59-37.61&gt; [0x55bd68f11970] bits=&#39;x&#39;(1) basic_prep range=[0:0]</pre>
+      <pre>verilog-ast&gt;                     AST_AUTOWIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f11b10] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:48$1.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;         AST_TCALL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:48.5-48.15&gt; [0x55bd68f02b50] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:48.8-48.13&gt; [0x55bd68f02d10] bits=&#39;x&#39;(1) basic_prep range=[0:0]</pre>
+      <pre>verilog-ast&gt;         AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:33.7-39.10&gt; [0x55bd68f129a0] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_CASE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.3-38.8&gt; [0x55bd68f12ad0] basic_prep</pre>
+      <pre>verilog-ast&gt;             AST_REDUCE_BOOL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-34.16&gt; [0x55bd68f12c00] basic_prep</pre>
+      <pre>verilog-ast&gt;               AST_NEX &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.15&gt; [0x55bd68f12d30] basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.8&gt; [0x55bd68f12e60 -&gt; 0x55bd68eea3a0] str=&#39;\q&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.13-34.15&gt; [0x55bd68f12f90] bits=&#39;0&#39;(1) basic_prep range=[0:0]</pre>
+      <pre>verilog-ast&gt;             AST_COND &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.15&gt; [0x55bd68f13150] basic_prep</pre>
+      <pre>verilog-ast&gt;               AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-34.16&gt; [0x55bd68f13280] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;               AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-38.8&gt; [0x55bd68f133f0] basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:35.5-38.8&gt; [0x55bd68f13520] basic_prep</pre>
+      <pre>verilog-ast&gt;                   AST_ASSIGN_EQ &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.8-36.17&gt; [0x55bd68f13650] basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.8-36.13&gt; [0x55bd68f13780 -&gt; 0x55bd68f12160] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:49$2.error&#39; basic_prep in_lvalue</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.16-36.17&gt; [0x55bd68f13940] bits=&#39;00000000000000000000000000000001&#39;(32) signed basic_prep range=[31:0] int=1</pre>
+      <pre>verilog-ast&gt;                   AST_TCALL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.8-37.63&gt; [0x55bd68f13ac0] str=&#39;$display&#39;</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.17-37.47&gt; [0x55bd68f13bf0] str=&#39;%0d: FAILED: q=%b, expect %b&#39; bits=&#39;00100101001100000110010000111010001000000100011001000001010010010100110001000101010001000011101000100000011100010011110100100101011000100010110000100000011001010111100001110000011001010110001101110100001000000010010101100010&#39;(224) basic_prep range=[223:0] int=1948263778</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f13e60 -&gt; 0x55bd68f0d580] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:49$2.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.56-37.57&gt; [0x55bd68f14020 -&gt; 0x55bd68eea3a0] str=&#39;\q&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.59-37.61&gt; [0x55bd68f14180] bits=&#39;0&#39;(1) basic_prep range=[0:0]</pre>
+      <pre>verilog-ast&gt;                     AST_AUTOWIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f14320] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:49$2.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;         AST_TCALL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:49.5-49.15&gt; [0x55bd68f02e40] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:49.8-49.13&gt; [0x55bd68f02fb0] bits=&#39;0&#39;(1) basic_prep range=[0:0]</pre>
+      <pre>verilog-ast&gt;         AST_ASSIGN_LE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:50.2-50.8&gt; [0x55bd68f03380] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:50.2-50.3&gt; [0x55bd68f030e0 -&gt; 0x55bd68eea4d0] str=&#39;\a&#39; basic_prep in_lvalue</pre>
+      <pre>verilog-ast&gt;           AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:50.7-50.8&gt; [0x55bd68f03250] bits=&#39;00000000000000000000000000000001&#39;(32) signed basic_prep range=[31:0] int=1</pre>
+      <pre>verilog-ast&gt;         AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:33.7-39.10&gt; [0x55bd68f15240] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_CASE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.3-38.8&gt; [0x55bd68f15370] basic_prep</pre>
+      <pre>verilog-ast&gt;             AST_REDUCE_BOOL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-34.16&gt; [0x55bd68f154a0] basic_prep</pre>
+      <pre>verilog-ast&gt;               AST_NEX &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.15&gt; [0x55bd68f155d0] basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.8&gt; [0x55bd68f15700 -&gt; 0x55bd68eea3a0] str=&#39;\q&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.13-34.15&gt; [0x55bd68f15830] bits=&#39;0&#39;(1) basic_prep range=[0:0]</pre>
+      <pre>verilog-ast&gt;             AST_COND &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.15&gt; [0x55bd68f159f0] basic_prep</pre>
+      <pre>verilog-ast&gt;               AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-34.16&gt; [0x55bd68f15b20] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;               AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-38.8&gt; [0x55bd68f15c90] basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:35.5-38.8&gt; [0x55bd68f15dc0] basic_prep</pre>
+      <pre>verilog-ast&gt;                   AST_ASSIGN_EQ &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.8-36.17&gt; [0x55bd68f15ef0] basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.8-36.13&gt; [0x55bd68f16020 -&gt; 0x55bd68f14a00] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:51$3.error&#39; basic_prep in_lvalue</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.16-36.17&gt; [0x55bd68f161e0] bits=&#39;00000000000000000000000000000001&#39;(32) signed basic_prep range=[31:0] int=1</pre>
+      <pre>verilog-ast&gt;                   AST_TCALL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.8-37.63&gt; [0x55bd68f16360] str=&#39;$display&#39;</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.17-37.47&gt; [0x55bd68f16490] str=&#39;%0d: FAILED: q=%b, expect %b&#39; bits=&#39;00100101001100000110010000111010001000000100011001000001010010010100110001000101010001000011101000100000011100010011110100100101011000100010110000100000011001010111100001110000011001010110001101110100001000000010010101100010&#39;(224) basic_prep range=[223:0] int=1948263778</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f16700 -&gt; 0x55bd68f0d6b0] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:51$3.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.56-37.57&gt; [0x55bd68f168c0 -&gt; 0x55bd68eea3a0] str=&#39;\q&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.59-37.61&gt; [0x55bd68f16a20] bits=&#39;0&#39;(1) basic_prep range=[0:0]</pre>
+      <pre>verilog-ast&gt;                     AST_AUTOWIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f16bc0] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:51$3.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;         AST_TCALL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:51.5-51.15&gt; [0x55bd68f034b0] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:51.8-51.13&gt; [0x55bd68f03600] bits=&#39;0&#39;(1) basic_prep range=[0:0]</pre>
+      <pre>verilog-ast&gt;         AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:33.7-39.10&gt; [0x55bd68f17ae0] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_CASE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.3-38.8&gt; [0x55bd68f17c10] basic_prep</pre>
+      <pre>verilog-ast&gt;             AST_REDUCE_BOOL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-34.16&gt; [0x55bd68f17d40] basic_prep</pre>
+      <pre>verilog-ast&gt;               AST_NEX &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.15&gt; [0x55bd68f17e70] basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.8&gt; [0x55bd68f17fa0 -&gt; 0x55bd68eea3a0] str=&#39;\q&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.13-34.15&gt; [0x55bd68f180d0] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;             AST_COND &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.15&gt; [0x55bd68f18290] basic_prep</pre>
+      <pre>verilog-ast&gt;               AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-34.16&gt; [0x55bd68f183c0] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;               AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-38.8&gt; [0x55bd68f18530] basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:35.5-38.8&gt; [0x55bd68f18660] basic_prep</pre>
+      <pre>verilog-ast&gt;                   AST_ASSIGN_EQ &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.8-36.17&gt; [0x55bd68f18790] basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.8-36.13&gt; [0x55bd68f188c0 -&gt; 0x55bd68f17300] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:52$4.error&#39; basic_prep in_lvalue</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.16-36.17&gt; [0x55bd68f18a80] bits=&#39;00000000000000000000000000000001&#39;(32) signed basic_prep range=[31:0] int=1</pre>
+      <pre>verilog-ast&gt;                   AST_TCALL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.8-37.63&gt; [0x55bd68f18c00] str=&#39;$display&#39;</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.17-37.47&gt; [0x55bd68f18d30] str=&#39;%0d: FAILED: q=%b, expect %b&#39; bits=&#39;00100101001100000110010000111010001000000100011001000001010010010100110001000101010001000011101000100000011100010011110100100101011000100010110000100000011001010111100001110000011001010110001101110100001000000010010101100010&#39;(224) basic_prep range=[223:0] int=1948263778</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f18fa0 -&gt; 0x55bd68f16df0] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:52$4.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.56-37.57&gt; [0x55bd68f19160 -&gt; 0x55bd68eea3a0] str=&#39;\q&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.59-37.61&gt; [0x55bd68f192c0] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;                     AST_AUTOWIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f19460] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:52$4.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;         AST_TCALL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:52.5-52.15&gt; [0x55bd68f03730] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:52.8-52.13&gt; [0x55bd68f038a0] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;         AST_ASSIGN_LE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:53.2-53.8&gt; [0x55bd68f03c70] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:53.2-53.3&gt; [0x55bd68f039d0 -&gt; 0x55bd68eea4d0] str=&#39;\a&#39; basic_prep in_lvalue</pre>
+      <pre>verilog-ast&gt;           AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:53.7-53.8&gt; [0x55bd68f03b40] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0]</pre>
+      <pre>verilog-ast&gt;         AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:33.7-39.10&gt; [0x55bd68f1a380] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_CASE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.3-38.8&gt; [0x55bd68f1a4b0] basic_prep</pre>
+      <pre>verilog-ast&gt;             AST_REDUCE_BOOL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-34.16&gt; [0x55bd68f1a5e0] basic_prep</pre>
+      <pre>verilog-ast&gt;               AST_NEX &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.15&gt; [0x55bd68f1a710] basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.8&gt; [0x55bd68f1a840 -&gt; 0x55bd68eea3a0] str=&#39;\q&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.13-34.15&gt; [0x55bd68f1a970] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;             AST_COND &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.15&gt; [0x55bd68f1ab30] basic_prep</pre>
+      <pre>verilog-ast&gt;               AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-34.16&gt; [0x55bd68f1ac60] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;               AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-38.8&gt; [0x55bd68f1add0] basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:35.5-38.8&gt; [0x55bd68f1af00] basic_prep</pre>
+      <pre>verilog-ast&gt;                   AST_ASSIGN_EQ &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.8-36.17&gt; [0x55bd68f1b030] basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.8-36.13&gt; [0x55bd68f1b160 -&gt; 0x55bd68f19b40] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:54$5.error&#39; basic_prep in_lvalue</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.16-36.17&gt; [0x55bd68f1b320] bits=&#39;00000000000000000000000000000001&#39;(32) signed basic_prep range=[31:0] int=1</pre>
+      <pre>verilog-ast&gt;                   AST_TCALL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.8-37.63&gt; [0x55bd68f1b4a0] str=&#39;$display&#39;</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.17-37.47&gt; [0x55bd68f1b5d0] str=&#39;%0d: FAILED: q=%b, expect %b&#39; bits=&#39;00100101001100000110010000111010001000000100011001000001010010010100110001000101010001000011101000100000011100010011110100100101011000100010110000100000011001010111100001110000011001010110001101110100001000000010010101100010&#39;(224) basic_prep range=[223:0] int=1948263778</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f1b840 -&gt; 0x55bd68f0d800] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:54$5.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.56-37.57&gt; [0x55bd68f1ba00 -&gt; 0x55bd68eea3a0] str=&#39;\q&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.59-37.61&gt; [0x55bd68f1bb60] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;                     AST_AUTOWIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f1bd00] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:54$5.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;         AST_TCALL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:54.5-54.15&gt; [0x55bd68f03da0] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:54.8-54.13&gt; [0x55bd68f03f20] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;         AST_ASSIGN_LE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:55.2-55.8&gt; [0x55bd68f042f0] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:55.2-55.3&gt; [0x55bd68f04050 -&gt; 0x55bd68eea4d0] str=&#39;\a&#39; basic_prep in_lvalue</pre>
+      <pre>verilog-ast&gt;           AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:55.7-55.8&gt; [0x55bd68f041c0] bits=&#39;00000000000000000000000000000001&#39;(32) signed basic_prep range=[31:0] int=1</pre>
+      <pre>verilog-ast&gt;         AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:33.7-39.10&gt; [0x55bd68f1cc20] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_CASE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.3-38.8&gt; [0x55bd68f1cd50] basic_prep</pre>
+      <pre>verilog-ast&gt;             AST_REDUCE_BOOL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-34.16&gt; [0x55bd68f1ce80] basic_prep</pre>
+      <pre>verilog-ast&gt;               AST_NEX &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.15&gt; [0x55bd68f1cfb0] basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.8&gt; [0x55bd68f1d0e0 -&gt; 0x55bd68eea3a0] str=&#39;\q&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.13-34.15&gt; [0x55bd68f1d210] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;             AST_COND &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.15&gt; [0x55bd68f1d3d0] basic_prep</pre>
+      <pre>verilog-ast&gt;               AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-34.16&gt; [0x55bd68f1d500] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;               AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-38.8&gt; [0x55bd68f1d670] basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:35.5-38.8&gt; [0x55bd68f1d7a0] basic_prep</pre>
+      <pre>verilog-ast&gt;                   AST_ASSIGN_EQ &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.8-36.17&gt; [0x55bd68f1d8d0] basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.8-36.13&gt; [0x55bd68f1da00 -&gt; 0x55bd68f1c3e0] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:56$6.error&#39; basic_prep in_lvalue</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.16-36.17&gt; [0x55bd68f1dbc0] bits=&#39;00000000000000000000000000000001&#39;(32) signed basic_prep range=[31:0] int=1</pre>
+      <pre>verilog-ast&gt;                   AST_TCALL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.8-37.63&gt; [0x55bd68f1dd40] str=&#39;$display&#39;</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.17-37.47&gt; [0x55bd68f1de70] str=&#39;%0d: FAILED: q=%b, expect %b&#39; bits=&#39;00100101001100000110010000111010001000000100011001000001010010010100110001000101010001000011101000100000011100010011110100100101011000100010110000100000011001010111100001110000011001010110001101110100001000000010010101100010&#39;(224) basic_prep range=[223:0] int=1948263778</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f1e0e0 -&gt; 0x55bd68f0da40] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:56$6.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.56-37.57&gt; [0x55bd68f1e2a0 -&gt; 0x55bd68eea3a0] str=&#39;\q&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.59-37.61&gt; [0x55bd68f1e400] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;                     AST_AUTOWIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f1e5a0] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:56$6.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;         AST_TCALL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:56.5-56.15&gt; [0x55bd68f04420] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:56.8-56.13&gt; [0x55bd68f045a0] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;         AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:33.7-39.10&gt; [0x55bd68f1f4c0] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_CASE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.3-38.8&gt; [0x55bd68f1f5f0] basic_prep</pre>
+      <pre>verilog-ast&gt;             AST_REDUCE_BOOL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-34.16&gt; [0x55bd68f1f720] basic_prep</pre>
+      <pre>verilog-ast&gt;               AST_NEX &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.15&gt; [0x55bd68f1f850] basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.8&gt; [0x55bd68f1f980 -&gt; 0x55bd68eea3a0] str=&#39;\q&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.13-34.15&gt; [0x55bd68f1fab0] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;             AST_COND &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.15&gt; [0x55bd68f1fc70] basic_prep</pre>
+      <pre>verilog-ast&gt;               AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-34.16&gt; [0x55bd68f1fda0] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;               AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-38.8&gt; [0x55bd68f1ff10] basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:35.5-38.8&gt; [0x55bd68f20040] basic_prep</pre>
+      <pre>verilog-ast&gt;                   AST_ASSIGN_EQ &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.8-36.17&gt; [0x55bd68f20170] basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.8-36.13&gt; [0x55bd68f202a0 -&gt; 0x55bd68f1ec80] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:57$7.error&#39; basic_prep in_lvalue</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.16-36.17&gt; [0x55bd68f20460] bits=&#39;00000000000000000000000000000001&#39;(32) signed basic_prep range=[31:0] int=1</pre>
+      <pre>verilog-ast&gt;                   AST_TCALL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.8-37.63&gt; [0x55bd68f205e0] str=&#39;$display&#39;</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.17-37.47&gt; [0x55bd68f20710] str=&#39;%0d: FAILED: q=%b, expect %b&#39; bits=&#39;00100101001100000110010000111010001000000100011001000001010010010100110001000101010001000011101000100000011100010011110100100101011000100010110000100000011001010111100001110000011001010110001101110100001000000010010101100010&#39;(224) basic_prep range=[223:0] int=1948263778</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f20980 -&gt; 0x55bd68f0db70] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:57$7.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.56-37.57&gt; [0x55bd68f20b40 -&gt; 0x55bd68eea3a0] str=&#39;\q&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.59-37.61&gt; [0x55bd68f20ca0] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;                     AST_AUTOWIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f20e40] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:57$7.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;         AST_TCALL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:57.5-57.15&gt; [0x55bd68f046d0] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:57.8-57.13&gt; [0x55bd68f04840] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;         AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:33.7-39.10&gt; [0x55bd68f21d60] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_CASE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.3-38.8&gt; [0x55bd68f21e90] basic_prep</pre>
+      <pre>verilog-ast&gt;             AST_REDUCE_BOOL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-34.16&gt; [0x55bd68f21fc0] basic_prep</pre>
+      <pre>verilog-ast&gt;               AST_NEX &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.15&gt; [0x55bd68f220f0] basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.8&gt; [0x55bd68f22220 -&gt; 0x55bd68eea3a0] str=&#39;\q&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.13-34.15&gt; [0x55bd68f22350] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;             AST_COND &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.15&gt; [0x55bd68f22510] basic_prep</pre>
+      <pre>verilog-ast&gt;               AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-34.16&gt; [0x55bd68f22640] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;               AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-38.8&gt; [0x55bd68f227b0] basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:35.5-38.8&gt; [0x55bd68f228e0] basic_prep</pre>
+      <pre>verilog-ast&gt;                   AST_ASSIGN_EQ &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.8-36.17&gt; [0x55bd68f22a10] basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.8-36.13&gt; [0x55bd68f22b40 -&gt; 0x55bd68f21520] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:58$8.error&#39; basic_prep in_lvalue</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.16-36.17&gt; [0x55bd68f22d00] bits=&#39;00000000000000000000000000000001&#39;(32) signed basic_prep range=[31:0] int=1</pre>
+      <pre>verilog-ast&gt;                   AST_TCALL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.8-37.63&gt; [0x55bd68f22e80] str=&#39;$display&#39;</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.17-37.47&gt; [0x55bd68f22fb0] str=&#39;%0d: FAILED: q=%b, expect %b&#39; bits=&#39;00100101001100000110010000111010001000000100011001000001010010010100110001000101010001000011101000100000011100010011110100100101011000100010110000100000011001010111100001110000011001010110001101110100001000000010010101100010&#39;(224) basic_prep range=[223:0] int=1948263778</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f23220 -&gt; 0x55bd68f2db70] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:58$8.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.56-37.57&gt; [0x55bd68f233e0 -&gt; 0x55bd68eea3a0] str=&#39;\q&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.59-37.61&gt; [0x55bd68f23540] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;                     AST_AUTOWIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f236e0] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:58$8.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;         AST_TCALL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:58.5-58.15&gt; [0x55bd68f04970] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:58.8-58.13&gt; [0x55bd68f04ae0] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;         AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:33.7-39.10&gt; [0x55bd68f24600] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_CASE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.3-38.8&gt; [0x55bd68f24730] basic_prep</pre>
+      <pre>verilog-ast&gt;             AST_REDUCE_BOOL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-34.16&gt; [0x55bd68f24860] basic_prep</pre>
+      <pre>verilog-ast&gt;               AST_NEX &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.15&gt; [0x55bd68f24990] basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.8&gt; [0x55bd68f24ac0 -&gt; 0x55bd68eea3a0] str=&#39;\q&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.13-34.15&gt; [0x55bd68f24bf0] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;             AST_COND &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.15&gt; [0x55bd68f24db0] basic_prep</pre>
+      <pre>verilog-ast&gt;               AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-34.16&gt; [0x55bd68f24ee0] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;               AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-38.8&gt; [0x55bd68f25050] basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:35.5-38.8&gt; [0x55bd68f25180] basic_prep</pre>
+      <pre>verilog-ast&gt;                   AST_ASSIGN_EQ &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.8-36.17&gt; [0x55bd68f252b0] basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.8-36.13&gt; [0x55bd68f253e0 -&gt; 0x55bd68f23dc0] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:59$9.error&#39; basic_prep in_lvalue</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.16-36.17&gt; [0x55bd68f255a0] bits=&#39;00000000000000000000000000000001&#39;(32) signed basic_prep range=[31:0] int=1</pre>
+      <pre>verilog-ast&gt;                   AST_TCALL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.8-37.63&gt; [0x55bd68f25720] str=&#39;$display&#39;</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.17-37.47&gt; [0x55bd68f25850] str=&#39;%0d: FAILED: q=%b, expect %b&#39; bits=&#39;00100101001100000110010000111010001000000100011001000001010010010100110001000101010001000011101000100000011100010011110100100101011000100010110000100000011001010111100001110000011001010110001101110100001000000010010101100010&#39;(224) basic_prep range=[223:0] int=1948263778</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f25ac0 -&gt; 0x55bd68f2dd10] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:59$9.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.56-37.57&gt; [0x55bd68f25c80 -&gt; 0x55bd68eea3a0] str=&#39;\q&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.59-37.61&gt; [0x55bd68f25de0] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;                     AST_AUTOWIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f25f80] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:59$9.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;         AST_TCALL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:59.5-59.15&gt; [0x55bd68f04c10] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:59.8-59.13&gt; [0x55bd68f04d80] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;         AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:33.7-39.10&gt; [0x55bd68f26ea0] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_CASE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.3-38.8&gt; [0x55bd68f26fd0] basic_prep</pre>
+      <pre>verilog-ast&gt;             AST_REDUCE_BOOL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-34.16&gt; [0x55bd68f27100] basic_prep</pre>
+      <pre>verilog-ast&gt;               AST_NEX &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.15&gt; [0x55bd68f27230] basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.8&gt; [0x55bd68f27360 -&gt; 0x55bd68eea3a0] str=&#39;\q&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.13-34.15&gt; [0x55bd68f27490] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;             AST_COND &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.15&gt; [0x55bd68f27650] basic_prep</pre>
+      <pre>verilog-ast&gt;               AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-34.16&gt; [0x55bd68f27780] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;               AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-38.8&gt; [0x55bd68f278f0] basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:35.5-38.8&gt; [0x55bd68f27a20] basic_prep</pre>
+      <pre>verilog-ast&gt;                   AST_ASSIGN_EQ &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.8-36.17&gt; [0x55bd68f27b50] basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.8-36.13&gt; [0x55bd68f27c80 -&gt; 0x55bd68f26660] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:60$10.error&#39; basic_prep in_lvalue</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.16-36.17&gt; [0x55bd68f27e40] bits=&#39;00000000000000000000000000000001&#39;(32) signed basic_prep range=[31:0] int=1</pre>
+      <pre>verilog-ast&gt;                   AST_TCALL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.8-37.63&gt; [0x55bd68f27fc0] str=&#39;$display&#39;</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.17-37.47&gt; [0x55bd68f280f0] str=&#39;%0d: FAILED: q=%b, expect %b&#39; bits=&#39;00100101001100000110010000111010001000000100011001000001010010010100110001000101010001000011101000100000011100010011110100100101011000100010110000100000011001010111100001110000011001010110001101110100001000000010010101100010&#39;(224) basic_prep range=[223:0] int=1948263778</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f28360 -&gt; 0x55bd68f2df20] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:60$10.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.56-37.57&gt; [0x55bd68f28520 -&gt; 0x55bd68eea3a0] str=&#39;\q&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.59-37.61&gt; [0x55bd68f28680] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;                     AST_AUTOWIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f28820] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:60$10.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;         AST_TCALL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:60.5-60.15&gt; [0x55bd68f04eb0] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:60.8-60.13&gt; [0x55bd68f05020] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;         AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:33.7-39.10&gt; [0x55bd68f29740] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_CASE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.3-38.8&gt; [0x55bd68f29870] basic_prep</pre>
+      <pre>verilog-ast&gt;             AST_REDUCE_BOOL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-34.16&gt; [0x55bd68f299a0] basic_prep</pre>
+      <pre>verilog-ast&gt;               AST_NEX &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.15&gt; [0x55bd68f29ad0] basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.8&gt; [0x55bd68f29c00 -&gt; 0x55bd68eea3a0] str=&#39;\q&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.13-34.15&gt; [0x55bd68f29d30] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;             AST_COND &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.15&gt; [0x55bd68f29ef0] basic_prep</pre>
+      <pre>verilog-ast&gt;               AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-34.16&gt; [0x55bd68f2a020] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;               AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-38.8&gt; [0x55bd68f2a190] basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:35.5-38.8&gt; [0x55bd68f2a2c0] basic_prep</pre>
+      <pre>verilog-ast&gt;                   AST_ASSIGN_EQ &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.8-36.17&gt; [0x55bd68f2a3f0] basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.8-36.13&gt; [0x55bd68f2a520 -&gt; 0x55bd68f28f00] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:61$11.error&#39; basic_prep in_lvalue</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.16-36.17&gt; [0x55bd68f2a6e0] bits=&#39;00000000000000000000000000000001&#39;(32) signed basic_prep range=[31:0] int=1</pre>
+      <pre>verilog-ast&gt;                   AST_TCALL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.8-37.63&gt; [0x55bd68f2a860] str=&#39;$display&#39;</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.17-37.47&gt; [0x55bd68f2a990] str=&#39;%0d: FAILED: q=%b, expect %b&#39; bits=&#39;00100101001100000110010000111010001000000100011001000001010010010100110001000101010001000011101000100000011100010011110100100101011000100010110000100000011001010111100001110000011001010110001101110100001000000010010101100010&#39;(224) basic_prep range=[223:0] int=1948263778</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f2ac00 -&gt; 0x55bd68f2e130] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:61$11.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.56-37.57&gt; [0x55bd68f2adc0 -&gt; 0x55bd68eea3a0] str=&#39;\q&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.59-37.61&gt; [0x55bd68f2af20] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;                     AST_AUTOWIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f2b0c0] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:61$11.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;         AST_TCALL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:61.5-61.15&gt; [0x55bd68f05150] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:61.8-61.13&gt; [0x55bd68f052c0] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;         AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:33.7-39.10&gt; [0x55bd68f2bfe0] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_CASE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.3-38.8&gt; [0x55bd68f2c110] basic_prep</pre>
+      <pre>verilog-ast&gt;             AST_REDUCE_BOOL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-34.16&gt; [0x55bd68f2c240] basic_prep</pre>
+      <pre>verilog-ast&gt;               AST_NEX &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.15&gt; [0x55bd68f2c370] basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.8&gt; [0x55bd68f2c4a0 -&gt; 0x55bd68eea3a0] str=&#39;\q&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.13-34.15&gt; [0x55bd68f2c5d0] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;             AST_COND &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.7-34.15&gt; [0x55bd68f2c790] basic_prep</pre>
+      <pre>verilog-ast&gt;               AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-34.16&gt; [0x55bd68f2c8c0] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;               AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:34.16-38.8&gt; [0x55bd68f2ca30] basic_prep</pre>
+      <pre>verilog-ast&gt;                 AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:35.5-38.8&gt; [0x55bd68f2cb60] basic_prep</pre>
+      <pre>verilog-ast&gt;                   AST_ASSIGN_EQ &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.8-36.17&gt; [0x55bd68f2cc90] basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.8-36.13&gt; [0x55bd68f2cdc0 -&gt; 0x55bd68f2b7a0] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:62$12.error&#39; basic_prep in_lvalue</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:36.16-36.17&gt; [0x55bd68f2cf80] bits=&#39;00000000000000000000000000000001&#39;(32) signed basic_prep range=[31:0] int=1</pre>
+      <pre>verilog-ast&gt;                   AST_TCALL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.8-37.63&gt; [0x55bd68f2d100] str=&#39;$display&#39;</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.17-37.47&gt; [0x55bd68f2d230] str=&#39;%0d: FAILED: q=%b, expect %b&#39; bits=&#39;00100101001100000110010000111010001000000100011001000001010010010100110001000101010001000011101000100000011100010011110100100101011000100010110000100000011001010111100001110000011001010110001101110100001000000010010101100010&#39;(224) basic_prep range=[223:0] int=1948263778</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f2d4a0 -&gt; 0x55bd68f2e340] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:62$12.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.56-37.57&gt; [0x55bd68f2d660 -&gt; 0x55bd68eea3a0] str=&#39;\q&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;                     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.59-37.61&gt; [0x55bd68f2d7c0] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;                     AST_AUTOWIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f2d960] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:62$12.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;         AST_TCALL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:62.5-62.15&gt; [0x55bd68f053f0] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:62.8-62.13&gt; [0x55bd68f05560] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;         AST_CASE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:63.2-64.23&gt; [0x55bd68f05a60] basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_REDUCE_BOOL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:63.16-63.16&gt; [0x55bd68f05b90] basic_prep</pre>
+      <pre>verilog-ast&gt;             AST_LOGIC_NOT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:63.6-63.15&gt; [0x55bd68f05cc0] basic_prep</pre>
+      <pre>verilog-ast&gt;               AST_IDENTIFIER &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:63.7-63.15&gt; [0x55bd68f05df0 -&gt; 0x55bd68eead90] str=&#39;\ok.error&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;           AST_COND &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:63.6-63.15&gt; [0x55bd68f06200] basic_prep</pre>
+      <pre>verilog-ast&gt;             AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:63.16-63.16&gt; [0x55bd68f060b0] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1</pre>
+      <pre>verilog-ast&gt;             AST_BLOCK &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:63.16-64.23&gt; [0x55bd68f05f80] basic_prep</pre>
+      <pre>verilog-ast&gt;               AST_TCALL &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:64.4-64.23&gt; [0x55bd68f05910] str=&#39;$display&#39;</pre>
+      <pre>verilog-ast&gt;                 AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:64.13-64.21&gt; [0x55bd68f057c0] str=&#39;PASSED&#39; bits=&#39;010100000100000101010011010100110100010101000100&#39;(48) basic_prep range=[47:0] int=1397966148</pre>
+      <pre>verilog-ast&gt;   AST_AUTOWIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:44.2-44.10&gt; [0x55bd68eead90] str=&#39;\ok.error&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;   AST_LOCALPARAM &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:31.13-31.15&gt; [0x55bd68f0f660] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:48$1.qq&#39; reg basic_prep range=[0:0] dimensions=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:48.8-48.13&gt; [0x55bd68f0f790] bits=&#39;x&#39;(1) basic_prep range=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;     AST_RANGE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:48.5-48.15&gt; [0x55bd68f0fac0] basic_prep range=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:48.5-48.15&gt; [0x55bd68f0fbf0] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0] in_param</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:48.5-48.15&gt; [0x55bd68f0fd60] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0] in_param</pre>
+      <pre>verilog-ast&gt;   AST_WIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:32.11-32.16&gt; [0x55bd68f0f950] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:48$1.error&#39; reg basic_prep range=[0:0] dimensions=[0:0]</pre>
+      <pre>verilog-ast&gt;     ATTR \nosync:</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:48.5-48.15&gt; [0x55bd68f0ff50] bits=&#39;00000000000000000000000000000001&#39;(32) basic_prep range=[31:0] int=1 in_param</pre>
+      <pre>verilog-ast&gt;   AST_LOCALPARAM &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:31.13-31.15&gt; [0x55bd68f11e70] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:49$2.qq&#39; reg basic_prep range=[0:0] dimensions=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:49.8-49.13&gt; [0x55bd68f11fa0] bits=&#39;0&#39;(1) basic_prep range=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;     AST_RANGE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:49.5-49.15&gt; [0x55bd68f122d0] basic_prep range=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:49.5-49.15&gt; [0x55bd68f12400] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0] in_param</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:49.5-49.15&gt; [0x55bd68f12570] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0] in_param</pre>
+      <pre>verilog-ast&gt;   AST_WIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:32.11-32.16&gt; [0x55bd68f12160] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:49$2.error&#39; reg basic_prep range=[0:0] dimensions=[0:0]</pre>
+      <pre>verilog-ast&gt;     ATTR \nosync:</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:49.5-49.15&gt; [0x55bd68f12760] bits=&#39;00000000000000000000000000000001&#39;(32) basic_prep range=[31:0] int=1 in_param</pre>
+      <pre>verilog-ast&gt;   AST_LOCALPARAM &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:31.13-31.15&gt; [0x55bd68f146d0] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:51$3.qq&#39; reg basic_prep range=[0:0] dimensions=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:51.8-51.13&gt; [0x55bd68f14800] bits=&#39;0&#39;(1) basic_prep range=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;     AST_RANGE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:51.5-51.15&gt; [0x55bd68f14b70] basic_prep range=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:51.5-51.15&gt; [0x55bd68f14ca0] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0] in_param</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:51.5-51.15&gt; [0x55bd68f14e10] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0] in_param</pre>
+      <pre>verilog-ast&gt;   AST_WIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:32.11-32.16&gt; [0x55bd68f14a00] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:51$3.error&#39; reg basic_prep range=[0:0] dimensions=[0:0]</pre>
+      <pre>verilog-ast&gt;     ATTR \nosync:</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:51.5-51.15&gt; [0x55bd68f15000] bits=&#39;00000000000000000000000000000001&#39;(32) basic_prep range=[31:0] int=1 in_param</pre>
+      <pre>verilog-ast&gt;   AST_LOCALPARAM &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:31.13-31.15&gt; [0x55bd68f17030] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:52$4.qq&#39; reg basic_prep range=[0:0] dimensions=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:52.8-52.13&gt; [0x55bd68f17160] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1 in_param</pre>
+      <pre>verilog-ast&gt;     AST_RANGE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:52.5-52.15&gt; [0x55bd68f17430] basic_prep range=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:52.5-52.15&gt; [0x55bd68f17560] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0] in_param</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:52.5-52.15&gt; [0x55bd68f176b0] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0] in_param</pre>
+      <pre>verilog-ast&gt;   AST_WIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:32.11-32.16&gt; [0x55bd68f17300] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:52$4.error&#39; reg basic_prep range=[0:0] dimensions=[0:0]</pre>
+      <pre>verilog-ast&gt;     ATTR \nosync:</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:52.5-52.15&gt; [0x55bd68f178a0] bits=&#39;00000000000000000000000000000001&#39;(32) basic_prep range=[31:0] int=1 in_param</pre>
+      <pre>verilog-ast&gt;   AST_LOCALPARAM &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:31.13-31.15&gt; [0x55bd68f19810] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:54$5.qq&#39; reg basic_prep range=[0:0] dimensions=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:54.8-54.13&gt; [0x55bd68f19940] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1 in_param</pre>
+      <pre>verilog-ast&gt;     AST_RANGE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:54.5-54.15&gt; [0x55bd68f19cb0] basic_prep range=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:54.5-54.15&gt; [0x55bd68f19de0] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0] in_param</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:54.5-54.15&gt; [0x55bd68f19f50] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0] in_param</pre>
+      <pre>verilog-ast&gt;   AST_WIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:32.11-32.16&gt; [0x55bd68f19b40] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:54$5.error&#39; reg basic_prep range=[0:0] dimensions=[0:0]</pre>
+      <pre>verilog-ast&gt;     ATTR \nosync:</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:54.5-54.15&gt; [0x55bd68f1a140] bits=&#39;00000000000000000000000000000001&#39;(32) basic_prep range=[31:0] int=1 in_param</pre>
+      <pre>verilog-ast&gt;   AST_LOCALPARAM &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:31.13-31.15&gt; [0x55bd68f1c0b0] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:56$6.qq&#39; reg basic_prep range=[0:0] dimensions=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:56.8-56.13&gt; [0x55bd68f1c1e0] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1 in_param</pre>
+      <pre>verilog-ast&gt;     AST_RANGE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:56.5-56.15&gt; [0x55bd68f1c550] basic_prep range=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:56.5-56.15&gt; [0x55bd68f1c680] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0] in_param</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:56.5-56.15&gt; [0x55bd68f1c7f0] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0] in_param</pre>
+      <pre>verilog-ast&gt;   AST_WIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:32.11-32.16&gt; [0x55bd68f1c3e0] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:56$6.error&#39; reg basic_prep range=[0:0] dimensions=[0:0]</pre>
+      <pre>verilog-ast&gt;     ATTR \nosync:</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:56.5-56.15&gt; [0x55bd68f1c9e0] bits=&#39;00000000000000000000000000000001&#39;(32) basic_prep range=[31:0] int=1 in_param</pre>
+      <pre>verilog-ast&gt;   AST_LOCALPARAM &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:31.13-31.15&gt; [0x55bd68f1e950] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:57$7.qq&#39; reg basic_prep range=[0:0] dimensions=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:57.8-57.13&gt; [0x55bd68f1ea80] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1 in_param</pre>
+      <pre>verilog-ast&gt;     AST_RANGE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:57.5-57.15&gt; [0x55bd68f1edf0] basic_prep range=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:57.5-57.15&gt; [0x55bd68f1ef20] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0] in_param</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:57.5-57.15&gt; [0x55bd68f1f090] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0] in_param</pre>
+      <pre>verilog-ast&gt;   AST_WIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:32.11-32.16&gt; [0x55bd68f1ec80] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:57$7.error&#39; reg basic_prep range=[0:0] dimensions=[0:0]</pre>
+      <pre>verilog-ast&gt;     ATTR \nosync:</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:57.5-57.15&gt; [0x55bd68f1f280] bits=&#39;00000000000000000000000000000001&#39;(32) basic_prep range=[31:0] int=1 in_param</pre>
+      <pre>verilog-ast&gt;   AST_LOCALPARAM &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:31.13-31.15&gt; [0x55bd68f211f0] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:58$8.qq&#39; reg basic_prep range=[0:0] dimensions=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:58.8-58.13&gt; [0x55bd68f21320] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1 in_param</pre>
+      <pre>verilog-ast&gt;     AST_RANGE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:58.5-58.15&gt; [0x55bd68f21690] basic_prep range=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:58.5-58.15&gt; [0x55bd68f217c0] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0] in_param</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:58.5-58.15&gt; [0x55bd68f21930] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0] in_param</pre>
+      <pre>verilog-ast&gt;   AST_WIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:32.11-32.16&gt; [0x55bd68f21520] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:58$8.error&#39; reg basic_prep range=[0:0] dimensions=[0:0]</pre>
+      <pre>verilog-ast&gt;     ATTR \nosync:</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:58.5-58.15&gt; [0x55bd68f21b20] bits=&#39;00000000000000000000000000000001&#39;(32) basic_prep range=[31:0] int=1 in_param</pre>
+      <pre>verilog-ast&gt;   AST_LOCALPARAM &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:31.13-31.15&gt; [0x55bd68f23a90] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:59$9.qq&#39; reg basic_prep range=[0:0] dimensions=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:59.8-59.13&gt; [0x55bd68f23bc0] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1 in_param</pre>
+      <pre>verilog-ast&gt;     AST_RANGE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:59.5-59.15&gt; [0x55bd68f23f30] basic_prep range=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:59.5-59.15&gt; [0x55bd68f24060] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0] in_param</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:59.5-59.15&gt; [0x55bd68f241d0] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0] in_param</pre>
+      <pre>verilog-ast&gt;   AST_WIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:32.11-32.16&gt; [0x55bd68f23dc0] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:59$9.error&#39; reg basic_prep range=[0:0] dimensions=[0:0]</pre>
+      <pre>verilog-ast&gt;     ATTR \nosync:</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:59.5-59.15&gt; [0x55bd68f243c0] bits=&#39;00000000000000000000000000000001&#39;(32) basic_prep range=[31:0] int=1 in_param</pre>
+      <pre>verilog-ast&gt;   AST_LOCALPARAM &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:31.13-31.15&gt; [0x55bd68f26330] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:60$10.qq&#39; reg basic_prep range=[0:0] dimensions=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:60.8-60.13&gt; [0x55bd68f26460] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1 in_param</pre>
+      <pre>verilog-ast&gt;     AST_RANGE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:60.5-60.15&gt; [0x55bd68f267d0] basic_prep range=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:60.5-60.15&gt; [0x55bd68f26900] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0] in_param</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:60.5-60.15&gt; [0x55bd68f26a70] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0] in_param</pre>
+      <pre>verilog-ast&gt;   AST_WIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:32.11-32.16&gt; [0x55bd68f26660] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:60$10.error&#39; reg basic_prep range=[0:0] dimensions=[0:0]</pre>
+      <pre>verilog-ast&gt;     ATTR \nosync:</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:60.5-60.15&gt; [0x55bd68f26c60] bits=&#39;00000000000000000000000000000001&#39;(32) basic_prep range=[31:0] int=1 in_param</pre>
+      <pre>verilog-ast&gt;   AST_LOCALPARAM &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:31.13-31.15&gt; [0x55bd68f28bd0] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:61$11.qq&#39; reg basic_prep range=[0:0] dimensions=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:61.8-61.13&gt; [0x55bd68f28d00] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1 in_param</pre>
+      <pre>verilog-ast&gt;     AST_RANGE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:61.5-61.15&gt; [0x55bd68f29070] basic_prep range=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:61.5-61.15&gt; [0x55bd68f291a0] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0] in_param</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:61.5-61.15&gt; [0x55bd68f29310] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0] in_param</pre>
+      <pre>verilog-ast&gt;   AST_WIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:32.11-32.16&gt; [0x55bd68f28f00] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:61$11.error&#39; reg basic_prep range=[0:0] dimensions=[0:0]</pre>
+      <pre>verilog-ast&gt;     ATTR \nosync:</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:61.5-61.15&gt; [0x55bd68f29500] bits=&#39;00000000000000000000000000000001&#39;(32) basic_prep range=[31:0] int=1 in_param</pre>
+      <pre>verilog-ast&gt;   AST_LOCALPARAM &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:31.13-31.15&gt; [0x55bd68f2b470] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:62$12.qq&#39; reg basic_prep range=[0:0] dimensions=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;     AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:62.8-62.13&gt; [0x55bd68f2b5a0] bits=&#39;1&#39;(1) basic_prep range=[0:0] int=1 in_param</pre>
+      <pre>verilog-ast&gt;     AST_RANGE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:62.5-62.15&gt; [0x55bd68f2b910] basic_prep range=[0:0] in_param</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:62.5-62.15&gt; [0x55bd68f2ba40] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0] in_param</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:62.5-62.15&gt; [0x55bd68f2bbb0] bits=&#39;00000000000000000000000000000000&#39;(32) signed basic_prep range=[31:0] in_param</pre>
+      <pre>verilog-ast&gt;   AST_WIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:32.11-32.16&gt; [0x55bd68f2b7a0] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:62$12.error&#39; reg basic_prep range=[0:0] dimensions=[0:0]</pre>
+      <pre>verilog-ast&gt;     ATTR \nosync:</pre>
+      <pre>verilog-ast&gt;       AST_CONSTANT &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:62.5-62.15&gt; [0x55bd68f2bda0] bits=&#39;00000000000000000000000000000001&#39;(32) basic_prep range=[31:0] int=1 in_param</pre>
+      <pre>verilog-ast&gt;   AST_AUTOWIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f0ecc0] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:48$1.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;   AST_AUTOWIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f0d580] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:49$2.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;   AST_AUTOWIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f0d6b0] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:51$3.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;   AST_AUTOWIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f16df0] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:52$4.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;   AST_AUTOWIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f0d800] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:54$5.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;   AST_AUTOWIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f0da40] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:56$6.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;   AST_AUTOWIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f0db70] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:57$7.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;   AST_AUTOWIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f2db70] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:58$8.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;   AST_AUTOWIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f2dd10] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:59$9.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;   AST_AUTOWIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f2df20] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:60$10.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;   AST_AUTOWIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f2e130] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:61$11.$time&#39; basic_prep</pre>
+      <pre>verilog-ast&gt;   AST_AUTOWIRE &lt;/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37.49-37.54&gt; [0x55bd68f2e340] str=&#39;\ok$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/ldelay1.v:62$12.$time&#39; basic_prep</pre>
+      <pre><a href="../../../../third_party/tools/icarus/ivtest/ivltests/ldelay1.v.html#l-37" target="file-frame">third_party/tools/icarus/ivtest/ivltests/ldelay1.v:37</a>: ERROR: Don&#39;t know how to detect sign and width for AST_AUTOWIRE node!</pre>
       <pre></pre>
     </section>
   </body>
