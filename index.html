@@ -9,9 +9,9 @@
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
       <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
       <script>
-         var TOOL_NAMES = ["Icarus", "Slang", "Slang_parse", "Verible", "Verilator", "Yosys", "yosys_slang"];
+         var TOOL_NAMES = ["Icarus", "Slang", "Slang_parse", "Verible", "Verilator", "VlogHammerSAT", "Yosys", "yosys_slang"];
       </script>
-      <style>:root { --TOOLS_COUNT: 7; }</style>
+      <style>:root { --TOOLS_COUNT: 8; }</style>
       <link rel="stylesheet" type="text/css" href="report.css">
       <script type="text/javascript" charset="utf8" src="report.js"></script>
       <script type="text/javascript" charset="utf8" src="filter.js"></script>
@@ -56,6 +56,7 @@
                         <label title="Slang_parse"><input type="checkbox" value="slang_parse" checked>Slang_parse</label>
                         <label title="Verible"><input type="checkbox" value="verible" checked>Verible</label>
                         <label title="Verilator"><input type="checkbox" value="verilator" checked>Verilator</label>
+                        <label title="VlogHammerSAT"><input type="checkbox" value="vloghammersat" checked>VlogHammerSAT</label>
                         <label title="Yosys"><input type="checkbox" value="yosys" checked>Yosys</label>
                         <label title="yosys_slang"><input type="checkbox" value="yosys_slang" checked>yosys_slang</label>
                      </div>
@@ -113,20 +114,23 @@
                      <h2></h2>
                   </th>
                   <th></th>
-                  <th title="icarus 13.0 (devel) ()" style="--z: 6">
+                  <th title="icarus 13.0 (devel) ()" style="--z: 7">
                      <a class="tool_link" target="_blank" href="https://github.com/steveicarus/iverilog/tree/2345c51478a9523fccd7109eea2e738ce66cf78e">Icarus</a>
                   </th>
-                  <th title="slang 9.1.0+9cdd071" style="--z: 5">
+                  <th title="slang 9.1.0+9cdd071" style="--z: 6">
                      <a class="tool_link" target="_blank" href="https://github.com/MikePopoloski/slang/tree/9cdd0712ef71e7bd68a5d95a2754db2251bc501e">Slang</a>
                   </th>
-                  <th title="slang-parse 9.1.0+9cdd071" style="--z: 4">
+                  <th title="slang-parse 9.1.0+9cdd071" style="--z: 5">
                      <a class="tool_link" target="_blank" href="https://github.com/MikePopoloski/slang/tree/9cdd0712ef71e7bd68a5d95a2754db2251bc501e">Slang_parse</a>
                   </th>
-                  <th title="Version	head&#10;Commit-Timestamp	2025-12-22T08:55:10Z&#10;Built	2026-01-22T03:08:03Z" style="--z: 3">
+                  <th title="Version	head&#10;Commit-Timestamp	2025-12-22T08:55:10Z&#10;Built	2026-01-22T03:03:51Z" style="--z: 4">
                      <a class="tool_link" target="_blank" href="https://github.com/chipsalliance/verible/tree/9fdb4057dadf4478307591ae2c77db8357a74864">Verible</a>
                   </th>
-                  <th title="Verilator 5.045 devel rev vUNKNOWN-built20260122-8b2144a" style="--z: 2">
+                  <th title="Verilator 5.045 devel rev vUNKNOWN-built20260122-8b2144a" style="--z: 3">
                      <a class="tool_link" target="_blank" href="https://github.com/verilator/verilator/tree/8b2144a9db940cfdd36c6ca850319c6921194e04">Verilator</a>
+                  </th>
+                  <th title="Yosys 0.61+21 (git sha1 967b47d98, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)" style="--z: 2">
+                     <a class="tool_link" target="_blank" href="https://github.com/symbiflow/sv-tests">VlogHammerSAT</a>
                   </th>
                   <th title="yosys 0.61+21" style="--z: 1">
                      <a class="tool_link" target="_blank" href="https://github.com/YosysHQ/yosys/tree/967b47d98412bb34b1e32fb9b31ba91792db1d3e">Yosys</a>
@@ -137,6 +141,18 @@
                </tr>
             </thead>
             <tbody>
+               <tr data-types="parsing" data-tag="chimera">
+                  <th title=""></th>
+                  <th title="">chimera</th>
+                  <td class="test-varied" data-tool="icarus" style="--val: 23%">23/100</td>
+                  <td class="test-varied" data-tool="slang" style="--val: 97%">97/100</td>
+                  <td class="test-varied" data-tool="slang_parse" style="--val: 97%">97/100</td>
+                  <td class="test-passed" data-tool="verible">100/100</td>
+                  <td class="test-varied" data-tool="verilator" style="--val: 30%">30/100</td>
+                  <td></td>
+                  <td class="test-varied" data-tool="yosys" style="--val: 44%">44/100</td>
+                  <td></td>
+               </tr>
                <tr data-types="parsing elaboration" data-tag="sanity">
                   <th title="Various sanity checks">Various sanity checks</th>
                   <th title="Various sanity checks">sanity</th>
@@ -145,6 +161,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -155,7 +172,8 @@
                   <td class="test-passed" data-tool="slang">137/137</td>
                   <td class="test-passed" data-tool="slang_parse">134/134</td>
                   <td class="test-varied" data-tool="verible" style="--val: 82%">110/134</td>
-                  <td class="test-varied" data-tool="verilator" style="--val: 51%">71/138</td>
+                  <td class="test-varied" data-tool="verilator" style="--val: 82%">113/138</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/8</td>
                   <td></td>
                </tr>
@@ -166,7 +184,8 @@
                   <td class="test-passed" data-tool="slang">3/3</td>
                   <td class="test-passed" data-tool="slang_parse">3/3</td>
                   <td class="test-passed" data-tool="verible">3/3</td>
-                  <td class="test-failed" data-tool="verilator">0/3</td>
+                  <td class="test-passed" data-tool="verilator">3/3</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                </tr>
@@ -177,7 +196,8 @@
                   <td class="test-passed" data-tool="slang">26/26</td>
                   <td class="test-passed" data-tool="slang_parse">26/26</td>
                   <td class="test-varied" data-tool="verible" style="--val: 46%">12/26</td>
-                  <td class="test-varied" data-tool="verilator" style="--val: 4%">1/27</td>
+                  <td class="test-varied" data-tool="verilator" style="--val: 30%">8/27</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                </tr>
@@ -188,7 +208,8 @@
                   <td class="test-passed" data-tool="slang">36/36</td>
                   <td class="test-passed" data-tool="slang_parse">36/36</td>
                   <td class="test-varied" data-tool="verible" style="--val: 78%">28/36</td>
-                  <td class="test-varied" data-tool="verilator" style="--val: 22%">8/36</td>
+                  <td class="test-passed" data-tool="verilator">36/36</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/8</td>
                   <td></td>
                </tr>
@@ -202,8 +223,9 @@
                   <td class="test-varied" data-tool="verilator" style="--val: 91%">60/66</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
-               <tr data-types="parsing elaboration simulation preprocessing" data-tag="uvm-req">
+               <tr data-types="preprocessing parsing elaboration simulation" data-tag="uvm-req">
                   <th title="UVM Prerequisites">UVM Prerequisites</th>
                   <th title="UVM Prerequisites">uvm-req</th>
                   <td class="test-varied" data-tool="icarus" style="--val: 69%">220/317</td>
@@ -211,6 +233,7 @@
                   <td class="test-passed" data-tool="slang_parse">303/303</td>
                   <td class="test-varied" data-tool="verible" style="--val: 98%">283/288</td>
                   <td class="test-varied" data-tool="verilator" style="--val: 98%">312/317</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 41%">101/244</td>
                   <td class="test-passed" data-tool="yosys_slang">224/224</td>
                </tr>
@@ -221,11 +244,36 @@
                   <td class="test-passed" data-tool="slang">3/3</td>
                   <td class="test-passed" data-tool="slang_parse">3/3</td>
                   <td class="test-passed" data-tool="verible">3/3</td>
-                  <td class="test-failed" data-tool="verilator">0/3</td>
+                  <td class="test-passed" data-tool="verilator">3/3</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                </tr>
-               <tr data-types="parsing elaboration preprocessing" data-tag="5.3">
+               <tr data-types="parsing elaboration simulation" data-tag="verismith">
+                  <th title="Tests imported from verismith"><a class="tag_link" target="_blank" href="https://github.com/Silimate/verismith">Tests imported from verismith</a></th>
+                  <th title="Tests imported from verismith">verismith</th>
+                  <td class="test-passed" data-tool="icarus">50/50</td>
+                  <td class="test-passed" data-tool="slang">50/50</td>
+                  <td class="test-passed" data-tool="slang_parse">50/50</td>
+                  <td class="test-passed" data-tool="verible">50/50</td>
+                  <td class="test-passed" data-tool="verilator">50/50</td>
+                  <td></td>
+                  <td class="test-varied" data-tool="yosys" style="--val: 36%">18/50</td>
+                  <td class="test-passed" data-tool="yosys_slang">50/50</td>
+               </tr>
+               <tr data-types="parsing elaboration simulation" data-tag="vloghammer">
+                  <th title="VlogHammer Synthesis Regression Tests"><a class="tag_link" target="_blank" href="https://github.com/Silimate/VlogHammer">VlogHammer Synthesis Regression Tests</a></th>
+                  <th title="VlogHammer Synthesis Regression Tests">vloghammer</th>
+                  <td class="test-passed" data-tool="icarus">300/300</td>
+                  <td class="test-passed" data-tool="slang">300/300</td>
+                  <td class="test-passed" data-tool="slang_parse">300/300</td>
+                  <td class="test-passed" data-tool="verible">300/300</td>
+                  <td class="test-passed" data-tool="verilator">300/300</td>
+                  <td class="test-passed" data-tool="vloghammersat">300/300</td>
+                  <td class="test-passed" data-tool="yosys">300/300</td>
+                  <td class="test-passed" data-tool="yosys_slang">300/300</td>
+               </tr>
+               <tr data-types="preprocessing parsing elaboration" data-tag="5.3">
                   <th title="White space">White space</th>
                   <th title="White space">5.3</th>
                   <td class="test-passed" data-tool="icarus">7/7</td>
@@ -233,10 +281,11 @@
                   <td class="test-passed" data-tool="slang_parse">7/7</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">7/7</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">7/7</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
-               <tr data-types="parsing elaboration preprocessing" data-tag="5.4">
+               <tr data-types="preprocessing parsing elaboration" data-tag="5.4">
                   <th title="Comments">Comments</th>
                   <th title="Comments">5.4</th>
                   <td class="test-passed" data-tool="icarus">7/7</td>
@@ -244,6 +293,7 @@
                   <td class="test-passed" data-tool="slang_parse">7/7</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">7/7</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">7/7</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -255,6 +305,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">2/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -266,6 +317,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">2/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -277,6 +329,7 @@
                   <td class="test-passed" data-tool="slang_parse">248/248</td>
                   <td class="test-varied" data-tool="verible" style="--val: 99%">246/248</td>
                   <td class="test-passed" data-tool="verilator">248/248</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 41%">101/248</td>
                   <td class="test-passed" data-tool="yosys_slang">248/248</td>
                </tr>
@@ -288,10 +341,11 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
-               <tr data-types="parsing elaboration preprocessing" data-tag="5.6.4">
+               <tr data-types="preprocessing parsing elaboration" data-tag="5.6.4">
                   <th title="Compiler directives">Compiler directives</th>
                   <th title="Compiler directives">5.6.4</th>
                   <td class="test-passed" data-tool="icarus">90/90</td>
@@ -299,6 +353,7 @@
                   <td class="test-passed" data-tool="slang_parse">90/90</td>
                   <td class="test-varied" data-tool="verible" style="--val: 95%">63/66</td>
                   <td class="test-passed" data-tool="verilator">90/90</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 96%">86/90</td>
                   <td class="test-passed" data-tool="yosys_slang">66/66</td>
                </tr>
@@ -310,6 +365,7 @@
                   <td class="test-passed" data-tool="slang_parse">64/64</td>
                   <td class="test-passed" data-tool="verible">64/64</td>
                   <td class="test-passed" data-tool="verilator">64/64</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">64/64</td>
                   <td class="test-passed" data-tool="yosys_slang">64/64</td>
                </tr>
@@ -321,6 +377,7 @@
                   <td class="test-passed" data-tool="slang_parse">58/58</td>
                   <td class="test-passed" data-tool="verible">58/58</td>
                   <td class="test-passed" data-tool="verilator">58/58</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">57/57</td>
                   <td class="test-passed" data-tool="yosys_slang">57/57</td>
                </tr>
@@ -334,6 +391,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="5.9">
                   <th title="String literals">String literals</th>
@@ -343,6 +401,7 @@
                   <td class="test-passed" data-tool="slang_parse">4/4</td>
                   <td class="test-passed" data-tool="verible">4/4</td>
                   <td class="test-passed" data-tool="verilator">4/4</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 75%">3/4</td>
                   <td class="test-passed" data-tool="yosys_slang">4/4</td>
                </tr>
@@ -354,6 +413,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -365,6 +425,7 @@
                   <td class="test-passed" data-tool="slang_parse">3/3</td>
                   <td class="test-passed" data-tool="verible">3/3</td>
                   <td class="test-passed" data-tool="verilator">4/4</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 25%">1/4</td>
                   <td class="test-passed" data-tool="yosys_slang">4/4</td>
                </tr>
@@ -376,6 +437,7 @@
                   <td class="test-passed" data-tool="slang_parse">3/3</td>
                   <td class="test-passed" data-tool="verible">3/3</td>
                   <td class="test-passed" data-tool="verilator">3/3</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/3</td>
                   <td class="test-passed" data-tool="yosys_slang">3/3</td>
                </tr>
@@ -387,6 +449,7 @@
                   <td class="test-passed" data-tool="slang_parse">5/5</td>
                   <td class="test-passed" data-tool="verible">5/5</td>
                   <td class="test-passed" data-tool="verilator">5/5</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">5/5</td>
                   <td class="test-passed" data-tool="yosys_slang">5/5</td>
                </tr>
@@ -398,6 +461,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -409,6 +473,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-varied" data-tool="verilator" style="--val: 50%">2/4</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 25%">1/4</td>
                   <td class="test-varied" data-tool="yosys_slang" style="--val: 50%">2/4</td>
                </tr>
@@ -420,6 +485,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">2/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -431,6 +497,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -442,6 +509,7 @@
                   <td class="test-passed" data-tool="slang_parse">4/4</td>
                   <td class="test-passed" data-tool="verible">4/4</td>
                   <td class="test-passed" data-tool="verilator">4/4</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">4/4</td>
                   <td class="test-failed" data-tool="yosys_slang">0/4</td>
                </tr>
@@ -453,6 +521,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-failed" data-tool="verilator">0/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-failed" data-tool="yosys_slang">0/1</td>
                </tr>
@@ -464,6 +533,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/2</td>
                   <td class="test-failed" data-tool="yosys_slang">0/2</td>
                </tr>
@@ -475,6 +545,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">2/2</td>
                   <td class="test-failed" data-tool="yosys_slang">0/2</td>
                </tr>
@@ -486,6 +557,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-failed" data-tool="verilator">0/2</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -497,6 +569,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-failed" data-tool="verilator">0/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-failed" data-tool="yosys_slang">0/1</td>
                </tr>
@@ -508,6 +581,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -519,6 +593,7 @@
                   <td class="test-passed" data-tool="slang_parse">3/3</td>
                   <td class="test-varied" data-tool="verible" style="--val: 33%">1/3</td>
                   <td class="test-passed" data-tool="verilator">3/3</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 33%">1/3</td>
                   <td class="test-varied" data-tool="yosys_slang" style="--val: 33%">1/3</td>
                </tr>
@@ -530,6 +605,7 @@
                   <td class="test-passed" data-tool="slang_parse">3/3</td>
                   <td class="test-passed" data-tool="verible">3/3</td>
                   <td class="test-passed" data-tool="verilator">3/3</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">3/3</td>
                   <td class="test-passed" data-tool="yosys_slang">3/3</td>
                </tr>
@@ -541,6 +617,7 @@
                   <td class="test-passed" data-tool="slang_parse">27/27</td>
                   <td class="test-passed" data-tool="verible">27/27</td>
                   <td class="test-passed" data-tool="verilator">27/27</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 89%">24/27</td>
                   <td class="test-passed" data-tool="yosys_slang">27/27</td>
                </tr>
@@ -554,6 +631,7 @@
                   <td class="test-passed" data-tool="verilator">6/6</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="6.13">
                   <th title="Void data type">Void data type</th>
@@ -563,6 +641,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -576,6 +655,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="6.15">
                   <th title="Class">Class</th>
@@ -585,6 +665,7 @@
                   <td class="test-passed" data-tool="slang_parse">41/41</td>
                   <td class="test-passed" data-tool="verible">41/41</td>
                   <td class="test-passed" data-tool="verilator">41/41</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/37</td>
                   <td class="test-passed" data-tool="yosys_slang">37/37</td>
                </tr>
@@ -596,6 +677,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -607,6 +689,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -618,6 +701,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -629,6 +713,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -640,6 +725,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -651,6 +737,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -662,6 +749,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -673,6 +761,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -684,6 +773,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -695,6 +785,7 @@
                   <td class="test-passed" data-tool="slang_parse">4/4</td>
                   <td class="test-passed" data-tool="verible">4/4</td>
                   <td class="test-passed" data-tool="verilator">4/4</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/4</td>
                   <td class="test-passed" data-tool="yosys_slang">4/4</td>
                </tr>
@@ -708,6 +799,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="6.16.11">
                   <th title="Itoa()">Itoa()</th>
@@ -717,6 +809,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -728,6 +821,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -739,6 +833,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -750,6 +845,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -761,6 +857,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -774,6 +871,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="6.18">
                   <th title="User-defined types">User-defined types</th>
@@ -783,6 +881,7 @@
                   <td class="test-passed" data-tool="slang_parse">27/27</td>
                   <td class="test-passed" data-tool="verible">27/27</td>
                   <td class="test-passed" data-tool="verilator">30/30</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 60%">18/30</td>
                   <td class="test-passed" data-tool="yosys_slang">30/30</td>
                </tr>
@@ -794,6 +893,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">5/5</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 40%">2/5</td>
                   <td class="test-passed" data-tool="yosys_slang">5/5</td>
                </tr>
@@ -805,6 +905,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -816,6 +917,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -827,6 +929,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 50%">1/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -838,6 +941,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">3/3</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 67%">2/3</td>
                   <td class="test-passed" data-tool="yosys_slang">3/3</td>
                </tr>
@@ -849,6 +953,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -860,6 +965,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -871,6 +977,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -882,6 +989,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -893,6 +1001,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -904,6 +1013,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -915,6 +1025,7 @@
                   <td class="test-passed" data-tool="slang_parse">6/6</td>
                   <td class="test-passed" data-tool="verible">6/6</td>
                   <td class="test-passed" data-tool="verilator">6/6</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 83%">5/6</td>
                   <td class="test-passed" data-tool="yosys_slang">6/6</td>
                </tr>
@@ -928,6 +1039,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="6.20.4">
                   <th title="Local parameters (localparam)">Local parameters (localparam)</th>
@@ -937,6 +1049,7 @@
                   <td class="test-passed" data-tool="slang_parse">5/5</td>
                   <td class="test-passed" data-tool="verible">5/5</td>
                   <td class="test-passed" data-tool="verilator">5/5</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 80%">4/5</td>
                   <td class="test-passed" data-tool="yosys_slang">5/5</td>
                </tr>
@@ -948,6 +1061,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 50%">1/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -961,6 +1075,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="6.23">
                   <th title="Type operator">Type operator</th>
@@ -970,6 +1085,7 @@
                   <td class="test-passed" data-tool="slang_parse">3/3</td>
                   <td class="test-varied" data-tool="verible" style="--val: 67%">2/3</td>
                   <td class="test-passed" data-tool="verilator">3/3</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -981,6 +1097,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -992,6 +1109,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -1003,6 +1121,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1014,6 +1133,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 50%">1/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -1025,6 +1145,7 @@
                   <td class="test-passed" data-tool="slang_parse">5/5</td>
                   <td class="test-passed" data-tool="verible">5/5</td>
                   <td class="test-passed" data-tool="verilator">5/5</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 60%">3/5</td>
                   <td class="test-passed" data-tool="yosys_slang">5/5</td>
                </tr>
@@ -1036,6 +1157,7 @@
                   <td class="test-passed" data-tool="slang_parse">3/3</td>
                   <td class="test-passed" data-tool="verible">3/3</td>
                   <td class="test-passed" data-tool="verilator">3/3</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">3/3</td>
                   <td class="test-passed" data-tool="yosys_slang">3/3</td>
                </tr>
@@ -1047,6 +1169,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-varied" data-tool="verilator" style="--val: 50%">1/2</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 50%">1/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -1058,6 +1181,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/2</td>
                   <td class="test-varied" data-tool="yosys_slang" style="--val: 50%">1/2</td>
                </tr>
@@ -1069,6 +1193,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1080,6 +1205,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-failed" data-tool="verible">0/2</td>
                   <td class="test-failed" data-tool="verilator">0/2</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -1091,6 +1217,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">2/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -1102,6 +1229,7 @@
                   <td class="test-passed" data-tool="slang_parse">9/9</td>
                   <td class="test-passed" data-tool="verible">9/9</td>
                   <td class="test-passed" data-tool="verilator">9/9</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">9/9</td>
                   <td class="test-passed" data-tool="yosys_slang">9/9</td>
                </tr>
@@ -1113,6 +1241,7 @@
                   <td class="test-passed" data-tool="slang_parse">13/13</td>
                   <td class="test-passed" data-tool="verible">13/13</td>
                   <td class="test-passed" data-tool="verilator">13/13</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 9%">1/11</td>
                   <td class="test-passed" data-tool="yosys_slang">11/11</td>
                </tr>
@@ -1124,6 +1253,7 @@
                   <td class="test-passed" data-tool="slang_parse">13/13</td>
                   <td class="test-passed" data-tool="verible">13/13</td>
                   <td class="test-passed" data-tool="verilator">14/14</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 50%">7/14</td>
                   <td class="test-passed" data-tool="yosys_slang">14/14</td>
                </tr>
@@ -1135,6 +1265,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">2/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -1146,6 +1277,7 @@
                   <td class="test-passed" data-tool="slang_parse">4/4</td>
                   <td class="test-passed" data-tool="verible">4/4</td>
                   <td class="test-passed" data-tool="verilator">4/4</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 75%">3/4</td>
                   <td class="test-passed" data-tool="yosys_slang">4/4</td>
                </tr>
@@ -1157,6 +1289,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 50%">1/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -1168,6 +1301,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1179,6 +1313,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1190,6 +1325,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1201,6 +1337,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1212,6 +1349,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1225,6 +1363,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="7.8">
                   <th title="Associative arrays">Associative arrays</th>
@@ -1234,6 +1373,7 @@
                   <td class="test-passed" data-tool="slang_parse">7/7</td>
                   <td class="test-passed" data-tool="verible">7/7</td>
                   <td class="test-passed" data-tool="verilator">7/7</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/6</td>
                   <td class="test-passed" data-tool="yosys_slang">6/6</td>
                </tr>
@@ -1247,6 +1387,7 @@
                   <td class="test-passed" data-tool="verilator">2/2</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="7.8.2">
                   <th title="String index">String index</th>
@@ -1256,6 +1397,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1267,6 +1409,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1278,6 +1421,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1289,6 +1433,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1300,6 +1445,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1311,6 +1457,7 @@
                   <td class="test-passed" data-tool="slang_parse">9/9</td>
                   <td class="test-passed" data-tool="verible">9/9</td>
                   <td class="test-passed" data-tool="verilator">9/9</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/9</td>
                   <td class="test-passed" data-tool="yosys_slang">9/9</td>
                </tr>
@@ -1322,6 +1469,7 @@
                   <td class="test-passed" data-tool="slang_parse">4/4</td>
                   <td class="test-passed" data-tool="verible">4/4</td>
                   <td class="test-passed" data-tool="verilator">4/4</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/4</td>
                   <td class="test-passed" data-tool="yosys_slang">4/4</td>
                </tr>
@@ -1333,6 +1481,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1344,6 +1493,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1355,6 +1505,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1366,6 +1517,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1377,6 +1529,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1388,6 +1541,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1399,6 +1553,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1410,6 +1565,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1423,6 +1579,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="7.9.11">
                   <th title="Associative array literals">Associative array literals</th>
@@ -1432,6 +1589,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1443,6 +1601,7 @@
                   <td class="test-passed" data-tool="slang_parse">13/13</td>
                   <td class="test-passed" data-tool="verible">13/13</td>
                   <td class="test-passed" data-tool="verilator">13/13</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1454,6 +1613,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1465,6 +1625,7 @@
                   <td class="test-passed" data-tool="slang_parse">9/9</td>
                   <td class="test-passed" data-tool="verible">9/9</td>
                   <td class="test-passed" data-tool="verilator">9/9</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1476,6 +1637,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1489,6 +1651,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="7.10.2.3">
                   <th title="Delete()">Delete()</th>
@@ -1498,6 +1661,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                </tr>
@@ -1511,6 +1675,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="7.10.2.5">
                   <th title="Pop_back()">Pop_back()</th>
@@ -1520,6 +1685,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                </tr>
@@ -1533,6 +1699,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="7.10.2.7">
                   <th title="Push_back()">Push_back()</th>
@@ -1542,6 +1709,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1555,6 +1723,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="7.10.4">
                   <th title="Updating a queue using assignment and unpacked array concatenation">Updating a queue using assignment and unpacked array concatenation</th>
@@ -1566,6 +1735,7 @@
                   <td class="test-passed" data-tool="verilator">6/6</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="7.10.5">
                   <th title="Bounded queues">Bounded queues</th>
@@ -1575,6 +1745,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1586,6 +1757,7 @@
                   <td class="test-passed" data-tool="slang_parse">8/8</td>
                   <td class="test-passed" data-tool="verible">8/8</td>
                   <td class="test-passed" data-tool="verilator">8/8</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">8/8</td>
                   <td class="test-passed" data-tool="yosys_slang">8/8</td>
                </tr>
@@ -1599,6 +1771,7 @@
                   <td class="test-passed" data-tool="verilator">10/10</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="7.12.1">
                   <th title="Array locator methods">Array locator methods</th>
@@ -1610,6 +1783,7 @@
                   <td class="test-passed" data-tool="verilator">11/11</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="7.12.2">
                   <th title="Array ordering methods">Array ordering methods</th>
@@ -1619,6 +1793,7 @@
                   <td class="test-passed" data-tool="slang_parse">6/6</td>
                   <td class="test-passed" data-tool="verible">6/6</td>
                   <td class="test-passed" data-tool="verilator">6/6</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/4</td>
                   <td class="test-passed" data-tool="yosys_slang">4/4</td>
                </tr>
@@ -1630,6 +1805,7 @@
                   <td class="test-passed" data-tool="slang_parse">5/5</td>
                   <td class="test-passed" data-tool="verible">5/5</td>
                   <td class="test-passed" data-tool="verilator">5/5</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/5</td>
                   <td class="test-passed" data-tool="yosys_slang">5/5</td>
                </tr>
@@ -1643,6 +1819,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="8.3">
                   <th title="Syntax">Syntax</th>
@@ -1652,6 +1829,7 @@
                   <td class="test-passed" data-tool="slang_parse">69/69</td>
                   <td class="test-passed" data-tool="verible">69/69</td>
                   <td class="test-passed" data-tool="verilator">70/70</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/53</td>
                   <td class="test-passed" data-tool="yosys_slang">53/53</td>
                </tr>
@@ -1665,6 +1843,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="8.5">
                   <th title="Object properties and object parameter data">Object properties and object parameter data</th>
@@ -1674,6 +1853,7 @@
                   <td class="test-passed" data-tool="slang_parse">3/3</td>
                   <td class="test-passed" data-tool="verible">3/3</td>
                   <td class="test-passed" data-tool="verilator">3/3</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                </tr>
@@ -1687,6 +1867,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="8.7">
                   <th title="Constructors">Constructors</th>
@@ -1696,6 +1877,7 @@
                   <td class="test-passed" data-tool="slang_parse">3/3</td>
                   <td class="test-passed" data-tool="verible">3/3</td>
                   <td class="test-passed" data-tool="verilator">3/3</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                </tr>
@@ -1709,6 +1891,7 @@
                   <td class="test-passed" data-tool="verilator">2/2</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="8.9">
                   <th title="Static class properties">Static class properties</th>
@@ -1718,6 +1901,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                </tr>
@@ -1731,6 +1915,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="8.11">
                   <th title="This">This</th>
@@ -1740,6 +1925,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                </tr>
@@ -1753,6 +1939,7 @@
                   <td class="test-passed" data-tool="verilator">2/2</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="8.13">
                   <th title="Inheritance and subclasses">Inheritance and subclasses</th>
@@ -1762,6 +1949,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                </tr>
@@ -1775,6 +1963,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="8.15">
                   <th title="Super">Super</th>
@@ -1786,6 +1975,7 @@
                   <td class="test-passed" data-tool="verilator">2/2</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="8.16">
                   <th title="Casting">Casting</th>
@@ -1795,6 +1985,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1808,6 +1999,7 @@
                   <td class="test-passed" data-tool="verilator">2/2</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="8.18">
                   <th title="Data hiding and encapsulation">Data hiding and encapsulation</th>
@@ -1817,6 +2009,7 @@
                   <td class="test-passed" data-tool="slang_parse">5/5</td>
                   <td class="test-passed" data-tool="verible">5/5</td>
                   <td class="test-passed" data-tool="verilator">10/10</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 50%">5/10</td>
                   <td class="test-passed" data-tool="yosys_slang">10/10</td>
                </tr>
@@ -1828,6 +2021,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1841,6 +2035,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="8.21">
                   <th title="Abstract classes and pure virtual methods">Abstract classes and pure virtual methods</th>
@@ -1850,6 +2045,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                </tr>
@@ -1863,6 +2059,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="8.23">
                   <th title="Class scope resolution operator ::">Class scope resolution operator ::</th>
@@ -1872,6 +2069,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                </tr>
@@ -1885,6 +2083,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="8.25">
                   <th title="Parameterized classes">Parameterized classes</th>
@@ -1894,6 +2093,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                </tr>
@@ -1907,6 +2107,7 @@
                   <td class="test-passed" data-tool="verilator">2/2</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="8.26">
                   <th title="Interface classes">Interface classes</th>
@@ -1916,6 +2117,7 @@
                   <td class="test-passed" data-tool="slang_parse">5/5</td>
                   <td class="test-passed" data-tool="verible">5/5</td>
                   <td class="test-passed" data-tool="verilator">5/5</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/5</td>
                   <td class="test-passed" data-tool="yosys_slang">5/5</td>
                </tr>
@@ -1929,6 +2131,7 @@
                   <td class="test-passed" data-tool="verilator">4/4</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="8.26.3">
                   <th title="Type access">Type access</th>
@@ -1938,6 +2141,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">3/3</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -1951,6 +2155,7 @@
                   <td class="test-passed" data-tool="verilator">2/2</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="8.26.5">
                   <th title="Casting and object reference assignment">Casting and object reference assignment</th>
@@ -1960,6 +2165,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                </tr>
@@ -1973,6 +2179,7 @@
                   <td class="test-varied" data-tool="verilator" style="--val: 50%">1/2</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="8.26.6.2">
                   <th title="Parameter and type declaration inheritance conflicts and resolution">Parameter and type declaration inheritance conflicts and resolution</th>
@@ -1982,6 +2189,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-varied" data-tool="verilator" style="--val: 50%">1/2</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 50%">1/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -1993,6 +2201,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-varied" data-tool="verilator" style="--val: 50%">1/2</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 50%">1/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -2006,6 +2215,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="8.27">
                   <th title="Typedef class">Typedef class</th>
@@ -2015,6 +2225,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2026,6 +2237,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2037,6 +2249,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2048,6 +2261,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2059,6 +2273,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2070,6 +2285,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2081,6 +2297,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2092,6 +2309,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2105,6 +2323,7 @@
                   <td class="test-passed" data-tool="verilator">3/3</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="9.3.3">
                   <th title="Statement block start and finish times">Statement block start and finish times</th>
@@ -2116,6 +2335,7 @@
                   <td class="test-passed" data-tool="verilator">3/3</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="9.3.4">
                   <th title="Block names">Block names</th>
@@ -2125,6 +2345,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2136,6 +2357,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2147,6 +2369,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">4/4</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2158,6 +2381,7 @@
                   <td class="test-passed" data-tool="slang_parse">3/3</td>
                   <td class="test-passed" data-tool="verible">3/3</td>
                   <td class="test-passed" data-tool="verilator">5/5</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 67%">2/3</td>
                   <td class="test-varied" data-tool="yosys_slang" style="--val: 67%">2/3</td>
                </tr>
@@ -2169,6 +2393,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">2/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -2180,6 +2405,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2191,6 +2417,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-failed" data-tool="yosys_slang">0/1</td>
                </tr>
@@ -2204,6 +2431,7 @@
                   <td class="test-failed" data-tool="verilator">0/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="9.4.3">
                   <th title="Level-sensitive event control">Level-sensitive event control</th>
@@ -2215,6 +2443,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="9.4.5">
                   <th title="Intra-assignment timing controls">Intra-assignment timing controls</th>
@@ -2224,6 +2453,7 @@
                   <td class="test-passed" data-tool="slang_parse">7/7</td>
                   <td class="test-passed" data-tool="verible">7/7</td>
                   <td class="test-varied" data-tool="verilator" style="--val: 43%">3/7</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">2/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -2237,6 +2467,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="9.6.2">
                   <th title="Disable statement">Disable statement</th>
@@ -2246,6 +2477,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2259,6 +2491,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="9.7">
                   <th title="Fine-grain process control">Fine-grain process control</th>
@@ -2270,6 +2503,7 @@
                   <td class="test-passed" data-tool="verilator">4/4</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="elaboration simulation" data-tag="10.3">
                   <th title="Continuous assignments">Continuous assignments</th>
@@ -2279,6 +2513,7 @@
                   <td></td>
                   <td></td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2290,6 +2525,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">2/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -2301,6 +2537,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2312,6 +2549,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">2/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -2323,6 +2561,7 @@
                   <td class="test-passed" data-tool="slang_parse">24/24</td>
                   <td class="test-failed" data-tool="verible">0/24</td>
                   <td class="test-varied" data-tool="verilator" style="--val: 67%">16/24</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/24</td>
                   <td class="test-passed" data-tool="yosys_slang">24/24</td>
                </tr>
@@ -2334,6 +2573,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2345,6 +2585,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2356,6 +2597,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-failed" data-tool="verilator">0/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-failed" data-tool="yosys_slang">0/1</td>
                </tr>
@@ -2367,6 +2609,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-failed" data-tool="yosys_slang">0/1</td>
                </tr>
@@ -2378,6 +2621,7 @@
                   <td class="test-passed" data-tool="slang_parse">6/6</td>
                   <td class="test-passed" data-tool="verible">6/6</td>
                   <td class="test-passed" data-tool="verilator">6/6</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">6/6</td>
                   <td class="test-passed" data-tool="yosys_slang">6/6</td>
                </tr>
@@ -2389,6 +2633,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2400,6 +2645,7 @@
                   <td class="test-varied" data-tool="slang_parse" style="--val: 91%">10/11</td>
                   <td class="test-passed" data-tool="verible">11/11</td>
                   <td class="test-passed" data-tool="verilator">11/11</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 64%">7/11</td>
                   <td class="test-passed" data-tool="yosys_slang">11/11</td>
                </tr>
@@ -2411,6 +2657,7 @@
                   <td class="test-passed" data-tool="slang_parse">34/34</td>
                   <td class="test-passed" data-tool="verible">34/34</td>
                   <td class="test-passed" data-tool="verilator">34/34</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 41%">14/34</td>
                   <td class="test-passed" data-tool="yosys_slang">34/34</td>
                </tr>
@@ -2422,6 +2669,7 @@
                   <td class="test-passed" data-tool="slang_parse">4/4</td>
                   <td class="test-passed" data-tool="verible">4/4</td>
                   <td class="test-passed" data-tool="verilator">4/4</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">4/4</td>
                   <td class="test-passed" data-tool="yosys_slang">4/4</td>
                </tr>
@@ -2433,6 +2681,7 @@
                   <td class="test-passed" data-tool="slang_parse">24/24</td>
                   <td class="test-passed" data-tool="verible">24/24</td>
                   <td class="test-passed" data-tool="verilator">24/24</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 50%">12/24</td>
                   <td class="test-passed" data-tool="yosys_slang">24/24</td>
                </tr>
@@ -2444,6 +2693,7 @@
                   <td class="test-passed" data-tool="slang_parse">16/16</td>
                   <td class="test-passed" data-tool="verible">16/16</td>
                   <td class="test-passed" data-tool="verilator">16/16</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 50%">8/16</td>
                   <td class="test-passed" data-tool="yosys_slang">16/16</td>
                </tr>
@@ -2455,6 +2705,7 @@
                   <td class="test-passed" data-tool="slang_parse">39/39</td>
                   <td class="test-passed" data-tool="verible">39/39</td>
                   <td class="test-varied" data-tool="verilator" style="--val: 82%">32/39</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 23%">9/39</td>
                   <td class="test-passed" data-tool="yosys_slang">39/39</td>
                </tr>
@@ -2466,6 +2717,7 @@
                   <td class="test-passed" data-tool="slang_parse">18/18</td>
                   <td class="test-passed" data-tool="verible">18/18</td>
                   <td class="test-varied" data-tool="verilator" style="--val: 39%">7/18</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/18</td>
                   <td class="test-passed" data-tool="yosys_slang">18/18</td>
                </tr>
@@ -2477,6 +2729,7 @@
                   <td class="test-passed" data-tool="slang_parse">24/24</td>
                   <td class="test-passed" data-tool="verible">24/24</td>
                   <td class="test-passed" data-tool="verilator">24/24</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 17%">4/24</td>
                   <td class="test-passed" data-tool="yosys_slang">24/24</td>
                </tr>
@@ -2488,6 +2741,7 @@
                   <td class="test-passed" data-tool="slang_parse">15/15</td>
                   <td class="test-passed" data-tool="verible">15/15</td>
                   <td class="test-passed" data-tool="verilator">15/15</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 60%">9/15</td>
                   <td class="test-passed" data-tool="yosys_slang">15/15</td>
                </tr>
@@ -2499,6 +2753,7 @@
                   <td class="test-passed" data-tool="slang_parse">14/14</td>
                   <td class="test-passed" data-tool="verible">14/14</td>
                   <td class="test-passed" data-tool="verilator">14/14</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">14/14</td>
                   <td class="test-passed" data-tool="yosys_slang">14/14</td>
                </tr>
@@ -2510,6 +2765,7 @@
                   <td class="test-passed" data-tool="slang_parse">14/14</td>
                   <td class="test-passed" data-tool="verible">14/14</td>
                   <td class="test-passed" data-tool="verilator">14/14</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 71%">10/14</td>
                   <td class="test-passed" data-tool="yosys_slang">14/14</td>
                </tr>
@@ -2521,6 +2777,7 @@
                   <td class="test-passed" data-tool="slang_parse">3/3</td>
                   <td class="test-passed" data-tool="verible">3/3</td>
                   <td class="test-passed" data-tool="verilator">3/3</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">3/3</td>
                   <td class="test-passed" data-tool="yosys_slang">3/3</td>
                </tr>
@@ -2532,6 +2789,7 @@
                   <td class="test-passed" data-tool="slang_parse">4/4</td>
                   <td class="test-varied" data-tool="verible" style="--val: 75%">3/4</td>
                   <td class="test-passed" data-tool="verilator">4/4</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 75%">3/4</td>
                   <td class="test-passed" data-tool="yosys_slang">4/4</td>
                </tr>
@@ -2543,6 +2801,7 @@
                   <td class="test-passed" data-tool="slang_parse">5/5</td>
                   <td class="test-passed" data-tool="verible">5/5</td>
                   <td class="test-passed" data-tool="verilator">5/5</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">5/5</td>
                   <td class="test-passed" data-tool="yosys_slang">5/5</td>
                </tr>
@@ -2554,6 +2813,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -2565,6 +2825,7 @@
                   <td class="test-passed" data-tool="slang_parse">3/3</td>
                   <td class="test-passed" data-tool="verible">3/3</td>
                   <td class="test-passed" data-tool="verilator">3/3</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/3</td>
                   <td class="test-passed" data-tool="yosys_slang">3/3</td>
                </tr>
@@ -2576,6 +2837,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -2587,6 +2849,7 @@
                   <td class="test-passed" data-tool="slang_parse">4/4</td>
                   <td class="test-passed" data-tool="verible">4/4</td>
                   <td class="test-passed" data-tool="verilator">4/4</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/4</td>
                   <td class="test-passed" data-tool="yosys_slang">4/4</td>
                </tr>
@@ -2598,6 +2861,7 @@
                   <td class="test-passed" data-tool="slang_parse">5/5</td>
                   <td class="test-passed" data-tool="verible">5/5</td>
                   <td class="test-passed" data-tool="verilator">6/6</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 17%">1/6</td>
                   <td class="test-passed" data-tool="yosys_slang">6/6</td>
                </tr>
@@ -2611,6 +2875,7 @@
                   <td class="test-varied" data-tool="verilator" style="--val: 33%">1/3</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="11.5.1">
                   <th title="Vector bit-select and part-select addressing">Vector bit-select and part-select addressing</th>
@@ -2620,6 +2885,7 @@
                   <td class="test-passed" data-tool="slang_parse">12/12</td>
                   <td class="test-passed" data-tool="verible">12/12</td>
                   <td class="test-passed" data-tool="verilator">12/12</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">12/12</td>
                   <td class="test-passed" data-tool="yosys_slang">12/12</td>
                </tr>
@@ -2631,6 +2897,7 @@
                   <td class="test-passed" data-tool="slang_parse">5/5</td>
                   <td class="test-passed" data-tool="verible">5/5</td>
                   <td class="test-passed" data-tool="verilator">5/5</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">5/5</td>
                   <td class="test-passed" data-tool="yosys_slang">5/5</td>
                </tr>
@@ -2642,6 +2909,7 @@
                   <td class="test-passed" data-tool="slang_parse">4/4</td>
                   <td class="test-passed" data-tool="verible">4/4</td>
                   <td class="test-passed" data-tool="verilator">4/4</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">4/4</td>
                   <td class="test-passed" data-tool="yosys_slang">4/4</td>
                </tr>
@@ -2653,6 +2921,7 @@
                   <td class="test-passed" data-tool="slang_parse">3/3</td>
                   <td class="test-failed" data-tool="verible">0/3</td>
                   <td class="test-varied" data-tool="verilator" style="--val: 25%">1/4</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 25%">1/4</td>
                   <td class="test-passed" data-tool="yosys_slang">3/3</td>
                </tr>
@@ -2664,6 +2933,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">2/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -2675,6 +2945,7 @@
                   <td class="test-passed" data-tool="slang_parse">3/3</td>
                   <td class="test-passed" data-tool="verible">3/3</td>
                   <td class="test-passed" data-tool="verilator">3/3</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">3/3</td>
                   <td class="test-passed" data-tool="yosys_slang">3/3</td>
                </tr>
@@ -2686,6 +2957,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">2/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -2697,6 +2969,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2708,6 +2981,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2719,6 +2993,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">2/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -2730,6 +3005,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2741,6 +3017,7 @@
                   <td class="test-passed" data-tool="slang_parse">3/3</td>
                   <td class="test-passed" data-tool="verible">3/3</td>
                   <td class="test-passed" data-tool="verilator">3/3</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">3/3</td>
                   <td class="test-passed" data-tool="yosys_slang">3/3</td>
                </tr>
@@ -2752,6 +3029,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2763,6 +3041,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">2/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -2774,6 +3053,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2785,6 +3065,7 @@
                   <td class="test-passed" data-tool="slang_parse">9/9</td>
                   <td class="test-passed" data-tool="verible">9/9</td>
                   <td class="test-passed" data-tool="verilator">9/9</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">9/9</td>
                   <td class="test-passed" data-tool="yosys_slang">9/9</td>
                </tr>
@@ -2796,6 +3077,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2807,6 +3089,7 @@
                   <td class="test-passed" data-tool="slang_parse">3/3</td>
                   <td class="test-passed" data-tool="verible">3/3</td>
                   <td class="test-failed" data-tool="verilator">0/3</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/3</td>
                   <td class="test-failed" data-tool="yosys_slang">0/3</td>
                </tr>
@@ -2818,6 +3101,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-failed" data-tool="verible">0/1</td>
                   <td class="test-failed" data-tool="verilator">0/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-failed" data-tool="yosys_slang">0/1</td>
                </tr>
@@ -2829,6 +3113,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-failed" data-tool="verible">0/1</td>
                   <td class="test-failed" data-tool="verilator">0/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-failed" data-tool="yosys_slang">0/1</td>
                </tr>
@@ -2840,6 +3125,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2851,6 +3137,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2862,6 +3149,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-failed" data-tool="yosys_slang">0/1</td>
                </tr>
@@ -2873,6 +3161,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2884,6 +3173,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2897,6 +3187,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="12.8">
                   <th title="Jump statements">Jump statements</th>
@@ -2906,6 +3197,7 @@
                   <td class="test-passed" data-tool="slang_parse">4/4</td>
                   <td class="test-passed" data-tool="verible">4/4</td>
                   <td class="test-passed" data-tool="verilator">4/4</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/4</td>
                   <td class="test-passed" data-tool="yosys_slang">4/4</td>
                </tr>
@@ -2917,6 +3209,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 50%">1/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -2928,6 +3221,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2939,6 +3233,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -2950,6 +3245,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">3/3</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 67%">2/3</td>
                   <td class="test-passed" data-tool="yosys_slang">3/3</td>
                </tr>
@@ -2961,6 +3257,7 @@
                   <td class="test-passed" data-tool="slang_parse">3/3</td>
                   <td class="test-passed" data-tool="verible">3/3</td>
                   <td class="test-passed" data-tool="verilator">3/3</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -2972,6 +3269,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -2985,6 +3283,7 @@
                   <td class="test-passed" data-tool="verilator">2/2</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="14.3">
                   <th title="Clocking block declaration">Clocking block declaration</th>
@@ -2996,6 +3295,7 @@
                   <td class="test-passed" data-tool="verilator">5/5</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="15.4">
                   <th title="Mailboxes">Mailboxes</th>
@@ -3005,6 +3305,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -3018,6 +3319,7 @@
                   <td class="test-varied" data-tool="verilator" style="--val: 67%">2/3</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="16.2">
                   <th title="Overview">Overview</th>
@@ -3027,6 +3329,7 @@
                   <td class="test-passed" data-tool="slang_parse">3/3</td>
                   <td class="test-passed" data-tool="verible">3/3</td>
                   <td class="test-passed" data-tool="verilator">3/3</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">3/3</td>
                   <td class="test-passed" data-tool="yosys_slang">3/3</td>
                </tr>
@@ -3038,6 +3341,7 @@
                   <td class="test-passed" data-tool="slang_parse">6/6</td>
                   <td class="test-passed" data-tool="verible">6/6</td>
                   <td class="test-passed" data-tool="verilator">6/6</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/6</td>
                   <td class="test-passed" data-tool="yosys_slang">6/6</td>
                </tr>
@@ -3051,6 +3355,7 @@
                   <td class="test-failed" data-tool="verilator">0/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="16.9">
                   <th title="Sequence operations">Sequence operations</th>
@@ -3060,6 +3365,7 @@
                   <td class="test-passed" data-tool="slang_parse">19/19</td>
                   <td class="test-varied" data-tool="verible" style="--val: 84%">16/19</td>
                   <td class="test-varied" data-tool="verilator" style="--val: 84%">16/19</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/16</td>
                   <td class="test-passed" data-tool="yosys_slang">16/16</td>
                </tr>
@@ -3073,6 +3379,7 @@
                   <td class="test-varied" data-tool="verilator" style="--val: 50%">2/4</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="16.12">
                   <th title="Declaring properties">Declaring properties</th>
@@ -3082,6 +3389,7 @@
                   <td class="test-passed" data-tool="slang_parse">5/5</td>
                   <td class="test-passed" data-tool="verible">5/5</td>
                   <td class="test-passed" data-tool="verilator">5/5</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/5</td>
                   <td class="test-passed" data-tool="yosys_slang">5/5</td>
                </tr>
@@ -3093,6 +3401,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -3106,6 +3415,7 @@
                   <td class="test-passed" data-tool="verilator">2/2</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="16.17">
                   <th title="Expect statement">Expect statement</th>
@@ -3115,6 +3425,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-failed" data-tool="verilator">0/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -3126,6 +3437,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -3137,6 +3449,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -3148,6 +3461,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -3159,6 +3473,7 @@
                   <td class="test-passed" data-tool="slang_parse">3/3</td>
                   <td class="test-varied" data-tool="verible" style="--val: 67%">2/3</td>
                   <td class="test-passed" data-tool="verilator">4/4</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 25%">1/4</td>
                   <td class="test-passed" data-tool="yosys_slang">4/4</td>
                </tr>
@@ -3170,6 +3485,7 @@
                   <td class="test-passed" data-tool="slang_parse">3/3</td>
                   <td class="test-varied" data-tool="verible" style="--val: 33%">1/3</td>
                   <td class="test-passed" data-tool="verilator">4/4</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 33%">1/3</td>
                   <td class="test-passed" data-tool="yosys_slang">3/3</td>
                </tr>
@@ -3181,6 +3497,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -3192,6 +3509,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 50%">1/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -3203,6 +3521,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -3214,6 +3533,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -3225,6 +3545,7 @@
                   <td class="test-passed" data-tool="slang_parse">4/4</td>
                   <td class="test-passed" data-tool="verible">4/4</td>
                   <td class="test-passed" data-tool="verilator">4/4</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/4</td>
                   <td class="test-passed" data-tool="yosys_slang">4/4</td>
                </tr>
@@ -3238,6 +3559,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="18.5.8.2">
                   <th title="Array reduction iterative constraints">Array reduction iterative constraints</th>
@@ -3247,6 +3569,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -3258,6 +3581,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -3269,6 +3593,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 50%">1/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -3282,6 +3607,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="18.5.12">
                   <th title="Functions in constraints">Functions in constraints</th>
@@ -3291,6 +3617,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -3302,6 +3629,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -3313,6 +3641,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 50%">1/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -3324,6 +3653,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -3335,6 +3665,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -3346,6 +3677,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -3357,6 +3689,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">1/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -3368,6 +3701,7 @@
                   <td class="test-passed" data-tool="slang_parse">3/3</td>
                   <td class="test-passed" data-tool="verible">3/3</td>
                   <td class="test-varied" data-tool="verilator" style="--val: 33%">1/3</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -3379,6 +3713,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -3390,6 +3725,7 @@
                   <td></td>
                   <td></td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">2/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -3401,6 +3737,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -3412,6 +3749,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -3423,6 +3761,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -3434,6 +3773,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -3447,6 +3787,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="18.16">
                   <th title="Random weighted case—randcase">Random weighted case—randcase</th>
@@ -3456,6 +3797,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -3469,6 +3811,7 @@
                   <td class="test-passed" data-tool="verilator">2/2</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="18.17.1">
                   <th title="Random production weights">Random production weights</th>
@@ -3478,6 +3821,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                </tr>
@@ -3491,6 +3835,7 @@
                   <td class="test-passed" data-tool="verilator">4/4</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="18.17.3">
                   <th title="Case production statements">Case production statements</th>
@@ -3500,6 +3845,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                </tr>
@@ -3513,6 +3859,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="18.17.5">
                   <th title="Interleaving productions—rand join">Interleaving productions—rand join</th>
@@ -3522,6 +3869,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                </tr>
@@ -3535,6 +3883,7 @@
                   <td class="test-passed" data-tool="verilator">3/3</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="18.17.7">
                   <th title="Value passing between productions">Value passing between productions</th>
@@ -3544,6 +3893,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-failed" data-tool="verilator">0/1</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                </tr>
@@ -3557,6 +3907,7 @@
                   <td class="test-passed" data-tool="verilator">3/3</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="20.3">
                   <th title="Simulation time system functions">Simulation time system functions</th>
@@ -3566,6 +3917,7 @@
                   <td class="test-passed" data-tool="slang_parse">3/3</td>
                   <td class="test-passed" data-tool="verible">3/3</td>
                   <td class="test-passed" data-tool="verilator">3/3</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                </tr>
@@ -3579,6 +3931,7 @@
                   <td class="test-passed" data-tool="verilator">3/3</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="20.5">
                   <th title="Conversion functions">Conversion functions</th>
@@ -3588,6 +3941,7 @@
                   <td class="test-passed" data-tool="slang_parse">4/4</td>
                   <td class="test-passed" data-tool="verible">4/4</td>
                   <td class="test-passed" data-tool="verilator">4/4</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 33%">1/3</td>
                   <td class="test-passed" data-tool="yosys_slang">3/3</td>
                </tr>
@@ -3599,6 +3953,7 @@
                   <td class="test-passed" data-tool="slang_parse">5/5</td>
                   <td class="test-passed" data-tool="verible">5/5</td>
                   <td class="test-passed" data-tool="verilator">5/5</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 20%">1/5</td>
                   <td class="test-passed" data-tool="yosys_slang">5/5</td>
                </tr>
@@ -3610,6 +3965,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">2/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -3621,6 +3977,7 @@
                   <td class="test-passed" data-tool="slang_parse">22/22</td>
                   <td class="test-passed" data-tool="verible">22/22</td>
                   <td class="test-passed" data-tool="verilator">22/22</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 18%">4/22</td>
                   <td class="test-passed" data-tool="yosys_slang">22/22</td>
                </tr>
@@ -3632,6 +3989,7 @@
                   <td class="test-passed" data-tool="slang_parse">4/4</td>
                   <td class="test-passed" data-tool="verible">4/4</td>
                   <td class="test-passed" data-tool="verilator">4/4</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 25%">1/4</td>
                   <td class="test-passed" data-tool="yosys_slang">4/4</td>
                </tr>
@@ -3645,6 +4003,7 @@
                   <td class="test-passed" data-tool="verilator">4/4</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="20.13">
                   <th title="Sampled value system functions">Sampled value system functions</th>
@@ -3654,6 +4013,7 @@
                   <td class="test-passed" data-tool="slang_parse">16/16</td>
                   <td class="test-passed" data-tool="verible">16/16</td>
                   <td class="test-passed" data-tool="verilator">16/16</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/16</td>
                   <td class="test-passed" data-tool="yosys_slang">16/16</td>
                </tr>
@@ -3667,6 +4027,7 @@
                   <td class="test-failed" data-tool="verilator">0/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="20.15">
                   <th title="Probabilistic distribution functions">Probabilistic distribution functions</th>
@@ -3676,6 +4037,7 @@
                   <td class="test-passed" data-tool="slang_parse">8/8</td>
                   <td class="test-passed" data-tool="verible">8/8</td>
                   <td class="test-passed" data-tool="verilator">8/8</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 12%">1/8</td>
                   <td class="test-passed" data-tool="yosys_slang">8/8</td>
                </tr>
@@ -3687,6 +4049,7 @@
                   <td class="test-passed" data-tool="slang_parse">6/6</td>
                   <td class="test-passed" data-tool="verible">6/6</td>
                   <td class="test-passed" data-tool="verilator">6/6</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -3698,6 +4061,7 @@
                   <td class="test-passed" data-tool="slang_parse">17/17</td>
                   <td class="test-passed" data-tool="verible">17/17</td>
                   <td class="test-passed" data-tool="verilator">17/17</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/7</td>
                   <td class="test-passed" data-tool="yosys_slang">7/7</td>
                </tr>
@@ -3709,6 +4073,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/2</td>
                   <td></td>
                </tr>
@@ -3720,6 +4085,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td class="test-passed" data-tool="verible">2/2</td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/2</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -3733,8 +4099,9 @@
                   <td class="test-passed" data-tool="verilator">2/2</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
-               <tr data-types="parsing preprocessing" data-tag="22.3">
+               <tr data-types="preprocessing parsing" data-tag="22.3">
                   <th title="resetall">resetall</th>
                   <th title="resetall">22.3</th>
                   <td class="test-passed" data-tool="icarus">3/3</td>
@@ -3742,10 +4109,11 @@
                   <td class="test-passed" data-tool="slang_parse">3/3</td>
                   <td class="test-passed" data-tool="verible">3/3</td>
                   <td class="test-passed" data-tool="verilator">3/3</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 67%">2/3</td>
                   <td></td>
                </tr>
-               <tr data-types="parsing preprocessing" data-tag="22.4">
+               <tr data-types="preprocessing parsing" data-tag="22.4">
                   <th title="include">include</th>
                   <th title="include">22.4</th>
                   <td class="test-passed" data-tool="icarus">8/8</td>
@@ -3753,10 +4121,11 @@
                   <td class="test-passed" data-tool="slang_parse">8/8</td>
                   <td class="test-varied" data-tool="verible" style="--val: 83%">5/6</td>
                   <td class="test-passed" data-tool="verilator">8/8</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">8/8</td>
                   <td></td>
                </tr>
-               <tr data-types="simulation elaboration preprocessing" data-tag="22.5.1">
+               <tr data-types="preprocessing elaboration simulation" data-tag="22.5.1">
                   <th title="define">define</th>
                   <th title="define">22.5.1</th>
                   <td class="test-varied" data-tool="icarus" style="--val: 97%">28/29</td>
@@ -3764,6 +4133,7 @@
                   <td class="test-passed" data-tool="slang_parse">29/29</td>
                   <td></td>
                   <td class="test-passed" data-tool="verilator">29/29</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 52%">15/29</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -3775,6 +4145,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td></td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">2/2</td>
                   <td></td>
                </tr>
@@ -3786,6 +4157,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td></td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">2/2</td>
                   <td></td>
                </tr>
@@ -3797,10 +4169,11 @@
                   <td class="test-passed" data-tool="slang_parse">3/3</td>
                   <td></td>
                   <td class="test-passed" data-tool="verilator">3/3</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">3/3</td>
                   <td></td>
                </tr>
-               <tr data-types="elaboration simulation preprocessing" data-tag="22.7">
+               <tr data-types="preprocessing elaboration simulation" data-tag="22.7">
                   <th title="timescale">timescale</th>
                   <th title="timescale">22.7</th>
                   <td class="test-passed" data-tool="icarus">6/6</td>
@@ -3808,6 +4181,7 @@
                   <td class="test-passed" data-tool="slang_parse">4/4</td>
                   <td></td>
                   <td class="test-passed" data-tool="verilator">6/6</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">5/5</td>
                   <td class="test-passed" data-tool="yosys_slang">2/2</td>
                </tr>
@@ -3819,10 +4193,11 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td></td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 50%">1/2</td>
                   <td></td>
                </tr>
-               <tr data-types="elaboration simulation preprocessing" data-tag="22.9">
+               <tr data-types="preprocessing elaboration simulation" data-tag="22.9">
                   <th title="unconnected_drive and nounconnected_drive">unconnected_drive and nounconnected_drive</th>
                   <th title="unconnected_drive and nounconnected_drive">22.9</th>
                   <td class="test-passed" data-tool="icarus">5/5</td>
@@ -3830,6 +4205,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td></td>
                   <td class="test-passed" data-tool="verilator">5/5</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 60%">3/5</td>
                   <td class="test-passed" data-tool="yosys_slang">3/3</td>
                </tr>
@@ -3841,6 +4217,7 @@
                   <td class="test-passed" data-tool="slang_parse">2/2</td>
                   <td></td>
                   <td class="test-passed" data-tool="verilator">2/2</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">2/2</td>
                   <td></td>
                </tr>
@@ -3852,6 +4229,7 @@
                   <td class="test-passed" data-tool="slang_parse">6/6</td>
                   <td></td>
                   <td class="test-passed" data-tool="verilator">6/6</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 17%">1/6</td>
                   <td></td>
                </tr>
@@ -3863,6 +4241,7 @@
                   <td class="test-passed" data-tool="slang_parse">7/7</td>
                   <td></td>
                   <td class="test-passed" data-tool="verilator">7/7</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 57%">4/7</td>
                   <td></td>
                </tr>
@@ -3874,6 +4253,7 @@
                   <td class="test-passed" data-tool="slang_parse">3/3</td>
                   <td class="test-passed" data-tool="verible">3/3</td>
                   <td class="test-passed" data-tool="verilator">3/3</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 33%">1/3</td>
                   <td class="test-passed" data-tool="yosys_slang">3/3</td>
                </tr>
@@ -3887,6 +4267,7 @@
                   <td class="test-passed" data-tool="verilator">1/1</td>
                   <td></td>
                   <td></td>
+                  <td></td>
                </tr>
                <tr data-types="parsing elaboration" data-tag="25.3">
                   <th title="Interface syntax">Interface syntax</th>
@@ -3896,6 +4277,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -3907,6 +4289,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -3918,6 +4301,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -3925,73 +4309,80 @@
             <tfoot>
                <tr>
                   <th colspan="2">Total tests passed</th>
-                  <td class="test-varied" style="--val: 72%" title="icarus (72%)">1166/1615</td>
-                  <td class="test-varied" style="--val: 100%" title="slang (100%)">1610/1610</td>
-                  <td class="test-varied" style="--val: 100%" title="slang_parse (100%)">1546/1547</td>
-                  <td class="test-varied" style="--val: 95%" title="verible (95%)">1379/1456</td>
-                  <td class="test-varied" style="--val: 92%" title="verilator (92%)">1482/1615</td>
-                  <td class="test-varied" style="--val: 46%" title="yosys (46%)">583/1269</td>
-                  <td class="test-varied" style="--val: 98%" title="yosys_slang (98%)">1135/1160</td>
+                  <td class="test-varied" style="--val: 75%" title="icarus (75%)">1539/2065</td>
+                  <td class="test-varied" style="--val: 100%" title="slang (100%)">2057/2060</td>
+                  <td class="test-varied" style="--val: 100%" title="slang_parse (100%)">1993/1997</td>
+                  <td class="test-varied" style="--val: 96%" title="verible (96%)">1829/1906</td>
+                  <td class="test-varied" style="--val: 92%" title="verilator (92%)">1904/2065</td>
+                  <td class="test-varied" style="--val: 100%" title="vloghammersat (100%)">300/300</td>
+                  <td class="test-varied" style="--val: 55%" title="yosys (55%)">945/1719</td>
+                  <td class="test-varied" style="--val: 98%" title="yosys_slang (98%)">1485/1510</td>
                </tr>
                <tr>
                   <th colspan="2">Total tags passed</th>
-                  <td class="test-varied" style="--val: 53%" title="icarus (53%)">182/344</td>
-                  <td class="test-varied" style="--val: 100%" title="slang (100%)">344/344</td>
-                  <td class="test-varied" style="--val: 100%" title="slang_parse (100%)">340/341</td>
-                  <td class="test-varied" style="--val: 92%" title="verible (92%)">306/331</td>
-                  <td class="test-varied" style="--val: 90%" title="verilator (90%)">309/344</td>
-                  <td class="test-varied" style="--val: 27%" title="yosys (27%)">71/262</td>
-                  <td class="test-varied" style="--val: 94%" title="yosys_slang (94%)">234/250</td>
+                  <td class="test-varied" style="--val: 53%" title="icarus (53%)">184/347</td>
+                  <td class="test-varied" style="--val: 100%" title="slang (100%)">346/347</td>
+                  <td class="test-varied" style="--val: 99%" title="slang_parse (99%)">342/344</td>
+                  <td class="test-varied" style="--val: 93%" title="verible (93%)">309/334</td>
+                  <td class="test-varied" style="--val: 90%" title="verilator (90%)">314/347</td>
+                  <td class="test-varied" style="--val: 100%" title="vloghammersat (100%)">1/1</td>
+                  <td class="test-varied" style="--val: 27%" title="yosys (27%)">72/265</td>
+                  <td class="test-varied" style="--val: 94%" title="yosys_slang (94%)">236/252</td>
                </tr>
                <tr>
                   <th colspan="2">Total time elapsed</th>
-                  <td title="icarus">21s</td>
-                  <td title="slang">136s</td>
+                  <td title="icarus">27s</td>
+                  <td title="slang">73s</td>
                   <td title="slang_parse">26s</td>
-                  <td title="verible">8s</td>
-                  <td title="verilator">1096s</td>
-                  <td title="yosys">20s</td>
-                  <td title="yosys_slang">19s</td>
+                  <td title="verible">9s</td>
+                  <td title="verilator">1956s</td>
+                  <td title="vloghammersat">405s</td>
+                  <td title="yosys">52s</td>
+                  <td title="yosys_slang">115s</td>
                </tr>
                <tr>
                   <th colspan="2">User time elapsed</th>
-                  <td title="icarus">6s</td>
-                  <td title="slang">60s</td>
-                  <td title="slang_parse">14s</td>
-                  <td title="verible">3s</td>
-                  <td title="verilator">918s</td>
-                  <td title="yosys">9s</td>
-                  <td title="yosys_slang">8s</td>
+                  <td title="icarus">13s</td>
+                  <td title="slang">52s</td>
+                  <td title="slang_parse">16s</td>
+                  <td title="verible">4s</td>
+                  <td title="verilator">1637s</td>
+                  <td title="vloghammersat">370s</td>
+                  <td title="yosys">41s</td>
+                  <td title="yosys_slang">102s</td>
                </tr>
                <tr>
                   <th colspan="2">System time elapsed</th>
-                  <td title="icarus">15s</td>
-                  <td title="slang">75s</td>
+                  <td title="icarus">14s</td>
+                  <td title="slang">21s</td>
                   <td title="slang_parse">11s</td>
                   <td title="verible">5s</td>
-                  <td title="verilator">178s</td>
-                  <td title="yosys">10s</td>
-                  <td title="yosys_slang">10s</td>
+                  <td title="verilator">319s</td>
+                  <td title="vloghammersat">35s</td>
+                  <td title="yosys">11s</td>
+                  <td title="yosys_slang">13s</td>
                </tr>
                <tr>
                   <th colspan="2">Maximum ram usage</th>
                   <td title="icarus">16 MB</td>
-                  <td title="slang">225 MB</td>
+                  <td title="slang">135 MB</td>
                   <td title="slang_parse">56 MB</td>
                   <td title="verible">16 MB</td>
-                  <td title="verilator">521 MB</td>
-                  <td title="yosys">51 MB</td>
-                  <td title="yosys_slang">28 MB</td>
+                  <td title="verilator">290 MB</td>
+                  <td title="vloghammersat">152 MB</td>
+                  <td title="yosys">60 MB</td>
+                  <td title="yosys_slang">79 MB</td>
                </tr>
                <tr>
                   <th colspan="2">Average throughput passed for inputs &gt; 1KiB</th>
-                  <td title="icarus">119 KiB/s</td>
-                  <td title="slang">4 KiB/s</td>
-                  <td title="slang_parse">26 KiB/s</td>
-                  <td title="verible">493 KiB/s</td>
-                  <td title="verilator">0 KiB/s</td>
-                  <td title="yosys">0 KiB/s</td>
-                  <td title="yosys_slang">70 KiB/s</td>
+                  <td title="icarus">306 KiB/s</td>
+                  <td title="slang">52 KiB/s</td>
+                  <td title="slang_parse">181 KiB/s</td>
+                  <td title="verible">952 KiB/s</td>
+                  <td title="verilator">2 KiB/s</td>
+                  <td title="vloghammersat">2 KiB/s</td>
+                  <td title="yosys">55 KiB/s</td>
+                  <td title="yosys_slang">26 KiB/s</td>
                </tr>
             </tfoot>
          </table>
@@ -4002,20 +4393,23 @@
                      <h2>cores</h2>
                   </th>
                   <th></th>
-                  <th title="icarus 13.0 (devel) ()" style="--z: 6">
+                  <th title="icarus 13.0 (devel) ()" style="--z: 7">
                      <a class="tool_link" target="_blank" href="https://github.com/steveicarus/iverilog/tree/2345c51478a9523fccd7109eea2e738ce66cf78e">Icarus</a>
                   </th>
-                  <th title="slang 9.1.0+9cdd071" style="--z: 5">
+                  <th title="slang 9.1.0+9cdd071" style="--z: 6">
                      <a class="tool_link" target="_blank" href="https://github.com/MikePopoloski/slang/tree/9cdd0712ef71e7bd68a5d95a2754db2251bc501e">Slang</a>
                   </th>
-                  <th title="slang-parse 9.1.0+9cdd071" style="--z: 4">
+                  <th title="slang-parse 9.1.0+9cdd071" style="--z: 5">
                      <a class="tool_link" target="_blank" href="https://github.com/MikePopoloski/slang/tree/9cdd0712ef71e7bd68a5d95a2754db2251bc501e">Slang_parse</a>
                   </th>
-                  <th title="Version	head&#10;Commit-Timestamp	2025-12-22T08:55:10Z&#10;Built	2026-01-22T03:08:03Z" style="--z: 3">
+                  <th title="Version	head&#10;Commit-Timestamp	2025-12-22T08:55:10Z&#10;Built	2026-01-22T03:03:51Z" style="--z: 4">
                      <a class="tool_link" target="_blank" href="https://github.com/chipsalliance/verible/tree/9fdb4057dadf4478307591ae2c77db8357a74864">Verible</a>
                   </th>
-                  <th title="Verilator 5.045 devel rev vUNKNOWN-built20260122-8b2144a" style="--z: 2">
+                  <th title="Verilator 5.045 devel rev vUNKNOWN-built20260122-8b2144a" style="--z: 3">
                      <a class="tool_link" target="_blank" href="https://github.com/verilator/verilator/tree/8b2144a9db940cfdd36c6ca850319c6921194e04">Verilator</a>
+                  </th>
+                  <th title="Yosys 0.61+21 (git sha1 967b47d98, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)" style="--z: 2">
+                     <a class="tool_link" target="_blank" href="https://github.com/symbiflow/sv-tests">VlogHammerSAT</a>
                   </th>
                   <th title="yosys 0.61+21" style="--z: 1">
                      <a class="tool_link" target="_blank" href="https://github.com/YosysHQ/yosys/tree/967b47d98412bb34b1e32fb9b31ba91792db1d3e">Yosys</a>
@@ -4034,6 +4428,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-failed" data-tool="verilator">0/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -4045,6 +4440,7 @@
                   <td class="test-passed" data-tool="slang_parse">6/6</td>
                   <td class="test-failed" data-tool="verible">0/6</td>
                   <td class="test-passed" data-tool="verilator">6/6</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/6</td>
                   <td></td>
                </tr>
@@ -4056,6 +4452,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -4067,6 +4464,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-failed" data-tool="verilator">0/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td></td>
                </tr>
@@ -4078,6 +4476,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -4089,6 +4488,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-failed" data-tool="verible">0/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -4100,6 +4500,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -4111,6 +4512,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-failed" data-tool="verilator">0/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td class="test-passed" data-tool="yosys_slang">1/1</td>
                </tr>
@@ -4122,6 +4524,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td></td>
                </tr>
@@ -4133,6 +4536,7 @@
                   <td class="test-passed" data-tool="slang_parse">1/1</td>
                   <td class="test-passed" data-tool="verible">1/1</td>
                   <td class="test-passed" data-tool="verilator">1/1</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/1</td>
                   <td></td>
                </tr>
@@ -4145,6 +4549,7 @@
                   <td class="test-varied" style="--val: 100%" title="slang_parse (100%)">15/15</td>
                   <td class="test-varied" style="--val: 53%" title="verible (53%)">8/15</td>
                   <td class="test-varied" style="--val: 80%" title="verilator (80%)">12/15</td>
+                  <td></td>
                   <td class="test-varied" style="--val: 0%" title="yosys (0%)">0/15</td>
                   <td class="test-varied" style="--val: 100%" title="yosys_slang (100%)">6/6</td>
                </tr>
@@ -4155,58 +4560,64 @@
                   <td class="test-varied" style="--val: 100%" title="slang_parse (100%)">10/10</td>
                   <td class="test-varied" style="--val: 80%" title="verible (80%)">8/10</td>
                   <td class="test-varied" style="--val: 70%" title="verilator (70%)">7/10</td>
+                  <td></td>
                   <td class="test-varied" style="--val: 0%" title="yosys (0%)">0/10</td>
                   <td class="test-varied" style="--val: 100%" title="yosys_slang (100%)">6/6</td>
                </tr>
                <tr>
                   <th colspan="2">Total time elapsed</th>
                   <td title="icarus">1s</td>
-                  <td title="slang">6s</td>
-                  <td title="slang_parse">4s</td>
+                  <td title="slang">4s</td>
+                  <td title="slang_parse">3s</td>
                   <td title="verible">2s</td>
-                  <td title="verilator">353s</td>
+                  <td title="verilator">200s</td>
+                  <td></td>
                   <td title="yosys">0s</td>
-                  <td title="yosys_slang">108s</td>
+                  <td title="yosys_slang">94s</td>
                </tr>
                <tr>
                   <th colspan="2">User time elapsed</th>
                   <td title="icarus">1s</td>
                   <td title="slang">3s</td>
-                  <td title="slang_parse">2s</td>
-                  <td title="verible">2s</td>
-                  <td title="verilator">328s</td>
+                  <td title="slang_parse">1s</td>
+                  <td title="verible">1s</td>
+                  <td title="verilator">191s</td>
+                  <td></td>
                   <td title="yosys">0s</td>
-                  <td title="yosys_slang">105s</td>
+                  <td title="yosys_slang">93s</td>
                </tr>
                <tr>
                   <th colspan="2">System time elapsed</th>
                   <td title="icarus">0s</td>
-                  <td title="slang">3s</td>
-                  <td title="slang_parse">2s</td>
+                  <td title="slang">2s</td>
+                  <td title="slang_parse">1s</td>
                   <td title="verible">0s</td>
-                  <td title="verilator">24s</td>
+                  <td title="verilator">8s</td>
+                  <td></td>
                   <td title="yosys">0s</td>
-                  <td title="yosys_slang">4s</td>
+                  <td title="yosys_slang">2s</td>
                </tr>
                <tr>
                   <th colspan="2">Maximum ram usage</th>
                   <td title="icarus">29 MB</td>
-                  <td title="slang">186 MB</td>
-                  <td title="slang_parse">145 MB</td>
+                  <td title="slang">197 MB</td>
+                  <td title="slang_parse">167 MB</td>
                   <td title="verible">16 MB</td>
-                  <td title="verilator">1030 MB</td>
+                  <td title="verilator">1031 MB</td>
+                  <td></td>
                   <td title="yosys">19 MB</td>
-                  <td title="yosys_slang">1855 MB</td>
+                  <td title="yosys_slang">1849 MB</td>
                </tr>
                <tr>
                   <th colspan="2">Average throughput passed for inputs &gt; 1KiB</th>
                   <td title="icarus">0 KiB/s</td>
-                  <td title="slang">3307 KiB/s</td>
-                  <td title="slang_parse">5401 KiB/s</td>
-                  <td title="verible">9127 KiB/s</td>
-                  <td title="verilator">51 KiB/s</td>
+                  <td title="slang">4975 KiB/s</td>
+                  <td title="slang_parse">7444 KiB/s</td>
+                  <td title="verible">10189 KiB/s</td>
+                  <td title="verilator">91 KiB/s</td>
+                  <td></td>
                   <td title="yosys">0 KiB/s</td>
-                  <td title="yosys_slang">49 KiB/s</td>
+                  <td title="yosys_slang">56 KiB/s</td>
                </tr>
             </tfoot>
          </table>
@@ -4217,20 +4628,23 @@
                      <h2>imported</h2>
                   </th>
                   <th></th>
-                  <th title="icarus 13.0 (devel) ()" style="--z: 6">
+                  <th title="icarus 13.0 (devel) ()" style="--z: 7">
                      <a class="tool_link" target="_blank" href="https://github.com/steveicarus/iverilog/tree/2345c51478a9523fccd7109eea2e738ce66cf78e">Icarus</a>
                   </th>
-                  <th title="slang 9.1.0+9cdd071" style="--z: 5">
+                  <th title="slang 9.1.0+9cdd071" style="--z: 6">
                      <a class="tool_link" target="_blank" href="https://github.com/MikePopoloski/slang/tree/9cdd0712ef71e7bd68a5d95a2754db2251bc501e">Slang</a>
                   </th>
-                  <th title="slang-parse 9.1.0+9cdd071" style="--z: 4">
+                  <th title="slang-parse 9.1.0+9cdd071" style="--z: 5">
                      <a class="tool_link" target="_blank" href="https://github.com/MikePopoloski/slang/tree/9cdd0712ef71e7bd68a5d95a2754db2251bc501e">Slang_parse</a>
                   </th>
-                  <th title="Version	head&#10;Commit-Timestamp	2025-12-22T08:55:10Z&#10;Built	2026-01-22T03:08:03Z" style="--z: 3">
+                  <th title="Version	head&#10;Commit-Timestamp	2025-12-22T08:55:10Z&#10;Built	2026-01-22T03:03:51Z" style="--z: 4">
                      <a class="tool_link" target="_blank" href="https://github.com/chipsalliance/verible/tree/9fdb4057dadf4478307591ae2c77db8357a74864">Verible</a>
                   </th>
-                  <th title="Verilator 5.045 devel rev vUNKNOWN-built20260122-8b2144a" style="--z: 2">
+                  <th title="Verilator 5.045 devel rev vUNKNOWN-built20260122-8b2144a" style="--z: 3">
                      <a class="tool_link" target="_blank" href="https://github.com/verilator/verilator/tree/8b2144a9db940cfdd36c6ca850319c6921194e04">Verilator</a>
+                  </th>
+                  <th title="Yosys 0.61+21 (git sha1 967b47d98, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)" style="--z: 2">
+                     <a class="tool_link" target="_blank" href="https://github.com/symbiflow/sv-tests">VlogHammerSAT</a>
                   </th>
                   <th title="yosys 0.61+21" style="--z: 1">
                      <a class="tool_link" target="_blank" href="https://github.com/YosysHQ/yosys/tree/967b47d98412bb34b1e32fb9b31ba91792db1d3e">Yosys</a>
@@ -4249,6 +4663,7 @@
                   <td class="test-passed" data-tool="slang_parse">344/344</td>
                   <td class="test-varied" data-tool="verible" style="--val: 13%">44/344</td>
                   <td class="test-passed" data-tool="verilator">344/344</td>
+                  <td></td>
                   <td class="test-failed" data-tool="yosys">0/344</td>
                   <td class="test-varied" data-tool="yosys_slang" style="--val: 99%">341/344</td>
                </tr>
@@ -4260,6 +4675,7 @@
                   <td class="test-passed" data-tool="slang_parse">19/19</td>
                   <td class="test-passed" data-tool="verible">19/19</td>
                   <td class="test-passed" data-tool="verilator">19/19</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 74%">14/19</td>
                   <td></td>
                </tr>
@@ -4271,6 +4687,7 @@
                   <td class="test-passed" data-tool="slang_parse">22/22</td>
                   <td class="test-passed" data-tool="verible">22/22</td>
                   <td class="test-varied" data-tool="verilator" style="--val: 86%">19/22</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 9%">2/22</td>
                   <td></td>
                </tr>
@@ -4282,19 +4699,21 @@
                   <td class="test-passed" data-tool="slang_parse">167/167</td>
                   <td class="test-varied" data-tool="verible" style="--val: 84%">141/167</td>
                   <td class="test-varied" data-tool="verilator" style="--val: 71%">119/167</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 16%">26/167</td>
                   <td></td>
                </tr>
                <tr data-types="parsing elaboration simulation" data-tag="ivtest">
                   <th title="Tests imported from ivtest"><a class="tag_link" target="_blank" href="https://github.com/steveicarus/iverilog/tree/master/ivtest">Tests imported from ivtest</a></th>
                   <th title="Tests imported from ivtest">ivtest</th>
-                  <td class="test-varied" data-tool="icarus" style="--val: 100%">2523/2534</td>
+                  <td class="test-varied" data-tool="icarus" style="--val: 99%">2521/2534</td>
                   <td class="test-passed" data-tool="slang">2534/2534</td>
                   <td class="test-varied" data-tool="slang_parse" style="--val: 88%">2231/2534</td>
                   <td class="test-varied" data-tool="verible" style="--val: 85%">2152/2534</td>
                   <td class="test-varied" data-tool="verilator" style="--val: 93%">2346/2534</td>
-                  <td class="test-varied" data-tool="yosys" style="--val: 37%">944/2534</td>
-                  <td class="test-varied" data-tool="yosys_slang" style="--val: 86%">2187/2534</td>
+                  <td></td>
+                  <td class="test-varied" data-tool="yosys" style="--val: 37%">937/2534</td>
+                  <td class="test-varied" data-tool="yosys_slang" style="--val: 86%">2186/2534</td>
                </tr>
                <tr data-types="parsing" data-tag="projf-explore">
                   <th title=""></th>
@@ -4304,6 +4723,7 @@
                   <td class="test-passed" data-tool="slang_parse">10/10</td>
                   <td class="test-passed" data-tool="verible">10/10</td>
                   <td class="test-passed" data-tool="verilator">10/10</td>
+                  <td></td>
                   <td class="test-passed" data-tool="yosys">10/10</td>
                   <td></td>
                </tr>
@@ -4315,6 +4735,7 @@
                   <td class="test-passed" data-tool="slang_parse">127/127</td>
                   <td class="test-passed" data-tool="verible">127/127</td>
                   <td class="test-varied" data-tool="verilator" style="--val: 99%">126/127</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 98%">124/127</td>
                   <td></td>
                </tr>
@@ -4326,6 +4747,7 @@
                   <td class="test-varied" data-tool="slang_parse" style="--val: 97%">210/216</td>
                   <td class="test-varied" data-tool="verible" style="--val: 97%">209/216</td>
                   <td class="test-varied" data-tool="verilator" style="--val: 96%">208/216</td>
+                  <td></td>
                   <td class="test-varied" data-tool="yosys" style="--val: 85%">184/216</td>
                   <td class="test-varied" data-tool="yosys_slang" style="--val: 88%">191/216</td>
                </tr>
@@ -4333,13 +4755,14 @@
             <tfoot>
                <tr>
                   <th colspan="2">Total tests passed</th>
-                  <td class="test-varied" style="--val: 85%" title="icarus (85%)">2912/3439</td>
+                  <td class="test-varied" style="--val: 85%" title="icarus (85%)">2910/3439</td>
                   <td class="test-varied" style="--val: 100%" title="slang (100%)">3439/3439</td>
                   <td class="test-varied" style="--val: 91%" title="slang_parse (91%)">3130/3439</td>
                   <td class="test-varied" style="--val: 79%" title="verible (79%)">2724/3439</td>
                   <td class="test-varied" style="--val: 93%" title="verilator (93%)">3191/3439</td>
-                  <td class="test-varied" style="--val: 38%" title="yosys (38%)">1304/3439</td>
-                  <td class="test-varied" style="--val: 88%" title="yosys_slang (88%)">2719/3094</td>
+                  <td></td>
+                  <td class="test-varied" style="--val: 38%" title="yosys (38%)">1297/3439</td>
+                  <td class="test-varied" style="--val: 88%" title="yosys_slang (88%)">2718/3094</td>
                </tr>
                <tr>
                   <th colspan="2">Total tags passed</th>
@@ -4348,58 +4771,64 @@
                   <td class="test-varied" style="--val: 75%" title="slang_parse (75%)">6/8</td>
                   <td class="test-varied" style="--val: 50%" title="verible (50%)">4/8</td>
                   <td class="test-varied" style="--val: 38%" title="verilator (38%)">3/8</td>
+                  <td></td>
                   <td class="test-varied" style="--val: 12%" title="yosys (12%)">1/8</td>
                   <td class="test-varied" style="--val: 0%" title="yosys_slang (0%)">0/3</td>
                </tr>
                <tr>
                   <th colspan="2">Total time elapsed</th>
-                  <td title="icarus">85s</td>
-                  <td title="slang">67s</td>
-                  <td title="slang_parse">31s</td>
-                  <td title="verible">21s</td>
-                  <td title="verilator">2428s</td>
-                  <td title="yosys">241s</td>
-                  <td title="yosys_slang">107s</td>
+                  <td title="icarus">61s</td>
+                  <td title="slang">27s</td>
+                  <td title="slang_parse">23s</td>
+                  <td title="verible">17s</td>
+                  <td title="verilator">1120s</td>
+                  <td></td>
+                  <td title="yosys">94s</td>
+                  <td title="yosys_slang">72s</td>
                </tr>
                <tr>
                   <th colspan="2">User time elapsed</th>
-                  <td title="icarus">43s</td>
-                  <td title="slang">15s</td>
-                  <td title="slang_parse">10s</td>
-                  <td title="verible">8s</td>
-                  <td title="verilator">1936s</td>
-                  <td title="yosys">204s</td>
-                  <td title="yosys_slang">70s</td>
+                  <td title="icarus">34s</td>
+                  <td title="slang">11s</td>
+                  <td title="slang_parse">9s</td>
+                  <td title="verible">9s</td>
+                  <td title="verilator">772s</td>
+                  <td></td>
+                  <td title="yosys">71s</td>
+                  <td title="yosys_slang">48s</td>
                </tr>
                <tr>
                   <th colspan="2">System time elapsed</th>
-                  <td title="icarus">42s</td>
-                  <td title="slang">52s</td>
-                  <td title="slang_parse">21s</td>
-                  <td title="verible">13s</td>
-                  <td title="verilator">492s</td>
-                  <td title="yosys">37s</td>
-                  <td title="yosys_slang">37s</td>
+                  <td title="icarus">27s</td>
+                  <td title="slang">16s</td>
+                  <td title="slang_parse">14s</td>
+                  <td title="verible">8s</td>
+                  <td title="verilator">348s</td>
+                  <td></td>
+                  <td title="yosys">23s</td>
+                  <td title="yosys_slang">24s</td>
                </tr>
                <tr>
                   <th colspan="2">Maximum ram usage</th>
-                  <td title="icarus">1329 MB</td>
-                  <td title="slang">34 MB</td>
-                  <td title="slang_parse">33 MB</td>
-                  <td title="verible">24 MB</td>
-                  <td title="verilator">279 MB</td>
-                  <td title="yosys">3506 MB</td>
-                  <td title="yosys_slang">7838 MB</td>
+                  <td title="icarus">20 MB</td>
+                  <td title="slang">36 MB</td>
+                  <td title="slang_parse">36 MB</td>
+                  <td title="verible">25 MB</td>
+                  <td title="verilator">151 MB</td>
+                  <td></td>
+                  <td title="yosys">3508 MB</td>
+                  <td title="yosys_slang">3939 MB</td>
                </tr>
                <tr>
                   <th colspan="2">Average throughput passed for inputs &gt; 1KiB</th>
-                  <td title="icarus">131 KiB/s</td>
-                  <td title="slang">637 KiB/s</td>
-                  <td title="slang_parse">1227 KiB/s</td>
-                  <td title="verible">758 KiB/s</td>
-                  <td title="verilator">20 KiB/s</td>
-                  <td title="yosys">13 KiB/s</td>
-                  <td title="yosys_slang">716 KiB/s</td>
+                  <td title="icarus">151 KiB/s</td>
+                  <td title="slang">1557 KiB/s</td>
+                  <td title="slang_parse">1866 KiB/s</td>
+                  <td title="verible">933 KiB/s</td>
+                  <td title="verilator">45 KiB/s</td>
+                  <td></td>
+                  <td title="yosys">30 KiB/s</td>
+                  <td title="yosys_slang">854 KiB/s</td>
                </tr>
             </tfoot>
          </table>
@@ -4411,9 +4840,9 @@
     <div>
         <p>
             Generated using <a href="https://github.com/chipsalliance/sv-tests">sv-tests</a>,
-            revision: <a href="https://github.com/chipsalliance/sv-tests/commit/1567334">1567334</a>,
-            build_id: <a href="https://github.com/chipsalliance/sv-tests/actions/runs/21234491461">21234491461</a>,
-            date: 2026-01-22 04:53:58.
+            revision: <a href="https://github.com/chipsalliance/sv-tests/commit/f0bfd37">f0bfd37</a>,
+            build_id: <a href="https://github.com/chipsalliance/sv-tests/actions/runs/21234398751">21234398751</a>,
+            date: 2026-01-22 09:41:35.
         </p>
     </div>
       <div class="footer">
