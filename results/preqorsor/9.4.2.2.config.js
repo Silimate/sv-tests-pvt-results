@@ -1,0 +1,1 @@
+config_loader_data['preqorsor/9.4.2.2'] = [["","event_implicit",0,"logs/preqorsor/chapter-9/9.4.2.2--event_implicit.sv.log.html","tests/chapter-9/9.4.2.2--event_implicit.sv.html"]]

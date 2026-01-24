@@ -1,0 +1,1 @@
+config_loader_data['preqorsor/9.2.2.2'] = [["","always_comb",0,"logs/preqorsor/chapter-9/9.2.2.2--always_comb.sv.log.html","tests/chapter-9/9.2.2.2--always_comb.sv.html"]]
