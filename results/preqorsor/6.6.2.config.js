@@ -1,1 +1,0 @@
-config_loader_data['preqorsor/6.6.2'] = [["","net_uwire",0,"logs/preqorsor/generated/nets/6.6.2--net_uwire.sv.log.html","tests/generated/nets/6.6.2--net_uwire.sv.html"]]

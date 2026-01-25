@@ -1,1 +1,0 @@
-config_loader_data['preqorsor/25.3'] = [["","interface",0,"logs/preqorsor/chapter-25/25.3-interface.sv.log.html","tests/chapter-25/25.3-interface.sv.html"]]
