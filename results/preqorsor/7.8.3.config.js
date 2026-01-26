@@ -1,0 +1,1 @@
+config_loader_data['preqorsor/7.8.3'] = [["","associative-arrays-class",0,"logs/preqorsor/chapter-7/arrays/associative/class.sv.log.html","tests/chapter-7/arrays/associative/class.sv.html"]]
