@@ -1,0 +1,1 @@
+config_loader_data['preqorsor/10.4.1'] = [["","blocking_assignment",1,"logs/preqorsor/chapter-10/10.4.1--blocking-assignment.sv.log.html","tests/chapter-10/10.4.1--blocking-assignment.sv.html"]]
