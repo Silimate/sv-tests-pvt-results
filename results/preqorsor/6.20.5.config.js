@@ -1,1 +1,0 @@
-config_loader_data['preqorsor/6.20.5'] = [["","specparam",0,"logs/preqorsor/chapter-6/6.20.5--specparam.sv.log.html","tests/chapter-6/6.20.5--specparam.sv.html"],["","specparam_inv",1,"logs/preqorsor/chapter-6/6.20.5--specparam_inv.sv.log.html","tests/chapter-6/6.20.5--specparam_inv.sv.html"]]
