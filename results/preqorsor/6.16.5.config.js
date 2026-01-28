@@ -1,1 +1,0 @@
-config_loader_data['preqorsor/6.16.5'] = [["","string_tolower",1,"logs/preqorsor/chapter-6/6.16.5--string_tolower.sv.log.html","tests/chapter-6/6.16.5--string_tolower.sv.html"]]
