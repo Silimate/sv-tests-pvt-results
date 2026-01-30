@@ -1,0 +1,1 @@
+config_loader_data['preqorsor/5.13'] = [["","builtin-methods-string",0,"logs/preqorsor/chapter-5/5.13-builtin-methods-strings.sv.log.html","tests/chapter-5/5.13-builtin-methods-strings.sv.html"]]
