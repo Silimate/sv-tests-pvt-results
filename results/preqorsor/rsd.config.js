@@ -1,0 +1,1 @@
+config_loader_data['preqorsor/rsd'] = [["cores","rsd",0,"logs/preqorsor/generated/rsd/rsd.sv.log.html","tests/generated/rsd/rsd.sv.html"]]
