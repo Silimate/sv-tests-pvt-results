@@ -1,1 +1,0 @@
-config_loader_data['preqorsor/8.16'] = [["","cast_task",1,"logs/preqorsor/chapter-6/6.24.2--cast_task.sv.log.html","tests/chapter-6/6.24.2--cast_task.sv.html"]]
