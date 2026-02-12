@@ -1,0 +1,1 @@
+config_loader_data['preqorsor/6.16.8'] = [["","string_substr",1,"logs/preqorsor/chapter-6/6.16.8--string_substr.sv.log.html","tests/chapter-6/6.16.8--string_substr.sv.html"]]

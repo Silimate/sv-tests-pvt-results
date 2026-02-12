@@ -1,0 +1,1 @@
+config_loader_data['preqorsor/9.6.2'] = [["","disable",1,"logs/preqorsor/chapter-9/9.6.2--disable.sv.log.html","tests/chapter-9/9.6.2--disable.sv.html"]]
