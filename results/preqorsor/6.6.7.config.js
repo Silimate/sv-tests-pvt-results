@@ -1,0 +1,1 @@
+config_loader_data['preqorsor/6.6.7'] = [["","nettype",1,"logs/preqorsor/chapter-6/6.6.7--nettype.sv.log.html","tests/chapter-6/6.6.7--nettype.sv.html"]]
