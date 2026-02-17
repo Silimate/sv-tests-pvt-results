@@ -2,9 +2,9 @@
 |   Tool    |New Failures|New Passes|Added|Removed|Not Affected|
 |-----------|-----------:|---------:|----:|------:|-----------:|
 |Verible    |           0|         0|   99|     99|        5259|
-|Slang_parse|           0|         0|   99|     99|        5350|
-|Verilator  |          13|         0|   99|     99|        5404|
-|yosys_slang|           0|         0|    0|      0|        4608|
+|Yosys      |         314|         5|   99|     99|        4753|
+|Icarus     |           0|         4|   99|     99|        5413|
 |Slang      |           0|         0|   99|     99|        5413|
-|Icarus     |           4|         0|   99|     99|        5413|
-|Yosys      |           4|       314|   99|     99|        4754|
+|Verilator  |           0|        13|   99|     99|        5404|
+|Slang_parse|           0|         0|   99|     99|        5350|
+|yosys_slang|           0|         0|    0|      0|        4608|
