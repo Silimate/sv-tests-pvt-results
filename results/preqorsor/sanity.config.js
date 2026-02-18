@@ -1,1 +1,0 @@
-config_loader_data['preqorsor/sanity'] = [["","sanity",1,"logs/preqorsor/sanity.sv.log.html","tests/sanity.sv.html"]]

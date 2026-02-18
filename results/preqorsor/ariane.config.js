@@ -1,1 +1,0 @@
-config_loader_data['preqorsor/ariane'] = [["cores","ariane",0,"logs/preqorsor/generated/ariane/ariane.sv.log.html","third_party/cores/ariane/vendor/pulp-platform/fpga-support/rtl/SyncDpRam.sv.html"]]
