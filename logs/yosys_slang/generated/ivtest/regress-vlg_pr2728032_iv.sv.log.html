@@ -6,7 +6,7 @@
   </head>
   <body>
     <header class="test-failed">
-        <a href="https://github.com/povik/yosys-slang/tree/4e1ad7c11e23cffe131aa5c478083f1d99f0c0be" target="_blank"><h1>yosys-slang</h1></a>
+        <a href="https://github.com/povik/yosys-slang/tree/4e53d772996184b07e9bfe784060f96e6cb0a267" target="_blank"><h1>yosys-slang</h1></a>
         <h2>regress-vlg_pr2728032_iv</h2>
     </header>
     <section class="property-list">
@@ -32,35 +32,109 @@
           </ul></dd>
         </div>
         <div><dt>defines</dt><dd><code></code></dd></div>
-        <div><dt>completed</dt><dd>2026-03-25 03:42:52</dd></div>
-        <div><dt>time elapsed</dt><dd>0.010s</dd></div>
-        <div><dt>ram usage</dt><dd>23072 KB</dd></div>
+        <div><dt>completed</dt><dd>2026-03-27 04:34:25</dd></div>
+        <div><dt>time elapsed</dt><dd>0.364s</dd></div>
+        <div><dt>ram usage</dt><dd>23868 KB</dd></div>
       </dl>
     </section>
     <section class="log">
       <pre></pre>
-      <pre>yosys-slang -s /__w/sv-tests/sv-tests/out/tmp/tmp7xtw_pdw/yosys-script</pre>
+      <pre>yosys-slang -s /__w/sv-tests/sv-tests/out/tmp/tmpvin0d615/yosys-script</pre>
       <pre></pre>
       <pre> /----------------------------------------------------------------------------\</pre>
       <pre> |  yosys -- Yosys Open SYnthesis Suite                                       |</pre>
       <pre> |  Copyright (C) 2012 - 2026  Claire Xenia Wolf &lt;claire@yosyshq.com&gt;         |</pre>
       <pre> |  Distributed under an ISC-like license, type &#34;license&#34; to see terms        |</pre>
       <pre> \----------------------------------------------------------------------------/</pre>
-      <pre> Yosys 0.61+97 (git sha1 1f6a13dac, g++ 13.3.0-6ubuntu2~24.04.1 -fPIC -O3)</pre>
+      <pre> Yosys 0.63 (git sha1 ebfe5b2c0, g++ 13.3.0-6ubuntu2~24.04.1 -fPIC -O3)</pre>
       <pre></pre>
-      <pre>-- Executing script file `/__w/sv-tests/sv-tests/out/tmp/tmp7xtw_pdw/yosys-script&#39; --</pre>
+      <pre>-- Executing script file `/__w/sv-tests/sv-tests/out/tmp/tmpvin0d615/yosys-script&#39; --</pre>
       <pre></pre>
       <pre>1. Executing SLANG frontend.</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:31:12: warning: non-edge sensitivity on a signal will be synthesized as @* sensitivity</pre>
+      <pre>  always @(in) change = $time;</pre>
+      <pre>           ^~</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:31:25: error: unsupported system task &#39;$time&#39;</pre>
+      <pre>  always @(in) change = $time;</pre>
+      <pre>                        ^~~~~</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:38:12: warning: non-edge sensitivity on a signal will be synthesized as @* sensitivity</pre>
+      <pre>  always @(out) begin</pre>
+      <pre>           ^~~</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:40:17: error: unsupported system task &#39;$time&#39;</pre>
+      <pre>      1&#39;b0: if ($time - top.change != 200) begin</pre>
+      <pre>                ^~~~~</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:44:17: error: unsupported system task &#39;$time&#39;</pre>
+      <pre>      1&#39;b1: if ($time - top.change != 200) begin</pre>
+      <pre>                ^~~~~</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:48:17: error: unsupported system task &#39;$time&#39;</pre>
+      <pre>      1&#39;bz: if ($time - top.change != 200) begin</pre>
+      <pre>                ^~~~~</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:64:12: warning: non-edge sensitivity on a signal will be synthesized as @* sensitivity</pre>
+      <pre>  always @(out) begin</pre>
+      <pre>           ^~~</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:66:17: error: unsupported system task &#39;$time&#39;</pre>
+      <pre>      1&#39;b0: if ($time - top.change != 100) begin</pre>
+      <pre>                ^~~~~</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:70:17: error: unsupported system task &#39;$time&#39;</pre>
+      <pre>      1&#39;b1: if ($time - top.change != 200) begin</pre>
+      <pre>                ^~~~~</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:74:17: error: unsupported system task &#39;$time&#39;</pre>
+      <pre>      1&#39;bz: if ($time - top.change != 100) begin</pre>
+      <pre>                ^~~~~</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:90:12: warning: non-edge sensitivity on a signal will be synthesized as @* sensitivity</pre>
+      <pre>  always @(out) begin</pre>
+      <pre>           ^~~</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:92:17: error: unsupported system task &#39;$time&#39;</pre>
+      <pre>      1&#39;b0: if ($time - top.change != 200) begin</pre>
+      <pre>                ^~~~~</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:96:17: error: unsupported system task &#39;$time&#39;</pre>
+      <pre>      1&#39;b1: if ($time - top.change != 100) begin</pre>
+      <pre>                ^~~~~</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:100:17: error: unsupported system task &#39;$time&#39;</pre>
+      <pre>      1&#39;bz: if ($time - top.change != 100) begin</pre>
+      <pre>                ^~~~~</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:116:12: warning: non-edge sensitivity on a signal will be synthesized as @* sensitivity</pre>
+      <pre>  always @(out) begin</pre>
+      <pre>           ^~~</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:118:17: error: unsupported system task &#39;$time&#39;</pre>
+      <pre>      1&#39;b0: if ($time - top.change != 200) begin</pre>
+      <pre>                ^~~~~</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:122:17: error: unsupported system task &#39;$time&#39;</pre>
+      <pre>      1&#39;b1: if ($time - top.change != 100) begin</pre>
+      <pre>                ^~~~~</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:126:17: error: unsupported system task &#39;$time&#39;</pre>
+      <pre>      1&#39;bz: if ($time - top.change != 300) begin</pre>
+      <pre>                ^~~~~</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:143:12: warning: non-edge sensitivity on a signal will be synthesized as @* sensitivity</pre>
+      <pre>  always @(out) begin</pre>
+      <pre>           ^~~</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:145:17: error: unsupported system task &#39;$time&#39;</pre>
+      <pre>      1&#39;b0: if ($time - top.change != delay) begin</pre>
+      <pre>                ^~~~~</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:149:17: error: unsupported system task &#39;$time&#39;</pre>
+      <pre>      1&#39;b1: if ($time - top.change != delay) begin</pre>
+      <pre>                ^~~~~</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:153:17: error: unsupported system task &#39;$time&#39;</pre>
+      <pre>      1&#39;bz: if ($time - top.change != delay) begin</pre>
+      <pre>                ^~~~~</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:212:12: warning: non-edge sensitivity on a signal will be synthesized as @* sensitivity</pre>
+      <pre>  always @(out) begin</pre>
+      <pre>           ^~~</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:214:17: error: unsupported system task &#39;$time&#39;</pre>
+      <pre>      1&#39;b0: if ($time - top.change != delayf) begin</pre>
+      <pre>                ^~~~~</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:218:17: error: unsupported system task &#39;$time&#39;</pre>
+      <pre>      1&#39;b1: if ($time - top.change != delayr) begin</pre>
+      <pre>                ^~~~~</pre>
+      <pre>../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:222:17: error: unsupported system task &#39;$time&#39;</pre>
+      <pre>      1&#39;bz: if ($time - top.change != delayd) begin</pre>
+      <pre>                ^~~~~</pre>
       <pre>Top level design units:</pre>
       <pre>    top</pre>
       <pre></pre>
-      <pre>{</pre>
-      <pre>  &#34;kind&#34;: &#34;Call&#34;,</pre>
-      <pre>  &#34;type&#34;: &#34;time&#34;,</pre>
-      <pre>  &#34;subroutine&#34;: &#34;$time&#34;</pre>
-      <pre>}</pre>
-      <pre>Source line ../../../third_party/tools/icarus/ivtest/ivltests/pr2728032.v:40:17:       1&#39;b0: if ($time - top.change != 200) begin</pre>
-      <pre>ERROR: Feature unimplemented at /__w/sv-tests/sv-tests/third_party/tools/yosys-slang/src/slang_frontend.cc:1268, see AST and code line dump above (failed condition &#34;call.getSubroutineName() == &#34;$signed&#34; || call.getSubroutineName() == &#34;$unsigned&#34;&#34;)</pre>
+      <pre></pre>
+      <pre>Build failed: 19 errors, 7 warnings</pre>
+      <pre>ERROR: Compilation failed</pre>
       <pre></pre>
     </section>
   </body>

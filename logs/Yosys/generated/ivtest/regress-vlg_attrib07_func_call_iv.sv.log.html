@@ -6,7 +6,7 @@
   </head>
   <body>
     <header class="test-passed">
-        <a href="https://github.com/YosysHQ/yosys/tree/1f6a13dac780673fb340322024ea32f24f297561" target="_blank"><h1>yosys</h1></a>
+        <a href="https://github.com/YosysHQ/yosys/tree/ebfe5b2c0687fce2b4e82a2f24a67ab1e1420a33" target="_blank"><h1>yosys</h1></a>
         <h2>regress-vlg_attrib07_func_call_iv</h2>
     </header>
     <section class="property-list">
@@ -32,15 +32,15 @@
           </ul></dd>
         </div>
         <div><dt>defines</dt><dd><code></code></dd></div>
-        <div><dt>completed</dt><dd>2026-03-25 03:42:16</dd></div>
-        <div><dt>time elapsed</dt><dd>0.016s</dd></div>
-        <div><dt>ram usage</dt><dd>22220 KB</dd></div>
+        <div><dt>completed</dt><dd>2026-03-27 04:28:05</dd></div>
+        <div><dt>time elapsed</dt><dd>0.634s</dd></div>
+        <div><dt>ram usage</dt><dd>23308 KB</dd></div>
       </dl>
     </section>
     <section class="log">
       <pre></pre>
-      <pre>sh /__w/sv-tests/sv-tests/out/tmp/tmp5y5y69cs/run.sh</pre>
-      <pre>+ cat /__w/sv-tests/sv-tests/out/tmp/tmp5y5y69cs/scr.ys</pre>
+      <pre>sh /__w/sv-tests/sv-tests/out/tmp/tmpi7n9c_up/run.sh</pre>
+      <pre>+ cat /__w/sv-tests/sv-tests/out/tmp/tmpi7n9c_up/scr.ys</pre>
       <pre>read_verilog  -sv -nodisplay  -I /__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest -I /__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests  <a href="../../../../third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v.html" target="file-frame">third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v</a></pre>
       <pre>hierarchy -auto-top</pre>
       <pre>proc</pre>
@@ -51,9 +51,9 @@
       <pre>stat</pre>
       <pre>check</pre>
       <pre>sim -assert</pre>
-      <pre>+ yosys -Q -T /__w/sv-tests/sv-tests/out/tmp/tmp5y5y69cs/scr.ys</pre>
+      <pre>+ yosys -Q -T /__w/sv-tests/sv-tests/out/tmp/tmpi7n9c_up/scr.ys</pre>
       <pre></pre>
-      <pre>-- Executing script file `/__w/sv-tests/sv-tests/out/tmp/tmp5y5y69cs/scr.ys&#39; --</pre>
+      <pre>-- Executing script file `/__w/sv-tests/sv-tests/out/tmp/tmpi7n9c_up/scr.ys&#39; --</pre>
       <pre></pre>
       <pre>1. Executing Verilog-2005 frontend: <a href="../../../../third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v.html" target="file-frame">third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v</a></pre>
       <pre>Parsing SystemVerilog input from `<a href="../../../../third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v.html" target="file-frame">third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v</a>&#39; to AST representation.</pre>
@@ -108,12 +108,6 @@
       <pre>3.9. Executing PROC_DFF pass (convert process syncs to FFs).</pre>
       <pre>Creating register for signal `\foo.\out&#39; using process `\foo.$proc$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:15$2&#39;.</pre>
       <pre>  created $dff cell `$procdff$24&#39; with positive edge clock.</pre>
-      <pre>Creating register for signal `\foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.$result&#39; using process `\foo.$proc$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:15$2&#39;.</pre>
-      <pre>  created $dff cell `$procdff$25&#39; with positive edge clock.</pre>
-      <pre>Creating register for signal `\foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.inp_a&#39; using process `\foo.$proc$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:15$2&#39;.</pre>
-      <pre>  created $dff cell `$procdff$26&#39; with positive edge clock.</pre>
-      <pre>Creating register for signal `\foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.inp_b&#39; using process `\foo.$proc$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:15$2&#39;.</pre>
-      <pre>  created $dff cell `$procdff$27&#39; with positive edge clock.</pre>
       <pre></pre>
       <pre>3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).</pre>
       <pre></pre>
@@ -128,8 +122,32 @@
       <pre></pre>
       <pre>4. Executing CHECK pass (checking for obvious problems).</pre>
       <pre>Checking module foo...</pre>
-      <pre>Found and reported 0 problems.</pre>
-      <pre>Removed 6 unused cells and 18 unused wires.</pre>
+      <pre>Warning: Wire foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.inp_b [7] is used but has no driver.</pre>
+      <pre>Warning: Wire foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.inp_b [6] is used but has no driver.</pre>
+      <pre>Warning: Wire foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.inp_b [5] is used but has no driver.</pre>
+      <pre>Warning: Wire foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.inp_b [4] is used but has no driver.</pre>
+      <pre>Warning: Wire foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.inp_b [3] is used but has no driver.</pre>
+      <pre>Warning: Wire foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.inp_b [2] is used but has no driver.</pre>
+      <pre>Warning: Wire foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.inp_b [1] is used but has no driver.</pre>
+      <pre>Warning: Wire foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.inp_b [0] is used but has no driver.</pre>
+      <pre>Warning: Wire foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.inp_a [7] is used but has no driver.</pre>
+      <pre>Warning: Wire foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.inp_a [6] is used but has no driver.</pre>
+      <pre>Warning: Wire foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.inp_a [5] is used but has no driver.</pre>
+      <pre>Warning: Wire foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.inp_a [4] is used but has no driver.</pre>
+      <pre>Warning: Wire foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.inp_a [3] is used but has no driver.</pre>
+      <pre>Warning: Wire foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.inp_a [2] is used but has no driver.</pre>
+      <pre>Warning: Wire foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.inp_a [1] is used but has no driver.</pre>
+      <pre>Warning: Wire foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.inp_a [0] is used but has no driver.</pre>
+      <pre>Warning: Wire foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.$result [7] is used but has no driver.</pre>
+      <pre>Warning: Wire foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.$result [6] is used but has no driver.</pre>
+      <pre>Warning: Wire foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.$result [5] is used but has no driver.</pre>
+      <pre>Warning: Wire foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.$result [4] is used but has no driver.</pre>
+      <pre>Warning: Wire foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.$result [3] is used but has no driver.</pre>
+      <pre>Warning: Wire foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.$result [2] is used but has no driver.</pre>
+      <pre>Warning: Wire foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.$result [1] is used but has no driver.</pre>
+      <pre>Warning: Wire foo.\do_add$func$/__w/sv-tests/sv-tests/third_party/tools/icarus/ivtest/ivltests/attrib07_func_call.v:17$1.$result [0] is used but has no driver.</pre>
+      <pre>Found and reported 24 problems.</pre>
+      <pre>Removed 3 unused cells and 18 unused wires.</pre>
       <pre></pre>
       <pre>5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).</pre>
       <pre></pre>

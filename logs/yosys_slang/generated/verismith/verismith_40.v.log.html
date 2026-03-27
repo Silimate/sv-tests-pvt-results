@@ -6,7 +6,7 @@
   </head>
   <body>
     <header class="test-passed">
-        <a href="https://github.com/povik/yosys-slang/tree/4e1ad7c11e23cffe131aa5c478083f1d99f0c0be" target="_blank"><h1>yosys-slang</h1></a>
+        <a href="https://github.com/povik/yosys-slang/tree/4e53d772996184b07e9bfe784060f96e6cb0a267" target="_blank"><h1>yosys-slang</h1></a>
         <h2>verismith_40</h2>
     </header>
     <section class="property-list">
@@ -31,66 +31,193 @@
           </ul></dd>
         </div>
         <div><dt>defines</dt><dd><code></code></dd></div>
-        <div><dt>completed</dt><dd>2026-03-25 03:51:37</dd></div>
-        <div><dt>time elapsed</dt><dd>0.208s</dd></div>
-        <div><dt>ram usage</dt><dd>34480 KB</dd></div>
+        <div><dt>completed</dt><dd>2026-03-27 04:45:43</dd></div>
+        <div><dt>time elapsed</dt><dd>8.651s</dd></div>
+        <div><dt>ram usage</dt><dd>37628 KB</dd></div>
       </dl>
     </section>
     <section class="log">
       <pre></pre>
-      <pre>sh /__w/sv-tests/sv-tests/out/tmp/tmptjzh4shx/scr.sh</pre>
+      <pre>sh /__w/sv-tests/sv-tests/out/tmp/tmpq8bcrynn/scr.sh</pre>
       <pre>+ export PATH=/__w/sv-tests/sv-tests:/__w/sv-tests/sv-tests/out/runners/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin</pre>
-      <pre>+ cat /__w/sv-tests/sv-tests/out/tmp/tmptjzh4shx/yosys-script</pre>
+      <pre>+ cat /__w/sv-tests/sv-tests/out/tmp/tmpq8bcrynn/yosys-script</pre>
       <pre># Verismith test case: eveluation will be done using ./verismith equiv</pre>
       <pre>plugin -i slang</pre>
       <pre>read_slang -DSYNTHESIS --ignore-timing --ignore-initial --ignore-assertions --single-unit --timescale=1ns/1ns -I /__w/sv-tests/sv-tests/tests/generated/verismith -Wno-error=index-oob -Wno-error=range-oob -Wno-error=range-width-oob <a href="../../../../tests/generated/verismith/verismith_40.v.html" target="file-frame">tests/generated/verismith/verismith_40.v</a></pre>
       <pre>synth;</pre>
       <pre>write_verilog -noattr syn.v</pre>
-      <pre>+ yosys-slang -s /__w/sv-tests/sv-tests/out/tmp/tmptjzh4shx/yosys-script</pre>
+      <pre>+ yosys-slang -s /__w/sv-tests/sv-tests/out/tmp/tmpq8bcrynn/yosys-script</pre>
       <pre></pre>
       <pre> /----------------------------------------------------------------------------\</pre>
       <pre> |  yosys -- Yosys Open SYnthesis Suite                                       |</pre>
       <pre> |  Copyright (C) 2012 - 2026  Claire Xenia Wolf &lt;claire@yosyshq.com&gt;         |</pre>
       <pre> |  Distributed under an ISC-like license, type &#34;license&#34; to see terms        |</pre>
       <pre> \----------------------------------------------------------------------------/</pre>
-      <pre> Yosys 0.61+97 (git sha1 1f6a13dac, g++ 13.3.0-6ubuntu2~24.04.1 -fPIC -O3)</pre>
+      <pre> Yosys 0.63 (git sha1 ebfe5b2c0, g++ 13.3.0-6ubuntu2~24.04.1 -fPIC -O3)</pre>
       <pre></pre>
-      <pre>-- Executing script file `/__w/sv-tests/sv-tests/out/tmp/tmptjzh4shx/yosys-script&#39; --</pre>
+      <pre>-- Executing script file `/__w/sv-tests/sv-tests/out/tmp/tmpq8bcrynn/yosys-script&#39; --</pre>
       <pre></pre>
       <pre>1. Executing SLANG frontend.</pre>
+      <pre>../../../tests/generated/verismith/verismith_40.v:8:156: warning: shift count of &#39;8&#39;d163&#39; overflows 8-bit operand [-Wshift-count-overflow]</pre>
+      <pre>#(parameter param180 = (({((-(8&#39;hb8)) &amp;&amp; ((8&#39;hb2) ? (8&#39;hb7) : (8&#39;hb0)))} &gt;&gt;&gt; {(((7&#39;h40) ? (8&#39;hb8) : (8&#39;hbe)) &lt; ((8&#39;ha6) &gt;= (8&#39;ha5)))}) ? (^((((8&#39;ha6) &lt;&lt;&lt; (8&#39;ha3)) &lt; ((8&#39;hbb) ? (8&#39;hb2) : (8&#39;ha3))) == (&amp;((7&#39;h41) &gt; (8&#39;h9f))))) : (^~(^({(8&#39;hac)} &gt; ((7&#39;h44) &gt;&gt; (8&#39;h9f)))))))</pre>
+      <pre>                                                                                                                                                           ^~~~~</pre>
+      <pre>../../../tests/generated/verismith/verismith_40.v:283:186: warning: shift count of &#39;8&#39;d172&#39; overflows 1-bit operand [-Wshift-count-overflow]</pre>
+      <pre>#(parameter param136 = (({(7&#39;h40)} ? (~|(((8&#39;hb0) &gt; (8&#39;ha8)) ? (^(8&#39;hb4)) : {(8&#39;ha0)})) : (&amp;(8&#39;hac))) == (((((8&#39;ha5) &amp; (8&#39;ha4)) &lt;= ((8&#39;h9d) || (8&#39;ha2))) ? (|(8&#39;hab)) : ((~|(7&#39;h40)) &lt;&lt; ((8&#39;ha4) ? (8&#39;hac) : (8&#39;h9e)))) ? ({(~|(8&#39;ha1))} &lt; ((!(8&#39;ha9)) &lt;&lt;&lt; (8&#39;hb1))) : (+(((7&#39;h44) - (8&#39;hac)) &amp;&amp; ((8&#39;hb4) &gt;&gt; (8&#39;ha8)))))))</pre>
+      <pre>                                                                                                                                                                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~</pre>
+      <pre>../../../tests/generated/verismith/verismith_40.v:283:303: warning: shift count of &#39;8&#39;d168&#39; overflows 8-bit operand [-Wshift-count-overflow]</pre>
+      <pre>#(parameter param136 = (({(7&#39;h40)} ? (~|(((8&#39;hb0) &gt; (8&#39;ha8)) ? (^(8&#39;hb4)) : {(8&#39;ha0)})) : (&amp;(8&#39;hac))) == (((((8&#39;ha5) &amp; (8&#39;ha4)) &lt;= ((8&#39;h9d) || (8&#39;ha2))) ? (|(8&#39;hab)) : ((~|(7&#39;h40)) &lt;&lt; ((8&#39;ha4) ? (8&#39;hac) : (8&#39;h9e)))) ? ({(~|(8&#39;ha1))} &lt; ((!(8&#39;ha9)) &lt;&lt;&lt; (8&#39;hb1))) : (+(((7&#39;h44) - (8&#39;hac)) &amp;&amp; ((8&#39;hb4) &gt;&gt; (8&#39;ha8)))))))</pre>
+      <pre>                                                                                                                                                                                                                                                                                                              ^~~~~</pre>
+      <pre>../../../tests/generated/verismith/verismith_40.v:507:58: warning: shift count of &#39;-8&#39;sd83&#39; is negative [-Wshift-count-negative]</pre>
+      <pre>                  reg94 : wire91) | $signed(wire83)) &gt;&gt;&gt; $signed((8&#39;had)))} | (($signed($unsigned((8&#39;hbc))) &lt;&lt; {$unsigned(reg108),</pre>
+      <pre>                                                         ^~~~~~~~~~~~~~~~</pre>
+      <pre>../../../tests/generated/verismith/verismith_40.v:760:67: warning: shift count of &#39;8&#39;d159&#39; overflows 8-bit operand [-Wshift-count-overflow]</pre>
+      <pre>#(parameter param31 = {(~&amp;(~&amp;({(8&#39;hb4), (8&#39;ha5)} &amp;&amp; ((8&#39;ha6) &gt;&gt;&gt; (8&#39;h9f))))), ((((&amp;(8&#39;hb0)) ? (8&#39;h9e) : ((7&#39;h44) ? (8&#39;haa) : (8&#39;ha4))) &amp;&amp; (((8&#39;ha9) &amp;&amp; (8&#39;had)) ? ((8&#39;hac) &lt; (8&#39;ha3)) : ((8&#39;hbd) ^ (8&#39;hbc)))) ? (~^{((8&#39;hab) ? (8&#39;hb5) : (7&#39;h42))}) : (((^~(8&#39;hb8)) || ((8&#39;hbd) + (8&#39;hba))) ? (((8&#39;hab) ? (8&#39;ha4) : (8&#39;hae)) ? ((8&#39;had) ? (8&#39;hac) : (8&#39;hb5)) : (8&#39;ha3)) : (((8&#39;hb3) ? (8&#39;h9e) : (8&#39;hb8)) == ((8&#39;ha1) == (8&#39;hb4)))))})</pre>
+      <pre>                                                                  ^~~~~</pre>
       <pre>Top level design units:</pre>
       <pre>    top</pre>
       <pre></pre>
-      <pre>Build succeeded: 0 errors, 0 warnings</pre>
       <pre></pre>
-      <pre>1.1. Executing UNDRIVEN pass. (resolve undriven signals)</pre>
+      <pre>Build succeeded: 0 errors, 5 warnings</pre>
       <pre></pre>
-      <pre>1.2. Executing PROC_CLEAN pass (remove empty switches from decision trees).</pre>
-      <pre>Removing empty process `top.$5&#39;.</pre>
-      <pre>Cleaned up 0 empty switches.</pre>
+      <pre>1.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).</pre>
+      <pre>Removing empty process `top.$825&#39;.</pre>
+      <pre>Removing empty process `top.$803&#39;.</pre>
+      <pre>Found and cleaned up 1 empty switch in `\top.$658&#39;.</pre>
+      <pre>Removing empty process `top.$605&#39;.</pre>
+      <pre>Found and cleaned up 1 empty switch in `\top.$381&#39;.</pre>
+      <pre>Found and cleaned up 1 empty switch in `\top.$241&#39;.</pre>
+      <pre>Found and cleaned up 1 empty switch in `\top.$107&#39;.</pre>
+      <pre>Removing empty process `top.$50&#39;.</pre>
+      <pre>Cleaned up 4 empty switches.</pre>
       <pre></pre>
-      <pre>1.3. Executing TRIBUF pass.</pre>
+      <pre>1.2. Executing TRIBUF pass.</pre>
       <pre></pre>
-      <pre>1.4. Executing PROC_RMDEAD pass (remove dead branches from decision trees).</pre>
+      <pre>1.3. Executing PROC_RMDEAD pass (remove dead branches from decision trees).</pre>
+      <pre>Marked 9 switch rules as full_case in process $381 in module top.</pre>
+      <pre>Marked 7 switch rules as full_case in process $241 in module top.</pre>
+      <pre>Marked 7 switch rules as full_case in process $107 in module top.</pre>
+      <pre>Marked 7 switch rules as full_case in process $658 in module top.</pre>
       <pre>Removed a total of 0 dead cases.</pre>
       <pre></pre>
-      <pre>1.5. Executing PROC_PRUNE pass (remove redundant assignments in processes).</pre>
-      <pre>Removed 0 redundant assignments.</pre>
+      <pre>1.4. Executing PROC_PRUNE pass (remove redundant assignments in processes).</pre>
+      <pre>Removed 48 redundant assignments.</pre>
       <pre>Promoted 0 assignments to connections.</pre>
       <pre></pre>
-      <pre>1.6. Executing PROC_INIT pass (extract init attributes).</pre>
+      <pre>1.5. Executing PROC_INIT pass (extract init attributes).</pre>
       <pre></pre>
-      <pre>1.7. Executing PROC_ROM pass (convert switches to ROMs).</pre>
+      <pre>1.6. Executing PROC_ROM pass (convert switches to ROMs).</pre>
       <pre>Converted 0 switches.</pre>
+      <pre>&lt;suppressed ~30 debug messages&gt;</pre>
       <pre></pre>
-      <pre>1.8. Executing PROC_MUX pass (convert decision trees to multiplexers).</pre>
+      <pre>1.7. Executing PROC_MUX pass (convert decision trees to multiplexers).</pre>
+      <pre>Creating decoders for process `\top.$381&#39;.</pre>
+      <pre>     1/31: $modinst173.modinst116.reg107$577</pre>
+      <pre>     2/31: $modinst173.modinst116.reg108$576</pre>
+      <pre>     3/31: $modinst173.modinst116.reg109$575</pre>
+      <pre>     4/31: $modinst173.modinst116.reg110$574</pre>
+      <pre>     5/31: $modinst173.modinst116.reg111$573</pre>
+      <pre>     6/31: $modinst173.modinst116.reg102$494</pre>
+      <pre>     7/31: $modinst173.modinst116.reg103$493</pre>
+      <pre>     8/31: $modinst173.modinst116.reg104$492</pre>
+      <pre>     9/31: $modinst173.modinst116.reg105$491</pre>
+      <pre>    10/31: $modinst173.modinst116.reg106$490</pre>
+      <pre>    11/31: $modinst173.modinst116.reg97$450</pre>
+      <pre>    12/31: $modinst173.modinst116.reg98$449</pre>
+      <pre>    13/31: $modinst173.modinst116.reg99$448</pre>
+      <pre>    14/31: $modinst173.modinst116.reg100$447</pre>
+      <pre>    15/31: $modinst173.modinst116.reg101$446</pre>
+      <pre>    16/31: $modinst173.modinst116.reg95$506</pre>
+      <pre>    17/31: $modinst173.modinst116.reg96$505</pre>
+      <pre>    18/31: $modinst173.modinst116.reg97$504</pre>
+      <pre>    19/31: $modinst173.modinst116.reg98$503</pre>
+      <pre>    20/31: $modinst173.modinst116.reg99$502</pre>
+      <pre>    21/31: $modinst173.modinst116.reg100$501</pre>
+      <pre>    22/31: $modinst173.modinst116.reg101$500</pre>
+      <pre>    23/31: $modinst173.modinst116.reg95$417</pre>
+      <pre>    24/31: $modinst173.modinst116.reg96$416</pre>
+      <pre>    25/31: $modinst173.modinst116.reg97$415</pre>
+      <pre>    26/31: $modinst173.modinst116.reg98$414</pre>
+      <pre>    27/31: $modinst173.modinst116.reg102$499</pre>
+      <pre>    28/31: $modinst173.modinst116.reg103$498</pre>
+      <pre>    29/31: $modinst173.modinst116.reg104$497</pre>
+      <pre>    30/31: $modinst173.modinst116.reg105$496</pre>
+      <pre>    31/31: $modinst173.modinst116.reg106$495</pre>
+      <pre>Creating decoders for process `\top.$241&#39;.</pre>
+      <pre>     1/17: $modinst173.modinst80.reg67$335</pre>
+      <pre>     2/17: $modinst173.modinst80.reg68$334</pre>
+      <pre>     3/17: $modinst173.modinst80.reg69$333</pre>
+      <pre>     4/17: $modinst173.modinst80.reg70$332</pre>
+      <pre>     5/17: $modinst173.modinst80.reg71$331</pre>
+      <pre>     6/17: $modinst173.modinst80.reg67$340</pre>
+      <pre>     7/17: $modinst173.modinst80.reg68$339</pre>
+      <pre>     8/17: $modinst173.modinst80.reg69$338</pre>
+      <pre>     9/17: $modinst173.modinst80.reg70$337</pre>
+      <pre>    10/17: $modinst173.modinst80.reg71$336</pre>
+      <pre>    11/17: $modinst173.modinst80.reg60$294</pre>
+      <pre>    12/17: $modinst173.modinst80.reg61$293</pre>
+      <pre>    13/17: $modinst173.modinst80.reg62$276</pre>
+      <pre>    14/17: $modinst173.modinst80.reg63$275</pre>
+      <pre>    15/17: $modinst173.modinst80.reg62$292</pre>
+      <pre>    16/17: $modinst173.modinst80.reg63$291</pre>
+      <pre>    17/17: $modinst173.modinst80.reg64$290</pre>
+      <pre>Creating decoders for process `\top.$107&#39;.</pre>
+      <pre>     1/22: $modinst173.modinst80.reg52$229</pre>
+      <pre>     2/22: $modinst173.modinst80.reg53$228</pre>
+      <pre>     3/22: $modinst173.modinst80.reg54$227</pre>
+      <pre>     4/22: $modinst173.modinst80.reg55$226</pre>
+      <pre>     5/22: $modinst173.modinst80.reg49$239</pre>
+      <pre>     6/22: $modinst173.modinst80.reg50$238</pre>
+      <pre>     7/22: $modinst173.modinst80.reg51$237</pre>
+      <pre>     8/22: $modinst173.modinst80.reg52$236</pre>
+      <pre>     9/22: $modinst173.modinst80.reg53$235</pre>
+      <pre>    10/22: $modinst173.modinst80.reg54$234</pre>
+      <pre>    11/22: $modinst173.modinst80.reg55$233</pre>
+      <pre>    12/22: $modinst173.modinst80.reg54$172</pre>
+      <pre>    13/22: $modinst173.modinst80.reg55$171</pre>
+      <pre>    14/22: $modinst173.modinst80.reg56$170</pre>
+      <pre>    15/22: $modinst173.modinst80.reg49$139</pre>
+      <pre>    16/22: $modinst173.modinst80.reg50$138</pre>
+      <pre>    17/22: $modinst173.modinst80.reg51$137</pre>
+      <pre>    18/22: $modinst173.modinst80.reg52$136</pre>
+      <pre>    19/22: $modinst173.modinst80.reg53$135</pre>
+      <pre>    20/22: $modinst173.modinst80.reg56$232</pre>
+      <pre>    21/22: $modinst173.modinst80.reg57$231</pre>
+      <pre>    22/22: $modinst173.modinst80.reg58$230</pre>
+      <pre>Creating decoders for process `\top.$658&#39;.</pre>
+      <pre>     1/19: $modinst173.reg146$748</pre>
+      <pre>     2/19: $modinst173.reg147$747</pre>
+      <pre>     3/19: $modinst173.reg144$761</pre>
+      <pre>     4/19: $modinst173.reg145$760</pre>
+      <pre>     5/19: $modinst173.reg146$759</pre>
+      <pre>     6/19: $modinst173.reg147$758</pre>
+      <pre>     7/19: $modinst173.reg148$757</pre>
+      <pre>     8/19: $modinst173.reg151$732</pre>
+      <pre>     9/19: $modinst173.reg152$731</pre>
+      <pre>    10/19: $modinst173.reg153$730</pre>
+      <pre>    11/19: $modinst173.reg147$706</pre>
+      <pre>    12/19: $modinst173.reg148$705</pre>
+      <pre>    13/19: $modinst173.reg149$704</pre>
+      <pre>    14/19: $modinst173.reg150$703</pre>
+      <pre>    15/19: $modinst173.reg149$756</pre>
+      <pre>    16/19: $modinst173.reg150$755</pre>
+      <pre>    17/19: $modinst173.reg151$754</pre>
+      <pre>    18/19: $modinst173.reg152$753</pre>
+      <pre>    19/19: $modinst173.reg153$752</pre>
       <pre></pre>
-      <pre>1.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).</pre>
-      <pre>Cleaned up 0 empty switches.</pre>
+      <pre>1.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).</pre>
+      <pre>Found and cleaned up 9 empty switches in `\top.$381&#39;.</pre>
+      <pre>Removing empty process `top.$381&#39;.</pre>
+      <pre>Found and cleaned up 7 empty switches in `\top.$241&#39;.</pre>
+      <pre>Removing empty process `top.$241&#39;.</pre>
+      <pre>Found and cleaned up 7 empty switches in `\top.$107&#39;.</pre>
+      <pre>Removing empty process `top.$107&#39;.</pre>
+      <pre>Found and cleaned up 7 empty switches in `\top.$658&#39;.</pre>
+      <pre>Removing empty process `top.$658&#39;.</pre>
+      <pre>Cleaned up 30 empty switches.</pre>
       <pre></pre>
-      <pre>1.10. Executing OPT_EXPR pass (perform const folding).</pre>
+      <pre>1.9. Executing OPT_EXPR pass (perform const folding).</pre>
       <pre>Optimizing module top.</pre>
-      <pre>&lt;suppressed ~1 debug messages&gt;</pre>
+      <pre>&lt;suppressed ~67 debug messages&gt;</pre>
       <pre></pre>
       <pre>2. Executing SYNTH pass.</pre>
       <pre></pre>
@@ -139,12 +266,11 @@
       <pre></pre>
       <pre>2.3. Executing OPT_EXPR pass (perform const folding).</pre>
       <pre>Optimizing module top.</pre>
-      <pre>&lt;suppressed ~1 debug messages&gt;</pre>
       <pre></pre>
       <pre>2.4. Executing OPT_CLEAN pass (remove unused cells and wires).</pre>
       <pre>Finding unused cells or wires in module \top..</pre>
-      <pre>Removed 0 unused cells and 5 unused wires.</pre>
-      <pre>&lt;suppressed ~1 debug messages&gt;</pre>
+      <pre>Removed 640 unused cells and 936 unused wires.</pre>
+      <pre>&lt;suppressed ~833 debug messages&gt;</pre>
       <pre></pre>
       <pre>2.5. Executing CHECK pass (checking for obvious problems).</pre>
       <pre>Checking module top...</pre>
@@ -154,46 +280,61 @@
       <pre></pre>
       <pre>2.6.1. Executing OPT_EXPR pass (perform const folding).</pre>
       <pre>Optimizing module top.</pre>
+      <pre>&lt;suppressed ~21 debug messages&gt;</pre>
       <pre></pre>
       <pre>2.6.2. Executing OPT_MERGE pass (detect identical cells).</pre>
       <pre>Finding identical cells in module `\top&#39;.</pre>
-      <pre>Computing hashes of 14 cells of `\top&#39;.</pre>
+      <pre>Computing hashes of 122 cells of `\top&#39;.</pre>
       <pre>Finding duplicate cells in `\top&#39;.</pre>
-      <pre>Removed a total of 0 cells.</pre>
+      <pre>Computing hashes of 118 cells of `\top&#39;.</pre>
+      <pre>Finding duplicate cells in `\top&#39;.</pre>
+      <pre>&lt;suppressed ~12 debug messages&gt;</pre>
+      <pre>Removed a total of 4 cells.</pre>
       <pre></pre>
       <pre>2.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).</pre>
       <pre>Running muxtree optimizer on module \top..</pre>
       <pre>  Creating internal representation of mux trees.</pre>
-      <pre>  No muxes found in this module.</pre>
-      <pre>Removed 0 multiplexer ports.</pre>
+      <pre>  Evaluating internal representation of mux trees.</pre>
+      <pre>  Analyzing evaluation results.</pre>
+      <pre>    dead port 2/2 on $mux $procmux$368.</pre>
+      <pre>    dead port 1/2 on $mux $procmux$443.</pre>
+      <pre>    dead port 1/2 on $mux $683.</pre>
+      <pre>    dead port 2/2 on $mux $683.</pre>
+      <pre>Removed 4 multiplexer ports.</pre>
+      <pre>&lt;suppressed ~58 debug messages&gt;</pre>
       <pre></pre>
       <pre>2.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).</pre>
       <pre>  Optimizing cells in module \top.</pre>
-      <pre>Performed a total of 0 changes.</pre>
+      <pre>    New input vector for $reduce_or cell $386: { \modinst173.modinst116.wire84 [13:10] \modinst173.modinst33.reg25 }</pre>
+      <pre>    New input vector for $reduce_or cell $744: \modinst173.modinst138.reg129</pre>
+      <pre>  Optimizing cells in module \top.</pre>
+      <pre>Performed a total of 2 changes.</pre>
       <pre></pre>
       <pre>2.6.5. Executing OPT_MERGE pass (detect identical cells).</pre>
       <pre>Finding identical cells in module `\top&#39;.</pre>
-      <pre>Computing hashes of 14 cells of `\top&#39;.</pre>
+      <pre>Computing hashes of 115 cells of `\top&#39;.</pre>
       <pre>Finding duplicate cells in `\top&#39;.</pre>
       <pre>Removed a total of 0 cells.</pre>
       <pre></pre>
       <pre>2.6.6. Executing OPT_DFF pass (perform DFF optimizations).</pre>
-      <pre>Setting constant 0-bit at position 1 on $driver$reg7 ($dff) from module top.</pre>
-      <pre>Setting constant 0-bit at position 2 on $driver$reg7 ($dff) from module top.</pre>
-      <pre>Setting constant 0-bit at position 3 on $driver$reg7 ($dff) from module top.</pre>
-      <pre>Setting constant 0-bit at position 4 on $driver$reg7 ($dff) from module top.</pre>
-      <pre>Setting constant 0-bit at position 5 on $driver$reg7 ($dff) from module top.</pre>
-      <pre>Setting constant 0-bit at position 6 on $driver$reg7 ($dff) from module top.</pre>
-      <pre>Setting constant 0-bit at position 7 on $driver$reg7 ($dff) from module top.</pre>
-      <pre>Setting constant 0-bit at position 8 on $driver$reg7 ($dff) from module top.</pre>
-      <pre>Setting constant 0-bit at position 9 on $driver$reg7 ($dff) from module top.</pre>
-      <pre>Setting constant 0-bit at position 10 on $driver$reg7 ($dff) from module top.</pre>
-      <pre>Setting constant 0-bit at position 11 on $driver$reg7 ($dff) from module top.</pre>
-      <pre>Setting constant 0-bit at position 12 on $driver$reg7 ($dff) from module top.</pre>
-      <pre>Setting constant 0-bit at position 13 on $driver$reg7 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 0 on $driver$modinst173.modinst116.reg93 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 1 on $driver$modinst173.modinst33.reg25 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 2 on $driver$modinst173.modinst33.reg25 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 3 on $driver$modinst173.modinst33.reg25 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 4 on $driver$modinst173.modinst33.reg25 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 5 on $driver$modinst173.modinst33.reg25 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 6 on $driver$modinst173.modinst33.reg25 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 7 on $driver$modinst173.modinst33.reg25 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 8 on $driver$modinst173.modinst33.reg25 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 1 on $driver$modinst173.modinst138.reg129 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 2 on $driver$modinst173.modinst138.reg129 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 3 on $driver$modinst173.modinst138.reg129 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 4 on $driver$modinst173.modinst138.reg129 ($dff) from module top.</pre>
       <pre></pre>
       <pre>2.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).</pre>
       <pre>Finding unused cells or wires in module \top..</pre>
+      <pre>Removed 2 unused cells and 26 unused wires.</pre>
+      <pre>&lt;suppressed ~4 debug messages&gt;</pre>
       <pre></pre>
       <pre>2.6.8. Executing OPT_EXPR pass (perform const folding).</pre>
       <pre>Optimizing module top.</pre>
@@ -204,28 +345,81 @@
       <pre>2.6.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).</pre>
       <pre>Running muxtree optimizer on module \top..</pre>
       <pre>  Creating internal representation of mux trees.</pre>
-      <pre>  No muxes found in this module.</pre>
+      <pre>  Evaluating internal representation of mux trees.</pre>
+      <pre>  Analyzing evaluation results.</pre>
       <pre>Removed 0 multiplexer ports.</pre>
+      <pre>&lt;suppressed ~56 debug messages&gt;</pre>
       <pre></pre>
       <pre>2.6.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).</pre>
       <pre>  Optimizing cells in module \top.</pre>
-      <pre>Performed a total of 0 changes.</pre>
+      <pre>    New input vector for $reduce_or cell $386: { \modinst173.modinst116.wire84 [13:10] \modinst173.modinst33.reg25 [0] }</pre>
+      <pre>  Optimizing cells in module \top.</pre>
+      <pre>Performed a total of 1 changes.</pre>
       <pre></pre>
       <pre>2.6.12. Executing OPT_MERGE pass (detect identical cells).</pre>
       <pre>Finding identical cells in module `\top&#39;.</pre>
-      <pre>Computing hashes of 12 cells of `\top&#39;.</pre>
+      <pre>Computing hashes of 110 cells of `\top&#39;.</pre>
       <pre>Finding duplicate cells in `\top&#39;.</pre>
       <pre>Removed a total of 0 cells.</pre>
       <pre></pre>
       <pre>2.6.13. Executing OPT_DFF pass (perform DFF optimizations).</pre>
+      <pre>Setting constant 0-bit at position 1 on $auto$ff.cc:337:slice$475 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 2 on $auto$ff.cc:337:slice$475 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 3 on $auto$ff.cc:337:slice$475 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 4 on $auto$ff.cc:337:slice$475 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 5 on $auto$ff.cc:337:slice$475 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 6 on $auto$ff.cc:337:slice$475 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 7 on $auto$ff.cc:337:slice$475 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 8 on $auto$ff.cc:337:slice$475 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 9 on $auto$ff.cc:337:slice$475 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 10 on $auto$ff.cc:337:slice$475 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 11 on $auto$ff.cc:337:slice$475 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 12 on $auto$ff.cc:337:slice$475 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 13 on $auto$ff.cc:337:slice$475 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 14 on $auto$ff.cc:337:slice$475 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 15 on $auto$ff.cc:337:slice$475 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 16 on $auto$ff.cc:337:slice$475 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 17 on $auto$ff.cc:337:slice$475 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 18 on $auto$ff.cc:337:slice$475 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 19 on $auto$ff.cc:337:slice$475 ($dff) from module top.</pre>
       <pre></pre>
       <pre>2.6.14. Executing OPT_CLEAN pass (remove unused cells and wires).</pre>
       <pre>Finding unused cells or wires in module \top..</pre>
+      <pre>Removed 0 unused cells and 2 unused wires.</pre>
+      <pre>&lt;suppressed ~1 debug messages&gt;</pre>
       <pre></pre>
       <pre>2.6.15. Executing OPT_EXPR pass (perform const folding).</pre>
       <pre>Optimizing module top.</pre>
       <pre></pre>
-      <pre>2.6.16. Finished fast OPT passes. (There is nothing left to do.)</pre>
+      <pre>2.6.16. Rerunning OPT passes. (Maybe there is more to do..)</pre>
+      <pre></pre>
+      <pre>2.6.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).</pre>
+      <pre>Running muxtree optimizer on module \top..</pre>
+      <pre>  Creating internal representation of mux trees.</pre>
+      <pre>  Evaluating internal representation of mux trees.</pre>
+      <pre>  Analyzing evaluation results.</pre>
+      <pre>Removed 0 multiplexer ports.</pre>
+      <pre>&lt;suppressed ~56 debug messages&gt;</pre>
+      <pre></pre>
+      <pre>2.6.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).</pre>
+      <pre>  Optimizing cells in module \top.</pre>
+      <pre>Performed a total of 0 changes.</pre>
+      <pre></pre>
+      <pre>2.6.19. Executing OPT_MERGE pass (detect identical cells).</pre>
+      <pre>Finding identical cells in module `\top&#39;.</pre>
+      <pre>Computing hashes of 110 cells of `\top&#39;.</pre>
+      <pre>Finding duplicate cells in `\top&#39;.</pre>
+      <pre>Removed a total of 0 cells.</pre>
+      <pre></pre>
+      <pre>2.6.20. Executing OPT_DFF pass (perform DFF optimizations).</pre>
+      <pre></pre>
+      <pre>2.6.21. Executing OPT_CLEAN pass (remove unused cells and wires).</pre>
+      <pre>Finding unused cells or wires in module \top..</pre>
+      <pre></pre>
+      <pre>2.6.22. Executing OPT_EXPR pass (perform const folding).</pre>
+      <pre>Optimizing module top.</pre>
+      <pre></pre>
+      <pre>2.6.23. Finished fast OPT passes. (There is nothing left to do.)</pre>
       <pre></pre>
       <pre>2.7. Executing FSM pass (extract and optimize FSM).</pre>
       <pre></pre>
@@ -253,15 +447,17 @@
       <pre></pre>
       <pre>2.8.2. Executing OPT_MERGE pass (detect identical cells).</pre>
       <pre>Finding identical cells in module `\top&#39;.</pre>
-      <pre>Computing hashes of 12 cells of `\top&#39;.</pre>
+      <pre>Computing hashes of 110 cells of `\top&#39;.</pre>
       <pre>Finding duplicate cells in `\top&#39;.</pre>
       <pre>Removed a total of 0 cells.</pre>
       <pre></pre>
       <pre>2.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).</pre>
       <pre>Running muxtree optimizer on module \top..</pre>
       <pre>  Creating internal representation of mux trees.</pre>
-      <pre>  No muxes found in this module.</pre>
+      <pre>  Evaluating internal representation of mux trees.</pre>
+      <pre>  Analyzing evaluation results.</pre>
       <pre>Removed 0 multiplexer ports.</pre>
+      <pre>&lt;suppressed ~56 debug messages&gt;</pre>
       <pre></pre>
       <pre>2.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).</pre>
       <pre>  Optimizing cells in module \top.</pre>
@@ -269,43 +465,171 @@
       <pre></pre>
       <pre>2.8.5. Executing OPT_MERGE pass (detect identical cells).</pre>
       <pre>Finding identical cells in module `\top&#39;.</pre>
-      <pre>Computing hashes of 12 cells of `\top&#39;.</pre>
+      <pre>Computing hashes of 110 cells of `\top&#39;.</pre>
       <pre>Finding duplicate cells in `\top&#39;.</pre>
       <pre>Removed a total of 0 cells.</pre>
       <pre></pre>
       <pre>2.8.6. Executing OPT_DFF pass (perform DFF optimizations).</pre>
+      <pre>Adding SRST signal on $driver$modinst173.reg144 ($dff) from module top (D = $673y [21:1], Q = \modinst173.reg144 [21:1], rval = 21&#39;000000000000000000000).</pre>
+      <pre>Adding SRST signal on $driver$modinst173.modinst116.reg92 ($dff) from module top (D = $387y [11:1], Q = \modinst173.modinst116.reg92 [11:1], rval = 11&#39;00000000000).</pre>
+      <pre>Adding SRST signal on $driver$reg174 ($dff) from module top (D = $834y [9:1], Q = \reg174 [9:1], rval = 9&#39;000000000).</pre>
+      <pre>Adding EN signal on $driver$modinst173.reg150 ($dff) from module top (D = $702y, Q = \modinst173.reg150).</pre>
       <pre></pre>
       <pre>2.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).</pre>
       <pre>Finding unused cells or wires in module \top..</pre>
+      <pre>Removed 2 unused cells and 2 unused wires.</pre>
+      <pre>&lt;suppressed ~3 debug messages&gt;</pre>
       <pre></pre>
       <pre>2.8.8. Executing OPT_EXPR pass (perform const folding).</pre>
       <pre>Optimizing module top.</pre>
       <pre></pre>
-      <pre>2.8.9. Finished fast OPT passes. (There is nothing left to do.)</pre>
+      <pre>2.8.9. Rerunning OPT passes. (Maybe there is more to do..)</pre>
+      <pre></pre>
+      <pre>2.8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).</pre>
+      <pre>Running muxtree optimizer on module \top..</pre>
+      <pre>  Creating internal representation of mux trees.</pre>
+      <pre>  Evaluating internal representation of mux trees.</pre>
+      <pre>  Analyzing evaluation results.</pre>
+      <pre>Removed 0 multiplexer ports.</pre>
+      <pre>&lt;suppressed ~53 debug messages&gt;</pre>
+      <pre></pre>
+      <pre>2.8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).</pre>
+      <pre>  Optimizing cells in module \top.</pre>
+      <pre>Performed a total of 0 changes.</pre>
+      <pre></pre>
+      <pre>2.8.12. Executing OPT_MERGE pass (detect identical cells).</pre>
+      <pre>Finding identical cells in module `\top&#39;.</pre>
+      <pre>Computing hashes of 113 cells of `\top&#39;.</pre>
+      <pre>Finding duplicate cells in `\top&#39;.</pre>
+      <pre>Removed a total of 0 cells.</pre>
+      <pre></pre>
+      <pre>2.8.13. Executing OPT_DFF pass (perform DFF optimizations).</pre>
+      <pre></pre>
+      <pre>2.8.14. Executing OPT_CLEAN pass (remove unused cells and wires).</pre>
+      <pre>Finding unused cells or wires in module \top..</pre>
+      <pre></pre>
+      <pre>2.8.15. Executing OPT_EXPR pass (perform const folding).</pre>
+      <pre>Optimizing module top.</pre>
+      <pre></pre>
+      <pre>2.8.16. Finished fast OPT passes. (There is nothing left to do.)</pre>
       <pre></pre>
       <pre>2.9. Executing WREDUCE pass (reducing word size of cells).</pre>
-      <pre>Removed top 9 bits (of 19) from port A of cell top.$4 ($sub).</pre>
-      <pre>Removed top 2 bits (of 20) from FF cell top.$driver$reg8 ($dff).</pre>
-      <pre>Removed top 16 bits (of 17) from port B of cell top.$7 ($shr).</pre>
-      <pre>Removed top 14 bits (of 19) from port B of cell top.$8 ($mul).</pre>
-      <pre>Removed top 15 bits (of 19) from port B of cell top.$9 ($ne).</pre>
-      <pre>Removed top 19 bits (of 20) from port A of cell top.$10 ($shl).</pre>
+      <pre>Removed top 20 bits (of 22) from port B of cell top.$7 ($and).</pre>
+      <pre>Removed top 8 bits (of 22) from mux cell top.$8 ($mux).</pre>
+      <pre>Removed top 1 bits (of 2) from mux cell top.$14 ($mux).</pre>
+      <pre>Removed top 1 bits (of 14) from mux cell top.$18 ($mux).</pre>
+      <pre>Removed top 31 bits (of 40) from mux cell top.$52 ($mux).</pre>
+      <pre>Removed top 31 bits (of 40) from port A of cell top.$55 ($eq).</pre>
+      <pre>Removed top 12 bits (of 40) from port B of cell top.$55 ($eq).</pre>
+      <pre>Removed top 11 bits (of 19) from mux cell top.$87 ($mux).</pre>
+      <pre>Removed top 7 bits (of 22) from mux cell top.$94 ($mux).</pre>
+      <pre>Removed top 7 bits (of 22) from mux cell top.$95 ($mux).</pre>
+      <pre>Removed top 20 bits (of 22) from mux cell top.$376 ($mux).</pre>
+      <pre>Removed top 21 bits (of 22) from mux cell top.$388 ($mux).</pre>
+      <pre>Removed top 1 bits (of 16) from mux cell top.$596 ($mux).</pre>
+      <pre>Removed top 1 bits (of 16) from port A of cell top.$597 ($not).</pre>
+      <pre>Removed top 9 bits (of 10) from port B of cell top.$600 ($lt).</pre>
+      <pre>Removed top 3 bits (of 16) from mux cell top.$601 ($mux).</pre>
+      <pre>Removed top 11 bits (of 12) from port A of cell top.$653 ($xnor).</pre>
+      <pre>Removed top 11 bits (of 12) from port B of cell top.$653 ($xnor).</pre>
+      <pre>Removed top 2 bits (of 4) from port B of cell top.$655 ($shl).</pre>
+      <pre>Removed top 2 bits (of 4) from port A of cell top.$661 ($sshr).</pre>
+      <pre>Removed top 6 bits (of 14) from port B of cell top.$670 ($eq).</pre>
+      <pre>Removed top 21 bits (of 22) from mux cell top.$672 ($mux).</pre>
+      <pre>Removed top 21 bits (of 22) from port A of cell top.$673 ($xnor).</pre>
+      <pre>Removed top 21 bits (of 22) from port B of cell top.$673 ($xnor).</pre>
+      <pre>Removed top 6 bits (of 19) from mux cell top.$689 ($mux).</pre>
+      <pre>Removed top 6 bits (of 19) from port A of cell top.$691 ($sub).</pre>
+      <pre>Removed top 18 bits (of 19) from port B of cell top.$691 ($sub).</pre>
+      <pre>Removed top 5 bits (of 19) from port Y of cell top.$691 ($sub).</pre>
+      <pre>Removed top 6 bits (of 19) from port A of cell top.$692 ($lt).</pre>
+      <pre>Removed top 7 bits (of 22) from port A of cell top.$695 ($eq).</pre>
+      <pre>Removed top 7 bits (of 22) from port B of cell top.$695 ($eq).</pre>
+      <pre>Removed top 3 bits (of 7) from mux cell top.$696 ($mux).</pre>
+      <pre>Removed top 6 bits (of 7) from port A of cell top.$697 ($sshl).</pre>
+      <pre>Removed top 8 bits (of 9) from mux cell top.$701 ($mux).</pre>
+      <pre>Removed top 13 bits (of 17) from port A of cell top.$702 ($neg).</pre>
+      <pre>Removed top 5 bits (of 9) from port A of cell top.$746 ($not).</pre>
+      <pre>Removed top 6 bits (of 9) from FF cell top.$driver$modinst173.reg146 ($dff).</pre>
+      <pre>Removed top 10 bits (of 11) from port A of cell top.$827 ($and).</pre>
+      <pre>Converting cell top.$834 ($add) from unsigned to signed.</pre>
+      <pre>Removed top 8 bits (of 22) from port A of cell top.$834 ($add).</pre>
+      <pre>Removed top 21 bits (of 22) from port B of cell top.$834 ($add).</pre>
+      <pre>Removed top 7 bits (of 22) from port Y of cell top.$834 ($add).</pre>
+      <pre>Removed top 21 bits (of 22) from mux cell top.$840 ($mux).</pre>
+      <pre>Removed top 24 bits (of 32) from mux cell top.$844 ($mux).</pre>
+      <pre>Removed top 21 bits (of 22) from mux cell top.$procmux$379 ($mux).</pre>
+      <pre>Removed top 6 bits (of 9) from mux cell top.$procmux$389 ($mux).</pre>
+      <pre>Removed top 8 bits (of 22) from mux cell top.$6 ($mux).</pre>
+      <pre>Removed top 8 bits (of 22) from port Y of cell top.$7 ($and).</pre>
+      <pre>Removed top 8 bits (of 22) from port A of cell top.$7 ($and).</pre>
+      <pre>Removed top 1 bits (of 14) from mux cell top.$17 ($mux).</pre>
+      <pre>Removed top 20 bits (of 22) from mux cell top.$374 ($mux).</pre>
+      <pre>Removed top 10 bits (of 22) from port Y of cell top.$387 ($not).</pre>
+      <pre>Removed top 10 bits (of 22) from port A of cell top.$387 ($not).</pre>
+      <pre>Removed top 3 bits (of 16) from port Y of cell top.$597 ($not).</pre>
+      <pre>Removed top 2 bits (of 15) from port A of cell top.$597 ($not).</pre>
+      <pre>Removed top 5 bits (of 15) from port Y of cell top.$834 ($add).</pre>
+      <pre>Removed top 4 bits (of 14) from port A of cell top.$834 ($add).</pre>
+      <pre>Removed top 6 bits (of 9) from mux cell top.$procmux$365 ($mux).</pre>
+      <pre>Removed top 2 bits (of 15) from mux cell top.$596 ($mux).</pre>
+      <pre>Removed top 6 bits (of 9) from port Y of cell top.$746 ($not).</pre>
+      <pre>Removed top 1 bits (of 4) from port A of cell top.$746 ($not).</pre>
+      <pre>Removed top 3 bits (of 13) from mux cell top.$832 ($mux).</pre>
+      <pre>Removed top 21 bits (of 22) from wire top.$672y.</pre>
+      <pre>Removed top 6 bits (of 9) from wire top.$modinst173.reg146$759.</pre>
+      <pre>Removed top 1 bits (of 14) from wire top.$17y.</pre>
+      <pre>Removed top 1 bits (of 2) from wire top.$14y.</pre>
+      <pre>Removed top 8 bits (of 22) from wire top.$7y.</pre>
+      <pre>Removed top 8 bits (of 22) from wire top.$6y.</pre>
+      <pre>Removed top 8 bits (of 9) from wire top.$701y.</pre>
+      <pre>Removed top 3 bits (of 16) from wire top.$596y.</pre>
+      <pre>Removed top 3 bits (of 16) from wire top.$597y.</pre>
+      <pre>Removed top 3 bits (of 7) from wire top.$696y.</pre>
+      <pre>Removed top 21 bits (of 22) from wire top.$modinst173.reg144$761.</pre>
+      <pre>Removed top 6 bits (of 19) from wire top.$689y.</pre>
+      <pre>Removed top 3 bits (of 13) from wire top.$832y.</pre>
+      <pre>Removed top 12 bits (of 22) from wire top.$834y.</pre>
+      <pre>Removed top 6 bits (of 9) from wire top.$746y.</pre>
+      <pre>Removed top 21 bits (of 22) from wire top.$840y.</pre>
+      <pre>Removed top 24 bits (of 32) from wire top.$844y.</pre>
+      <pre>Removed top 6 bits (of 9) from wire top.$modinst173.reg146$748.</pre>
+      <pre>Removed top 21 bits (of 22) from wire top.$388y.</pre>
+      <pre>Removed top 10 bits (of 22) from wire top.$387y.</pre>
+      <pre>Removed top 11 bits (of 19) from wire top.$87y.</pre>
+      <pre>Removed top 20 bits (of 22) from wire top.$376y.</pre>
+      <pre>Removed top 20 bits (of 22) from wire top.$374y.</pre>
+      <pre>Removed top 7 bits (of 22) from wire top.$94y.</pre>
+      <pre>Removed top 31 bits (of 40) from wire top.$52y.</pre>
       <pre></pre>
       <pre>2.10. Executing PEEPOPT pass (run peephole optimizers).</pre>
       <pre></pre>
       <pre>2.11. Executing OPT_CLEAN pass (remove unused cells and wires).</pre>
       <pre>Finding unused cells or wires in module \top..</pre>
+      <pre>Removed 0 unused cells and 29 unused wires.</pre>
+      <pre>&lt;suppressed ~1 debug messages&gt;</pre>
       <pre></pre>
       <pre>2.12. Executing ALUMACC pass (create $alu and $macc cells).</pre>
       <pre>Extracting $alu and $macc cells in module top:</pre>
-      <pre>  creating $macc model for $4 ($sub).</pre>
-      <pre>  creating $macc model for $8 ($mul).</pre>
-      <pre>  creating $alu model for $macc $4.</pre>
-      <pre>  creating $macc cell for $8: $auto$alumacc.cc:382:replace_macc$2</pre>
-      <pre>  creating $alu model for $2 ($le): new $alu</pre>
-      <pre>  creating $alu cell for $2: $auto$alumacc.cc:512:replace_alu$4</pre>
-      <pre>  creating $alu cell for $4: $auto$alumacc.cc:512:replace_alu$13</pre>
-      <pre>  created 2 $alu and 1 $macc cells.</pre>
+      <pre>  creating $macc model for $834 ($add).</pre>
+      <pre>  creating $macc model for $702 ($neg).</pre>
+      <pre>  creating $macc model for $828 ($neg).</pre>
+      <pre>  creating $macc model for $691 ($sub).</pre>
+      <pre>  creating $alu model for $macc $691.</pre>
+      <pre>  creating $alu model for $macc $828.</pre>
+      <pre>  creating $alu model for $macc $702.</pre>
+      <pre>  creating $alu model for $macc $834.</pre>
+      <pre>  creating $alu model for $692 ($lt): new $alu</pre>
+      <pre>  creating $alu model for $600 ($lt): new $alu</pre>
+      <pre>  creating $alu model for $671 ($gt): new $alu</pre>
+      <pre>  creating $alu cell for $671: $auto$alumacc.cc:512:replace_alu$518</pre>
+      <pre>  creating $alu cell for $600: $auto$alumacc.cc:512:replace_alu$529</pre>
+      <pre>  creating $alu cell for $692: $auto$alumacc.cc:512:replace_alu$534</pre>
+      <pre>  creating $alu cell for $834: $auto$alumacc.cc:512:replace_alu$539</pre>
+      <pre>  creating $alu cell for $702: $auto$alumacc.cc:512:replace_alu$542</pre>
+      <pre>  creating $alu cell for $828: $auto$alumacc.cc:512:replace_alu$545</pre>
+      <pre>  creating $alu cell for $691: $auto$alumacc.cc:512:replace_alu$548</pre>
+      <pre>  created 7 $alu and 0 $macc cells.</pre>
       <pre></pre>
       <pre>2.13. Executing SHARE pass (SAT-based resource sharing).</pre>
       <pre></pre>
@@ -313,19 +637,23 @@
       <pre></pre>
       <pre>2.14.1. Executing OPT_EXPR pass (perform const folding).</pre>
       <pre>Optimizing module top.</pre>
-      <pre>&lt;suppressed ~1 debug messages&gt;</pre>
+      <pre>&lt;suppressed ~2 debug messages&gt;</pre>
       <pre></pre>
       <pre>2.14.2. Executing OPT_MERGE pass (detect identical cells).</pre>
       <pre>Finding identical cells in module `\top&#39;.</pre>
-      <pre>Computing hashes of 14 cells of `\top&#39;.</pre>
+      <pre>Computing hashes of 117 cells of `\top&#39;.</pre>
       <pre>Finding duplicate cells in `\top&#39;.</pre>
       <pre>Removed a total of 0 cells.</pre>
       <pre></pre>
       <pre>2.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).</pre>
       <pre>Running muxtree optimizer on module \top..</pre>
       <pre>  Creating internal representation of mux trees.</pre>
-      <pre>  No muxes found in this module.</pre>
-      <pre>Removed 0 multiplexer ports.</pre>
+      <pre>  Evaluating internal representation of mux trees.</pre>
+      <pre>  Analyzing evaluation results.</pre>
+      <pre>    dead port 1/2 on $mux $52.</pre>
+      <pre>    dead port 2/2 on $mux $52.</pre>
+      <pre>Removed 2 multiplexer ports.</pre>
+      <pre>&lt;suppressed ~51 debug messages&gt;</pre>
       <pre></pre>
       <pre>2.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).</pre>
       <pre>  Optimizing cells in module \top.</pre>
@@ -333,16 +661,18 @@
       <pre></pre>
       <pre>2.14.5. Executing OPT_MERGE pass (detect identical cells).</pre>
       <pre>Finding identical cells in module `\top&#39;.</pre>
-      <pre>Computing hashes of 14 cells of `\top&#39;.</pre>
+      <pre>Computing hashes of 116 cells of `\top&#39;.</pre>
       <pre>Finding duplicate cells in `\top&#39;.</pre>
       <pre>Removed a total of 0 cells.</pre>
       <pre></pre>
       <pre>2.14.6. Executing OPT_DFF pass (perform DFF optimizations).</pre>
+      <pre>Adding SRST signal on $driver$modinst173.reg146 ($dff) from module top (D = $auto$wreduce.cc:514:run$507 [2:1], Q = \modinst173.reg146 [2:1], rval = 2&#39;00).</pre>
+      <pre>Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$476 ($dff) from module top.</pre>
       <pre></pre>
       <pre>2.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).</pre>
       <pre>Finding unused cells or wires in module \top..</pre>
-      <pre>Removed 0 unused cells and 2 unused wires.</pre>
-      <pre>&lt;suppressed ~1 debug messages&gt;</pre>
+      <pre>Removed 20 unused cells and 29 unused wires.</pre>
+      <pre>&lt;suppressed ~21 debug messages&gt;</pre>
       <pre></pre>
       <pre>2.14.8. Executing OPT_EXPR pass (perform const folding).</pre>
       <pre>Optimizing module top.</pre>
@@ -352,20 +682,25 @@
       <pre>2.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).</pre>
       <pre>Running muxtree optimizer on module \top..</pre>
       <pre>  Creating internal representation of mux trees.</pre>
-      <pre>  No muxes found in this module.</pre>
+      <pre>  Evaluating internal representation of mux trees.</pre>
+      <pre>  Analyzing evaluation results.</pre>
       <pre>Removed 0 multiplexer ports.</pre>
+      <pre>&lt;suppressed ~44 debug messages&gt;</pre>
       <pre></pre>
       <pre>2.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).</pre>
       <pre>  Optimizing cells in module \top.</pre>
-      <pre>Performed a total of 0 changes.</pre>
+      <pre>    New input vector for $reduce_or cell $386: \modinst173.wire10 [4:1]</pre>
+      <pre>  Optimizing cells in module \top.</pre>
+      <pre>Performed a total of 1 changes.</pre>
       <pre></pre>
       <pre>2.14.12. Executing OPT_MERGE pass (detect identical cells).</pre>
       <pre>Finding identical cells in module `\top&#39;.</pre>
-      <pre>Computing hashes of 14 cells of `\top&#39;.</pre>
+      <pre>Computing hashes of 96 cells of `\top&#39;.</pre>
       <pre>Finding duplicate cells in `\top&#39;.</pre>
       <pre>Removed a total of 0 cells.</pre>
       <pre></pre>
       <pre>2.14.13. Executing OPT_DFF pass (perform DFF optimizations).</pre>
+      <pre>Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$478 ($dff) from module top.</pre>
       <pre></pre>
       <pre>2.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).</pre>
       <pre>Finding unused cells or wires in module \top..</pre>
@@ -373,7 +708,35 @@
       <pre>2.14.15. Executing OPT_EXPR pass (perform const folding).</pre>
       <pre>Optimizing module top.</pre>
       <pre></pre>
-      <pre>2.14.16. Finished fast OPT passes. (There is nothing left to do.)</pre>
+      <pre>2.14.16. Rerunning OPT passes. (Maybe there is more to do..)</pre>
+      <pre></pre>
+      <pre>2.14.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).</pre>
+      <pre>Running muxtree optimizer on module \top..</pre>
+      <pre>  Creating internal representation of mux trees.</pre>
+      <pre>  Evaluating internal representation of mux trees.</pre>
+      <pre>  Analyzing evaluation results.</pre>
+      <pre>Removed 0 multiplexer ports.</pre>
+      <pre>&lt;suppressed ~44 debug messages&gt;</pre>
+      <pre></pre>
+      <pre>2.14.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).</pre>
+      <pre>  Optimizing cells in module \top.</pre>
+      <pre>Performed a total of 0 changes.</pre>
+      <pre></pre>
+      <pre>2.14.19. Executing OPT_MERGE pass (detect identical cells).</pre>
+      <pre>Finding identical cells in module `\top&#39;.</pre>
+      <pre>Computing hashes of 95 cells of `\top&#39;.</pre>
+      <pre>Finding duplicate cells in `\top&#39;.</pre>
+      <pre>Removed a total of 0 cells.</pre>
+      <pre></pre>
+      <pre>2.14.20. Executing OPT_DFF pass (perform DFF optimizations).</pre>
+      <pre></pre>
+      <pre>2.14.21. Executing OPT_CLEAN pass (remove unused cells and wires).</pre>
+      <pre>Finding unused cells or wires in module \top..</pre>
+      <pre></pre>
+      <pre>2.14.22. Executing OPT_EXPR pass (perform const folding).</pre>
+      <pre>Optimizing module top.</pre>
+      <pre></pre>
+      <pre>2.14.23. Finished fast OPT passes. (There is nothing left to do.)</pre>
       <pre></pre>
       <pre>2.15. Executing MEMORY pass.</pre>
       <pre></pre>
@@ -409,19 +772,49 @@
       <pre></pre>
       <pre>2.17.1. Executing OPT_EXPR pass (perform const folding).</pre>
       <pre>Optimizing module top.</pre>
+      <pre>&lt;suppressed ~179 debug messages&gt;</pre>
       <pre></pre>
       <pre>2.17.2. Executing OPT_MERGE pass (detect identical cells).</pre>
       <pre>Finding identical cells in module `\top&#39;.</pre>
-      <pre>Computing hashes of 14 cells of `\top&#39;.</pre>
+      <pre>Computing hashes of 87 cells of `\top&#39;.</pre>
       <pre>Finding duplicate cells in `\top&#39;.</pre>
       <pre>Removed a total of 0 cells.</pre>
       <pre></pre>
       <pre>2.17.3. Executing OPT_DFF pass (perform DFF optimizations).</pre>
+      <pre>Handling always-active SRST on $auto$ff.cc:337:slice$483 ($sdff) from module top (changing to const D).</pre>
+      <pre>Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$483 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 1 on $auto$ff.cc:337:slice$483 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 2 on $auto$ff.cc:337:slice$483 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 3 on $auto$ff.cc:337:slice$483 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 4 on $auto$ff.cc:337:slice$483 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 5 on $auto$ff.cc:337:slice$483 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 6 on $auto$ff.cc:337:slice$483 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 7 on $auto$ff.cc:337:slice$483 ($dff) from module top.</pre>
+      <pre>Setting constant 0-bit at position 8 on $auto$ff.cc:337:slice$483 ($dff) from module top.</pre>
       <pre></pre>
       <pre>2.17.4. Executing OPT_CLEAN pass (remove unused cells and wires).</pre>
       <pre>Finding unused cells or wires in module \top..</pre>
+      <pre>Removed 13 unused cells and 37 unused wires.</pre>
+      <pre>&lt;suppressed ~16 debug messages&gt;</pre>
       <pre></pre>
-      <pre>2.17.5. Finished fast OPT passes.</pre>
+      <pre>2.17.5. Rerunning OPT passes. (Removed registers in this run.)</pre>
+      <pre></pre>
+      <pre>2.17.6. Executing OPT_EXPR pass (perform const folding).</pre>
+      <pre>Optimizing module top.</pre>
+      <pre>&lt;suppressed ~26 debug messages&gt;</pre>
+      <pre></pre>
+      <pre>2.17.7. Executing OPT_MERGE pass (detect identical cells).</pre>
+      <pre>Finding identical cells in module `\top&#39;.</pre>
+      <pre>Computing hashes of 73 cells of `\top&#39;.</pre>
+      <pre>Finding duplicate cells in `\top&#39;.</pre>
+      <pre>Removed a total of 0 cells.</pre>
+      <pre></pre>
+      <pre>2.17.8. Executing OPT_DFF pass (perform DFF optimizations).</pre>
+      <pre></pre>
+      <pre>2.17.9. Executing OPT_CLEAN pass (remove unused cells and wires).</pre>
+      <pre>Finding unused cells or wires in module \top..</pre>
+      <pre></pre>
+      <pre>2.17.10. Finished fast OPT passes.</pre>
       <pre></pre>
       <pre>2.18. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).</pre>
       <pre></pre>
@@ -432,23 +825,38 @@
       <pre></pre>
       <pre>2.19.2. Executing OPT_MERGE pass (detect identical cells).</pre>
       <pre>Finding identical cells in module `\top&#39;.</pre>
-      <pre>Computing hashes of 14 cells of `\top&#39;.</pre>
+      <pre>Computing hashes of 73 cells of `\top&#39;.</pre>
       <pre>Finding duplicate cells in `\top&#39;.</pre>
       <pre>Removed a total of 0 cells.</pre>
       <pre></pre>
       <pre>2.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).</pre>
       <pre>Running muxtree optimizer on module \top..</pre>
       <pre>  Creating internal representation of mux trees.</pre>
-      <pre>  No muxes found in this module.</pre>
+      <pre>  Evaluating internal representation of mux trees.</pre>
+      <pre>  Analyzing evaluation results.</pre>
       <pre>Removed 0 multiplexer ports.</pre>
+      <pre>&lt;suppressed ~35 debug messages&gt;</pre>
       <pre></pre>
       <pre>2.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).</pre>
       <pre>  Optimizing cells in module \top.</pre>
-      <pre>Performed a total of 0 changes.</pre>
+      <pre>    Consolidated identical input bits for $mux cell $842:</pre>
+      <pre>      Old ports: A={ \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] }, B={ \wire2 [13] \wire2 [13] \wire2 [13] \wire2 [13] \wire2 [13] \wire2 [13] \wire2 [13] \wire2 [13] \wire2 }, Y=$842y</pre>
+      <pre>      New ports: A={ \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] \modinst173.modinst116.wire85 [0] }, B=\wire2, Y=$842y [13:0]</pre>
+      <pre>      New connections: $842y [21:14] = { $842y [13] $842y [13] $842y [13] $842y [13] $842y [13] $842y [13] $842y [13] $842y [13] }</pre>
+      <pre>    Consolidated identical input bits for $mux cell $94:</pre>
+      <pre>      Old ports: A={ \modinst173.wire10 [4] \modinst173.wire10 [4:1] 10&#39;0000000000 }, B=15&#39;000000000000001, Y=$94y</pre>
+      <pre>      New ports: A={ \modinst173.wire10 [4:1] 1&#39;0 }, B=5&#39;00001, Y={ $94y [13:10] $94y [0] }</pre>
+      <pre>      New connections: { $94y [14] $94y [9:1] } = { $94y [13] 9&#39;000000000 }</pre>
+      <pre>    Consolidated identical input bits for $mux cell $87:</pre>
+      <pre>      Old ports: A=8&#39;10101011, B={ 7&#39;0000000 \modinst173.wire34 [0] }, Y=$87y</pre>
+      <pre>      New ports: A=2&#39;11, B={ 1&#39;0 \modinst173.wire34 [0] }, Y=$87y [1:0]</pre>
+      <pre>      New connections: $87y [7:2] = { $87y [1] 1&#39;0 $87y [1] 1&#39;0 $87y [1] 1&#39;0 }</pre>
+      <pre>  Optimizing cells in module \top.</pre>
+      <pre>Performed a total of 3 changes.</pre>
       <pre></pre>
       <pre>2.19.5. Executing OPT_MERGE pass (detect identical cells).</pre>
       <pre>Finding identical cells in module `\top&#39;.</pre>
-      <pre>Computing hashes of 14 cells of `\top&#39;.</pre>
+      <pre>Computing hashes of 73 cells of `\top&#39;.</pre>
       <pre>Finding duplicate cells in `\top&#39;.</pre>
       <pre>Removed a total of 0 cells.</pre>
       <pre></pre>
@@ -461,8 +869,39 @@
       <pre></pre>
       <pre>2.19.9. Executing OPT_EXPR pass (perform const folding).</pre>
       <pre>Optimizing module top.</pre>
+      <pre>&lt;suppressed ~1 debug messages&gt;</pre>
       <pre></pre>
-      <pre>2.19.10. Finished fast OPT passes. (There is nothing left to do.)</pre>
+      <pre>2.19.10. Rerunning OPT passes. (Maybe there is more to do..)</pre>
+      <pre></pre>
+      <pre>2.19.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).</pre>
+      <pre>Running muxtree optimizer on module \top..</pre>
+      <pre>  Creating internal representation of mux trees.</pre>
+      <pre>  Evaluating internal representation of mux trees.</pre>
+      <pre>  Analyzing evaluation results.</pre>
+      <pre>Removed 0 multiplexer ports.</pre>
+      <pre>&lt;suppressed ~35 debug messages&gt;</pre>
+      <pre></pre>
+      <pre>2.19.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).</pre>
+      <pre>  Optimizing cells in module \top.</pre>
+      <pre>Performed a total of 0 changes.</pre>
+      <pre></pre>
+      <pre>2.19.13. Executing OPT_MERGE pass (detect identical cells).</pre>
+      <pre>Finding identical cells in module `\top&#39;.</pre>
+      <pre>Computing hashes of 73 cells of `\top&#39;.</pre>
+      <pre>Finding duplicate cells in `\top&#39;.</pre>
+      <pre>Removed a total of 0 cells.</pre>
+      <pre></pre>
+      <pre>2.19.14. Executing OPT_SHARE pass.</pre>
+      <pre></pre>
+      <pre>2.19.15. Executing OPT_DFF pass (perform DFF optimizations).</pre>
+      <pre></pre>
+      <pre>2.19.16. Executing OPT_CLEAN pass (remove unused cells and wires).</pre>
+      <pre>Finding unused cells or wires in module \top..</pre>
+      <pre></pre>
+      <pre>2.19.17. Executing OPT_EXPR pass (perform const folding).</pre>
+      <pre>Optimizing module top.</pre>
+      <pre></pre>
+      <pre>2.19.18. Finished fast OPT passes. (There is nothing left to do.)</pre>
       <pre></pre>
       <pre>2.20. Executing TECHMAP pass (map to technology primitives).</pre>
       <pre></pre>
@@ -497,49 +936,86 @@
       <pre>Successfully finished Verilog frontend.</pre>
       <pre></pre>
       <pre>2.20.2. Continuing TECHMAP pass.</pre>
-      <pre>Using template $paramod$50923d1e9c34e28cdd37f17419ae3e9af00546aa\_90_alu for cells of type $alu.</pre>
-      <pre>Using extmapper simplemap for cells of type $reduce_or.</pre>
-      <pre>Using extmapper simplemap for cells of type $not.</pre>
-      <pre>Using template $paramod$fc972a7a46956c1788f3cb5257b53c8f1df2d0cc\_90_alu for cells of type $alu.</pre>
-      <pre>Using extmapper maccmap for cells of type $macc_v2.</pre>
-      <pre>  add $7y * \reg8 [7:3] (19x5 bits, unsigned)</pre>
-      <pre>Using extmapper simplemap for cells of type $dff.</pre>
-      <pre>Using extmapper simplemap for cells of type $logic_not.</pre>
-      <pre>Using template $paramod$constmap:ac383b5391c79b788bb6b22fc59d52cf1f8f69a2$paramod$a510a6fdffd00464a1a5ab2f1e0ac1b5631fae54\_90_shift_ops_shr_shl_sshl_sshr for cells of type $shr.</pre>
-      <pre>Using extmapper simplemap for cells of type $ne.</pre>
-      <pre>Using template $paramod$constmap:51e7076a40dd24459a9f0eb58fead1f7d8f73d3c$paramod$e5683c29b37fbac59c1fa24f6f90712f3795474c\_90_shift_ops_shr_shl_sshl_sshr for cells of type $shl.</pre>
-      <pre>Using template $paramod\_90_fa\WIDTH=32&#39;00000000000000000000000000010011 for cells of type $fa.</pre>
-      <pre>Using template $paramod$4e6ee5eb737cf7428f8e246e911ae1dac9ae2979\_90_alu for cells of type $alu.</pre>
+      <pre>Using extmapper simplemap for cells of type $xnor.</pre>
       <pre>Using extmapper simplemap for cells of type $and.</pre>
-      <pre>Using extmapper simplemap for cells of type $xor.</pre>
-      <pre>Using template $paramod\_90_lcu_brent_kung\WIDTH=32&#39;00000000000000000000000000010011 for cells of type $lcu.</pre>
+      <pre>Using extmapper simplemap for cells of type $not.</pre>
+      <pre>Using template $paramod$1eb759649286d7485bd82f4dfc30385bade4b4b3\_90_alu for cells of type $alu.</pre>
+      <pre>Using extmapper simplemap for cells of type $or.</pre>
+      <pre>Using template $paramod$fc972a7a46956c1788f3cb5257b53c8f1df2d0cc\_90_alu for cells of type $alu.</pre>
+      <pre>Using extmapper simplemap for cells of type $dff.</pre>
+      <pre>Using extmapper simplemap for cells of type $sdff.</pre>
+      <pre>Using extmapper simplemap for cells of type $reduce_and.</pre>
+      <pre>Using template $paramod$constmap:f6fc04df5f092ce952de2a130519d8acf35d1db1$paramod$97d8042c693a081e0a437ba61cb547c0ae0ed447\_90_shift_ops_shr_shl_sshl_sshr for cells of type $sshr.</pre>
+      <pre>Using extmapper simplemap for cells of type $reduce_bool.</pre>
+      <pre>Using extmapper simplemap for cells of type $logic_not.</pre>
+      <pre>Using template $paramod$constmap:7398c6924cc64fc6772deaa8069265060dd3c885$paramod$1ee881c6a93333a7ed0d25d3d0aaadec65edc279\_90_shift_ops_shr_shl_sshl_sshr for cells of type $shr.</pre>
+      <pre>Using extmapper simplemap for cells of type $reduce_xnor.</pre>
+      <pre>Using extmapper simplemap for cells of type $logic_and.</pre>
+      <pre>Using template $paramod$constmap:228e105916f491bc35455cfe9282eb835e247a8b$paramod$6a0fad60e180a3272b0b124e194f538b45b27785\_90_shift_ops_shr_shl_sshl_sshr for cells of type $shl.</pre>
+      <pre>Using template $paramod$constmap:b2482dd475318f52b138d361c84af91bebc1e2d5$paramod$7ba03cee183a91ec36f52e46290ca461c708f1af\_90_shift_ops_shr_shl_sshl_sshr for cells of type $sshr.</pre>
+      <pre>Using extmapper simplemap for cells of type $reduce_xor.</pre>
+      <pre>Using extmapper simplemap for cells of type $eq.</pre>
       <pre>Using extmapper simplemap for cells of type $pos.</pre>
       <pre>Using template $paramod\_90_fa\WIDTH=32&#39;00000000000000000000000000000001 for cells of type $fa.</pre>
       <pre>Using template $paramod\_90_lcu_brent_kung\WIDTH=32&#39;00000000000000000000000000000001 for cells of type $lcu.</pre>
-      <pre>Using extmapper simplemap for cells of type $or.</pre>
+      <pre>Using extmapper simplemap for cells of type $xor.</pre>
+      <pre>Using template $paramod\_90_fa\WIDTH=32&#39;00000000000000000000000000001010 for cells of type $fa.</pre>
+      <pre>Using template $paramod\_90_lcu_brent_kung\WIDTH=32&#39;00000000000000000000000000001010 for cells of type $lcu.</pre>
       <pre>No more expansions possible.</pre>
-      <pre>&lt;suppressed ~1021 debug messages&gt;</pre>
+      <pre>&lt;suppressed ~1281 debug messages&gt;</pre>
       <pre></pre>
       <pre>2.21. Executing OPT pass (performing simple optimizations).</pre>
       <pre></pre>
       <pre>2.21.1. Executing OPT_EXPR pass (perform const folding).</pre>
       <pre>Optimizing module top.</pre>
-      <pre>&lt;suppressed ~269 debug messages&gt;</pre>
+      <pre>&lt;suppressed ~178 debug messages&gt;</pre>
       <pre></pre>
       <pre>2.21.2. Executing OPT_MERGE pass (detect identical cells).</pre>
       <pre>Finding identical cells in module `\top&#39;.</pre>
-      <pre>Computing hashes of 742 cells of `\top&#39;.</pre>
+      <pre>Computing hashes of 817 cells of `\top&#39;.</pre>
       <pre>Finding duplicate cells in `\top&#39;.</pre>
-      <pre>Removed a total of 0 cells.</pre>
+      <pre>Computing hashes of 736 cells of `\top&#39;.</pre>
+      <pre>Finding duplicate cells in `\top&#39;.</pre>
+      <pre>Computing hashes of 714 cells of `\top&#39;.</pre>
+      <pre>Finding duplicate cells in `\top&#39;.</pre>
+      <pre>Computing hashes of 703 cells of `\top&#39;.</pre>
+      <pre>Finding duplicate cells in `\top&#39;.</pre>
+      <pre>Computing hashes of 700 cells of `\top&#39;.</pre>
+      <pre>Finding duplicate cells in `\top&#39;.</pre>
+      <pre>Computing hashes of 699 cells of `\top&#39;.</pre>
+      <pre>Finding duplicate cells in `\top&#39;.</pre>
+      <pre>&lt;suppressed ~354 debug messages&gt;</pre>
+      <pre>Removed a total of 118 cells.</pre>
       <pre></pre>
       <pre>2.21.3. Executing OPT_DFF pass (perform DFF optimizations).</pre>
+      <pre>Adding SRST signal on $auto$ff.cc:337:slice$1871 ($_DFF_P_) from module top (D = \wire3 [8], Q = \modinst173.reg143 [1], rval = 1&#39;0).</pre>
+      <pre>Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$1872 ($_DFF_P_) from module top.</pre>
       <pre></pre>
       <pre>2.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).</pre>
       <pre>Finding unused cells or wires in module \top..</pre>
-      <pre>Removed 34 unused cells and 168 unused wires.</pre>
-      <pre>&lt;suppressed ~35 debug messages&gt;</pre>
+      <pre>Removed 128 unused cells and 210 unused wires.</pre>
+      <pre>&lt;suppressed ~129 debug messages&gt;</pre>
       <pre></pre>
-      <pre>2.21.5. Finished fast OPT passes.</pre>
+      <pre>2.21.5. Rerunning OPT passes. (Removed registers in this run.)</pre>
+      <pre></pre>
+      <pre>2.21.6. Executing OPT_EXPR pass (perform const folding).</pre>
+      <pre>Optimizing module top.</pre>
+      <pre>&lt;suppressed ~5 debug messages&gt;</pre>
+      <pre></pre>
+      <pre>2.21.7. Executing OPT_MERGE pass (detect identical cells).</pre>
+      <pre>Finding identical cells in module `\top&#39;.</pre>
+      <pre>Computing hashes of 565 cells of `\top&#39;.</pre>
+      <pre>Finding duplicate cells in `\top&#39;.</pre>
+      <pre>Removed a total of 0 cells.</pre>
+      <pre></pre>
+      <pre>2.21.8. Executing OPT_DFF pass (perform DFF optimizations).</pre>
+      <pre></pre>
+      <pre>2.21.9. Executing OPT_CLEAN pass (remove unused cells and wires).</pre>
+      <pre>Finding unused cells or wires in module \top..</pre>
+      <pre>Removed 0 unused cells and 3 unused wires.</pre>
+      <pre>&lt;suppressed ~1 debug messages&gt;</pre>
+      <pre></pre>
+      <pre>2.21.10. Finished fast OPT passes.</pre>
       <pre></pre>
       <pre>2.22. Executing HIERARCHY pass (managing design hierarchy).</pre>
       <pre>Attribute `top&#39; found on module `top&#39;. Setting top module to top.</pre>
@@ -557,19 +1033,22 @@
       <pre></pre>
       <pre>        +----------Local Count, excluding submodules.</pre>
       <pre>        | </pre>
-      <pre>      172 wires</pre>
-      <pre>     1098 wire bits</pre>
-      <pre>       15 public wires</pre>
-      <pre>      306 public wire bits</pre>
-      <pre>        7 ports</pre>
-      <pre>      180 port bits</pre>
-      <pre>      708 cells</pre>
-      <pre>      290   $_AND_</pre>
-      <pre>       19   $_DFF_P_</pre>
-      <pre>       48   $_MUX_</pre>
-      <pre>       25   $_NOT_</pre>
-      <pre>      154   $_OR_</pre>
-      <pre>      172   $_XOR_</pre>
+      <pre>      219 wires</pre>
+      <pre>     3328 wire bits</pre>
+      <pre>      113 public wires</pre>
+      <pre>     2648 public wire bits</pre>
+      <pre>        6 ports</pre>
+      <pre>      184 port bits</pre>
+      <pre>      565 cells</pre>
+      <pre>       27   $_AND_</pre>
+      <pre>       13   $_DFF_P_</pre>
+      <pre>      306   $_MUX_</pre>
+      <pre>       32   $_NOT_</pre>
+      <pre>      168   $_OR_</pre>
+      <pre>        1   $_SDFF_PN0_</pre>
+      <pre>        2   $_SDFF_PP0_</pre>
+      <pre>        1   $_XNOR_</pre>
+      <pre>       15   $_XOR_</pre>
       <pre></pre>
       <pre>2.24. Executing CHECK pass (checking for obvious problems).</pre>
       <pre>Checking module top...</pre>
@@ -582,9 +1061,9 @@
       <pre>3.2. Executing DEMUXMAP pass.</pre>
       <pre>Dumping module `\top&#39;.</pre>
       <pre></pre>
-      <pre>End of script. Logfile hash: 7bf324ddab, CPU: user 0.17s system 0.01s, MEM: 31.80 MB peak</pre>
-      <pre>Yosys 0.61+97 (git sha1 1f6a13dac, g++ 13.3.0-6ubuntu2~24.04.1 -fPIC -O3)</pre>
-      <pre>Time spent: 22% 23x opt_expr (0 sec), 16% 1x techmap (0 sec), ...</pre>
+      <pre>End of script. Logfile hash: efb4994468, time: 4.91s, user: 0.37s, system: 0.03s, MEM: 34.89 MB peak</pre>
+      <pre>Yosys 0.63 (git sha1 ebfe5b2c0, g++ 13.3.0-6ubuntu2~24.04.1 -fPIC -O3)</pre>
+      <pre>Time spent: 21% 33x opt_expr (0 sec), 21% 22x opt_clean (0 sec), ...</pre>
       <pre>+ <a href="../../../../third_party/tests/verismith/dist-newstyle/build/x86_64-linux/ghc-9.4.7/verismith-1.1.0.html" target="file-frame">third_party/tests/verismith/dist-newstyle/build/x86_64-linux/ghc-9.4.7/verismith-1.1.0</a>/x/verismith/build/verismith/verismith equiv -o output <a href="../../../../tests/generated/verismith/verismith_40.v.html" target="file-frame">tests/generated/verismith/verismith_40.v</a> syn.v</pre>
       <pre>Equivalence check error</pre>
       <pre></pre>
