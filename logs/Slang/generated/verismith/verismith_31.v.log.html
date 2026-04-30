@@ -31,22 +31,25 @@
           </ul></dd>
         </div>
         <div><dt>defines</dt><dd><code></code></dd></div>
-        <div><dt>completed</dt><dd>2026-04-29 04:44:21</dd></div>
-        <div><dt>time elapsed</dt><dd>0.138s</dd></div>
-        <div><dt>ram usage</dt><dd>18528 KB</dd></div>
+        <div><dt>completed</dt><dd>2026-04-30 04:47:43</dd></div>
+        <div><dt>time elapsed</dt><dd>0.278s</dd></div>
+        <div><dt>ram usage</dt><dd>22388 KB</dd></div>
       </dl>
     </section>
     <section class="log">
       <pre></pre>
       <pre>slang-driver --single-unit --timescale=1ns/1ns -I /__w/sv-tests/sv-tests/tests/generated/verismith -Wno-error=index-oob -Wno-error=range-oob -Wno-error=range-width-oob <a href="../../../../tests/generated/verismith/verismith_31.v.html" target="file-frame">tests/generated/verismith/verismith_31.v</a></pre>
-      <pre>../../../tests/generated/verismith/verismith_31.v:8:198: warning: shift count of &#39;8&#39;d65&#39; overflows 16-bit operand [-Wshift-count-overflow]</pre>
-      <pre>#(parameter param9 = ({((((8&#39;hb2) &lt; (7&#39;h42)) ? (~(8&#39;hbc)) : (8&#39;h9e)) &gt;&gt;&gt; (((8&#39;ha4) ? (8&#39;h9c) : (8&#39;h9e)) ? (!(8&#39;h9e)) : (^~(8&#39;had)))), (8&#39;hb8)} ? (-(({(8&#39;ha1), (8&#39;hb2)} &amp; ((8&#39;ha6) &lt;= (8&#39;hae))) &lt;&lt;&lt; ({(8&#39;hb7)} ? (~(8&#39;hbe)) : ((8&#39;hac) ? (8&#39;haa) : (8&#39;ha2))))) : (~^(^(~&amp;((8&#39;hba) | (8&#39;ha4)))))), </pre>
-      <pre>                                                                                                                                                                                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</pre>
+      <pre>../../../tests/generated/verismith/verismith_31.v:231:65: warning: shift count of &#39;-8&#39;sd84&#39; is negative [-Wshift-count-negative]</pre>
+      <pre>              reg53 &lt;= $unsigned((reg55 &gt;&gt; $unsigned((reg49 &gt;&gt;&gt; $signed((8&#39;hac))))));</pre>
+      <pre>                                                                ^~~~~~~~~~~~~~~~</pre>
+      <pre>../../../tests/generated/verismith/verismith_31.v:379:47: warning: shift count of &#39;-8&#39;sd96&#39; is negative [-Wshift-count-negative]</pre>
+      <pre>                          wire67 : wire67) &lt;&lt; $signed((8&#39;ha0))))) ?</pre>
+      <pre>                                              ^~~~~~~~~~~~~~~~</pre>
       <pre>Top level design units:</pre>
       <pre>    top</pre>
       <pre></pre>
       <pre></pre>
-      <pre>Build succeeded: 0 errors, 1 warning</pre>
+      <pre>Build succeeded: 0 errors, 2 warnings</pre>
       <pre></pre>
     </section>
   </body>
