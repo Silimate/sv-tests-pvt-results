@@ -31,25 +31,64 @@
           </ul></dd>
         </div>
         <div><dt>defines</dt><dd><code></code></dd></div>
-        <div><dt>completed</dt><dd>2026-04-30 04:47:43</dd></div>
-        <div><dt>time elapsed</dt><dd>0.278s</dd></div>
-        <div><dt>ram usage</dt><dd>22388 KB</dd></div>
+        <div><dt>completed</dt><dd>2026-05-01 05:04:39</dd></div>
+        <div><dt>time elapsed</dt><dd>0.424s</dd></div>
+        <div><dt>ram usage</dt><dd>24316 KB</dd></div>
       </dl>
     </section>
     <section class="log">
       <pre></pre>
       <pre>slang-driver --single-unit --timescale=1ns/1ns -I /__w/sv-tests/sv-tests/tests/generated/verismith -Wno-error=index-oob -Wno-error=range-oob -Wno-error=range-width-oob <a href="../../../../tests/generated/verismith/verismith_31.v.html" target="file-frame">tests/generated/verismith/verismith_31.v</a></pre>
-      <pre>../../../tests/generated/verismith/verismith_31.v:231:65: warning: shift count of &#39;-8&#39;sd84&#39; is negative [-Wshift-count-negative]</pre>
-      <pre>              reg53 &lt;= $unsigned((reg55 &gt;&gt; $unsigned((reg49 &gt;&gt;&gt; $signed((8&#39;hac))))));</pre>
-      <pre>                                                                ^~~~~~~~~~~~~~~~</pre>
-      <pre>../../../tests/generated/verismith/verismith_31.v:379:47: warning: shift count of &#39;-8&#39;sd96&#39; is negative [-Wshift-count-negative]</pre>
-      <pre>                          wire67 : wire67) &lt;&lt; $signed((8&#39;ha0))))) ?</pre>
-      <pre>                                              ^~~~~~~~~~~~~~~~</pre>
+      <pre>../../../tests/generated/verismith/verismith_31.v:245:55: warning: shift count of &#39;8&#39;d68&#39; overflows 5-bit operand [-Wshift-count-overflow]</pre>
+      <pre>                       $signed((($unsigned(reg21) &gt;&gt; (~(8&#39;hbb))) ?</pre>
+      <pre>                                                      ^~~~~~~~</pre>
+      <pre>../../../tests/generated/verismith/verismith_31.v:396:71: warning: shift count of &#39;8&#39;d172&#39; overflows 8-bit operand [-Wshift-count-overflow]</pre>
+      <pre>                       wire217 : (wire218 &gt;= reg275)) + ((wire315 &gt;&gt; (8&#39;hac)) ?</pre>
+      <pre>                                                                      ^~~~~</pre>
+      <pre>../../../tests/generated/verismith/verismith_31.v:432:159: warning: shift count of &#39;8&#39;d39&#39; overflows 8-bit operand [-Wshift-count-overflow]</pre>
+      <pre>parameter param202 = (+(((param201 ? (param201 ? param201 : param201) : (~param201)) &lt;= {(param201 ? param201 : (8&#39;hb9))}) ? ({{param201}} ? ((-param201) &gt;&gt; (param201 ? param201 : param201)) : ((param201 &gt;&gt;&gt; param201) ? (param201 &gt;&gt; param201) : param201)) : (((param201 &lt;= param201) ? {param201, (7&#39;h41)} : ((8&#39;hb5) ? (8&#39;hac) : param201)) &gt;= (^{param201, param201})))))</pre>
+      <pre>                                                                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</pre>
+      <pre>../../../tests/generated/verismith/verismith_31.v:642:58: warning: shift count of &#39;8&#39;d191&#39; overflows 14-bit operand [-Wshift-count-overflow]</pre>
+      <pre>                          $unsigned($unsigned((reg47 &gt;&gt; (8&#39;hbf))))});</pre>
+      <pre>                                                         ^~~~~</pre>
+      <pre>../../../tests/generated/verismith/verismith_31.v:771:62: warning: shift count of &#39;8&#39;d67&#39; overflows 8-bit operand [-Wshift-count-overflow]</pre>
+      <pre>#(parameter param194 = ((((((8&#39;h9d) ? (7&#39;h44) : (8&#39;hba)) &gt;&gt; ((8&#39;hb7) ? (7&#39;h43) : (8&#39;h9d))) &amp;&amp; (-((8&#39;hb7) ? (8&#39;hb0) : (8&#39;hb4)))) ? (~|(+(~|(8&#39;ha5)))) : (&amp;(8&#39;hb1))) &amp;&amp; {((~&amp;((8&#39;hba) ? (8&#39;hb1) : (8&#39;ha7))) &gt;= (((8&#39;ha1) || (8&#39;hb7)) ? ((8&#39;hbb) == (8&#39;haa)) : ((8&#39;hab) ? (8&#39;h9f) : (8&#39;ha0)))), (&amp;(8&#39;haf))}), </pre>
+      <pre>                                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~</pre>
+      <pre>../../../tests/generated/verismith/verismith_31.v:889:63: warning: shift count of &#39;8&#39;d177&#39; overflows 8-bit operand [-Wshift-count-overflow]</pre>
+      <pre>                           reg170 : reg178) &gt;&gt;&gt; ((8&#39;hb4) &gt;&gt;&gt; (8&#39;hb1)))} &gt;&gt; ((!(~^wire187)) || (~|wire164))));</pre>
+      <pre>                                                              ^~~~~</pre>
+      <pre>../../../tests/generated/verismith/verismith_31.v:896:132: warning: shift count of &#39;8&#39;d178&#39; overflows 9-bit operand [-Wshift-count-overflow]</pre>
+      <pre>#(parameter param153 = {(((((8&#39;ha0) &amp;&amp; (8&#39;h9f)) ? {(8&#39;ha2), (7&#39;h42)} : {(8&#39;ha0), (7&#39;h40)}) ? (((8&#39;hb8) &gt;= (8&#39;haa)) ~^ ((7&#39;h41) &gt;&gt; (8&#39;hb2))) : (((8&#39;hbb) ? (8&#39;hb1) : (8&#39;hb8)) ^~ ((8&#39;hb6) ^~ (8&#39;h9f)))) != {((8&#39;hbf) ? ((8&#39;hbe) ? (8&#39;ha3) : (8&#39;had)) : ((8&#39;hb2) ? (7&#39;h41) : (8&#39;ha3))), (~^(8&#39;hbc))})}, </pre>
+      <pre>                                                                                                                                   ^~~~~</pre>
+      <pre>../../../tests/generated/verismith/verismith_31.v:1026:45: warning: shift count of &#39;8&#39;d173&#39; overflows 17-bit operand [-Wshift-count-overflow]</pre>
+      <pre>      reg138 &lt;= (~$unsigned((((wire123 &lt;&lt;&lt; (8&#39;had)) &lt;&lt; {wire121,</pre>
+      <pre>                                            ^~~~~</pre>
+      <pre>../../../tests/generated/verismith/verismith_31.v:1027:25: warning: shift count of &#39;8&#39;d176&#39; overflows 17-bit operand [-Wshift-count-overflow]</pre>
+      <pre>          wire121}) &lt;&lt; (8&#39;hb0))));</pre>
+      <pre>                        ^~~~~</pre>
+      <pre>../../../tests/generated/verismith/verismith_31.v:1060:129: warning: shift count of &#39;15&#39;d160&#39; overflows 2-bit operand [-Wshift-count-overflow]</pre>
+      <pre>#(parameter param103 = ((({(!(8&#39;hac))} &lt; (8&#39;hb0)) ? {(&amp;(|(8&#39;h9c))), (~^((8&#39;hbc) &amp;&amp; (8&#39;hb2)))} : (!(-((8&#39;haa) - (8&#39;ha2))))) &lt;&lt;&lt; (((~|((8&#39;ha8) | (8&#39;hb5))) ? (8&#39;hb3) : (((8&#39;hb8) ~^ (8&#39;hba)) &lt;&lt;&lt; ((8&#39;hb0) ? (8&#39;ha4) : (8&#39;hbc)))) ? {({(7&#39;h44)} &amp; (|(8&#39;ha5))), (((7&#39;h41) &gt;= (8&#39;ha0)) ^~ ((7&#39;h42) ? (8&#39;hb6) : (8&#39;hac)))} : (+({(8&#39;ha6)} ? {(8&#39;ha0)} : ((8&#39;hb8) ? (8&#39;h9c) : (7&#39;h42)))))), </pre>
+      <pre>                                                                                                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</pre>
+      <pre>../../../tests/generated/verismith/verismith_31.v:1060:193: warning: shift count of &#39;8&#39;d164&#39; overflows 8-bit operand [-Wshift-count-overflow]</pre>
+      <pre>#(parameter param103 = ((({(!(8&#39;hac))} &lt; (8&#39;hb0)) ? {(&amp;(|(8&#39;h9c))), (~^((8&#39;hbc) &amp;&amp; (8&#39;hb2)))} : (!(-((8&#39;haa) - (8&#39;ha2))))) &lt;&lt;&lt; (((~|((8&#39;ha8) | (8&#39;hb5))) ? (8&#39;hb3) : (((8&#39;hb8) ~^ (8&#39;hba)) &lt;&lt;&lt; ((8&#39;hb0) ? (8&#39;ha4) : (8&#39;hbc)))) ? {({(7&#39;h44)} &amp; (|(8&#39;ha5))), (((7&#39;h41) &gt;= (8&#39;ha0)) ^~ ((7&#39;h42) ? (8&#39;hb6) : (8&#39;hac)))} : (+({(8&#39;ha6)} ? {(8&#39;ha0)} : ((8&#39;hb8) ? (8&#39;h9c) : (7&#39;h42)))))), </pre>
+      <pre>                                                                                                                                                                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~</pre>
+      <pre>../../../tests/generated/verismith/verismith_31.v:1158:45: warning: shift count of &#39;8&#39;d160&#39; overflows 14-bit operand [-Wshift-count-overflow]</pre>
+      <pre>  assign wire89 = (wire80[(2&#39;h2):(2&#39;h2)] &gt;&gt; $unsigned((8&#39;ha0)));</pre>
+      <pre>                                            ^~~~~~~~~~~~~~~~~~</pre>
+      <pre>../../../tests/generated/verismith/verismith_31.v:1216:58: warning: shift count of &#39;8&#39;d164&#39; overflows 1-bit operand [-Wshift-count-overflow]</pre>
+      <pre>#(parameter param314 = ((({(&amp;(8&#39;hbc))} ~^ ((!(8&#39;hb9)) &gt;&gt; {(8&#39;ha4)})) ? ({{(7&#39;h41), (8&#39;ha5)}, ((8&#39;ha8) &amp;&amp; (8&#39;hbb))} ? ((-(8&#39;hb9)) &gt;= ((8&#39;had) ? (8&#39;ha1) : (7&#39;h43))) : (((8&#39;hb6) ? (8&#39;h9f) : (8&#39;haf)) &lt; ((8&#39;h9e) || (8&#39;haf)))) : (~(^{(7&#39;h44), (8&#39;hb9)}))) - (8&#39;ha0)))</pre>
+      <pre>                                                         ^~~~~~~~~</pre>
+      <pre>../../../tests/generated/verismith/verismith_31.v:1318:91: warning: shift count of &#39;8&#39;d187&#39; overflows 10-bit operand [-Wshift-count-overflow]</pre>
+      <pre>              reg292 &lt;= {((($signed((7&#39;h40)) - $unsigned((8&#39;hae))) ~^ $signed((reg287 &gt;&gt; (8&#39;hbb)))) || $signed((wire279[(1&#39;h0):(1&#39;h0)] == reg291)))};</pre>
+      <pre>                                                                                          ^~~~~</pre>
+      <pre>../../../tests/generated/verismith/verismith_31.v:1465:63: warning: shift count of &#39;8&#39;d158&#39; overflows 12-bit operand [-Wshift-count-overflow]</pre>
+      <pre>              (~|$unsigned(($signed((8&#39;hbb)) &lt;&lt;&lt; (wire251 &gt;&gt; (8&#39;h9e)))))};</pre>
+      <pre>                                                              ^~~~~</pre>
       <pre>Top level design units:</pre>
       <pre>    top</pre>
       <pre></pre>
       <pre></pre>
-      <pre>Build succeeded: 0 errors, 2 warnings</pre>
+      <pre>Build succeeded: 0 errors, 15 warnings</pre>
       <pre></pre>
     </section>
   </body>
